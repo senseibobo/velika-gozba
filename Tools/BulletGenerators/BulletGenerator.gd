@@ -9,6 +9,7 @@ export var life_time : float = 3.0
 export var bullet_script : GDScript = preload("res://Tools/Bullets/Bullet.gd")
 export var texture : Texture = preload("res://icon.png")
 export var bullet_size : Vector2 = Vector2(8,8)
+export var bullet_radius  : float = 4.0
 
 var multimeshinstance : MultiMeshInstance2D = MultiMeshInstance2D.new()
 var multimesh = MultiMesh.new()
@@ -50,7 +51,7 @@ func _process_bullets(delta):
 	var erased_bullets : Array = []
 	for bullet in bullets:
 		bullet._process(delta)
-		if bullet.current_time > bullet.life_time:
+		if bullet.check_collision(bullet_radius) or bullet.current_time > bullet.life_time:
 			erased_bullets.append(bullet)
 	for bullet in erased_bullets:
 		remove_bullet(bullet)

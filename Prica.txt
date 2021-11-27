@@ -1,0 +1,75 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+												PRICA
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Petar(glavni lik) uticajni kuvar iz Pekograda uobicajeno provodi vreme na poslu.
+Dolazi kralj opasnog carstva koji mu naredjuje da spremi najbolju gozbu koju je svet ikada video, ali zeli da tu gozbu Petar napravi od carobnih namernica.Ali tu postoji jedan problem.
+Te carobne namirnice su najopasnija bica na svetu i oni se nalaze u Zmajevom vrtu.Petar tako odvazno i hrabro se probija kroz horde carobnih namirnica kako bi prikupio odredjene sastojke za gozbu.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+					GLAVNI LIK
+-----------------------------------------------------------------------------------------------
+Petar
+-Opis:  uticajni kuvar iz Pekograda
+-Napad: na pocetku imas tiganj sa kojim mozes da udaras i sa njim mozes da odbijas metke. 
+-----------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+					NEPRIJATELJI
+-----------------------------------------------------------------------------------------------
+NAPOMENA:Kad ubijes nepratelja iz njega ispadnu namirnice(koje mozes pokupis) i one ti daju score.!!!!!!!!!!!!!!!!!!!!!
+--------------------------------------------------------------------------
+		Paradajz
+-Opis: Minion, najslabiji neprijatelj
+-Napad: Ima noz sa kojim te udara.
+--------------------------------------------------------------------------
+		Krompir
+-Opis: Tenk
+-Napad: Ima palicu sa kojom zamahne i ako te udari skine 30% ako te udari
+--------------------------------------------------------------------------
+		Krastavac
+-Opis: Vojnik 
+-Napad: Ima pusku i puca te
+--------------------------------------------------------------------------
+		Luk
+-Opis: Kamikaza
+-Napad: Trci ka tebi i ako ti se priblizi bas blizu eksplodira i skine ti 50% helta
+--------------------------------------------------------------------------
+		Sargarepa
+-Opis: Sniper
+-Napad: Ima snajper sa kojim puca(kao Bullet Shell iz Enter The Gungeon-a)
+-----------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+					MINI BOSSEVI
+-----------------------------------------------------------------------------------------------
+NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!!
+--------------------------------------------------------------------------
+		Brokoli
+-Opis: Veliki,zelene boje
+-Napad: Baca bombe(manje brokolije)
+-Abiliti koji dobijas: -------------------------
+--------------------------------------------------------------------------
+		Bundeva
+-Opis: Neprijatelj koji kad ga ubijes, od njega nastanu dva manja neprijatelja(isto bundeve ali manje)
+-Napad: Kotrlja se i pokusava da te udari, dok se kotrlja, ubrzava se i sto je brza to ti vise skine.
+-Abiliti koji dobijas: -------------------------
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+					GLAVNI BOSS
+-----------------------------------------------------------------------------------------------
+		Pitaja(dragon fruit)....
+-Baca roze tecnost koja ti skida helt ako stanes u nju(5 sec)
+
+

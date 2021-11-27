@@ -1,8 +1,8 @@
-# potraga-za-hranom
+# velika-gozba
+
 HZS 4.0 domaci
 
-OBAVEZNO------------------OBAVEZNO
-
+!-------------------------------OBAVEZNO--------------------------------!
 -muzika za main menu
 -main menu ui
 -movemnt za glavnog lika
@@ -21,10 +21,27 @@ OBAVEZNO------------------OBAVEZNO
 -about
 -settings
 -difficulty
+!------------------------------------------------------------------------!
 
-
-EXTRA----------------------EXTRA
-
+!-------------------------------EXTRA------------------------------------!
 -power ups
 -vise bossova
 -animacije za neprijatelje
+!------------------------------------------------------------------------!
+
+!----------------------CREDITS ZA MUZIKU--------------------------------!
+Le Baguette by Alexander Nakarada | https://www.serpentsoundstudios.com/
+Music promoted on https://www.chosic.com/free-music/all/
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+!------------------------------------------------------------------------!
+Silly Intro by Alexander Nakarada | https://www.serpentsoundstudios.com/
+Music promoted by https://www.chosic.com/free-music/all/free-music/
+Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+!------------------------------------------------------------------------!
+The Great Battle by Alexander Nakarada | https://www.serpentsoundstudios.com/
+Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Music promoted by https://www.chosic.com/free-music/all/
+!------------------------------------------------------------------------!

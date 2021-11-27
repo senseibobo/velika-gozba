@@ -3,10 +3,12 @@ class_name BulletGenerator
 
 var bullets : Array
 
+export var shot_interval : float = 0.1
+export var speed : float = 100.0
 export var life_time : float = 3.0
 export var bullet_script : GDScript = preload("res://Tools/Bullets/Bullet.gd")
-export var texture : Texture
-export var bullet_size : Vector2
+export var texture : Texture = preload("res://icon.png")
+export var bullet_size : Vector2 = Vector2(8,8)
 
 var multimeshinstance : MultiMeshInstance2D = MultiMeshInstance2D.new()
 var multimesh = MultiMesh.new()
@@ -32,20 +34,17 @@ func remove_bullet(bullet):
 	_update_bullet_positions()
 
 func _process(delta):
-	_debug_process(delta)
+	_process_shooting(delta)
 	_process_bullets(delta)
 	_update_bullet_positions()
 
-var time = 0.0
+var time : float = 0.0
 
-func _debug_process(delta):
-	var bullet = Bullet.new()
-	bullet.position = global_position
-	bullet.velocity = Vector2.RIGHT.rotated(time)*100.0
-	bullet.rotation = time
-	bullet.life_time = life_time
-	add_bullet(bullet)
-	time += delta*20.0
+func _process_shooting(delta):
+	time += delta
+	while time > shot_interval:
+		shoot()
+		time -= shot_interval
 
 func _process_bullets(delta):
 	var erased_bullets : Array = []

@@ -8,9 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Tools/Bullets/Bullet.gd"
+}, {
+"base": "Node2D",
+"class": "BulletGenerator",
+"language": "GDScript",
+"path": "res://Tools/BulletGenerators/BulletGenerator.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"BulletGenerator": ""
+}
+
 [application]
 
 config/name="potraga-za-hranom"
+run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
 [physics]

@@ -36,7 +36,6 @@ func _handle_animations():
 	if _dir != Vector2():
 		animationtree.travel("run")
 	else:
-		$Object/Node2D.rotation_degrees = 0
 		animationtree.travel("idle")
 
 func _handle_attack():

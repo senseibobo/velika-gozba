@@ -4,7 +4,8 @@ HZS 4.0 domaci<br/>
 <br/>
 !-------------------------------OBAVEZNO--------------------------------!<br/>
 -muzika za main menu<br/>
--main menu ui<br/>
+<strike>-main menu ui<br/></strike>
+-slika za main menu
 -movemnt za glavnog lika<br/>
 -attack za glavnog lika<br/>
 -animacije za movement glavnog lika<br/>
@@ -15,7 +16,8 @@ HZS 4.0 domaci<br/>
 -ui u levelima(hp?)<br/>
 -highscore sistem<br/>
 <strike>-baza podataka<br/></strike>
-<strike>-singlton<br/></strike>
+<strike>-singleton<br/></strike>
+<strike>-music-singleton<br/></strike>
 -shaderi<br/>
 -level select screen<br/>
 -about<br/>

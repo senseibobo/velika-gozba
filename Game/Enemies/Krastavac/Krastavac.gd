@@ -1,16 +1,26 @@
 extends Enemy
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+enum STATES {
+	WALKING,
+	SHOOTING
+}
 
+var state : int = STATES.WALKING 
+var approach_range : float = 500
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _process(delta):
+	if state == STATES.WALKING:
+		_handle_movement()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _handle_movement():
+	if is_instance_valid(Global.player):
+		var pp = Global.player.global_position
+		var dest : Vector2
+		var ppr = sign(global_position.x - pp.x)
+		dest.x = pp.x + ppr*approach_range
+		dest.y = pp.y 
+		var dir = global_position.direction_to(dest)
+		move_and_slide(dir*movement_speed)
+		if dir.x != 0:
+			sprite.scale.x = ppr*abs(sprite.scale.x)

@@ -14,6 +14,7 @@ export var bullet_script : GDScript = preload("res://Tools/Bullets/Bullet.gd")
 export var texture : Texture = preload("res://icon.png")
 export var bullet_size : Vector2 = Vector2(8,8)
 export var bullet_radius  : float = 8.0
+export var shooting : bool = true
 export(TARGETS) var targets : int = TARGETS.PLAYER
 
 var multimeshinstance : MultiMeshInstance2D = MultiMeshInstance2D.new()
@@ -53,7 +54,7 @@ func remove_bullet(bullet) -> void:
 
 func _process_shooting(delta) -> void:
 	time += delta
-	while time > shot_interval:
+	while shooting and time > shot_interval:
 		shoot()
 		time -= shot_interval
 

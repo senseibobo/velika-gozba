@@ -7,6 +7,7 @@ enum TARGETS {
 	ENEMY
 }
 
+export var damage : float = 20
 export var shot_interval : float = 0.1
 export var speed : float = 100.0
 export var life_time : float = 3.0
@@ -37,6 +38,7 @@ func add_bullet(bullet):
 	bullet.life_time = life_time
 	bullet.generator = self
 	bullet.size = bullet_size
+	bullet.damage = damage
 	bullets.append(bullet)
 	return bullet
 

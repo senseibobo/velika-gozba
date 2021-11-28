@@ -57,6 +57,7 @@ func deflect_bullets(pos):
 			bullet.generator.bullets.erase(bullet)
 			bullet.current_time = 0
 			var old_texture = bullet.texture
+			var old_damage = bullet.damage
 			deflect_generator.add_bullet(bullet)
 			bullet.texture = old_texture
 			

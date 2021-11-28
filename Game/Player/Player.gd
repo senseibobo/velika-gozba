@@ -9,8 +9,10 @@ func _ready():
 	Global.player = self
 
 func _process(delta):
-	_handle_movement()
-	_handle_animations()
+	if animationtree.get_current_node() != "attack":
+		_handle_movement()
+		_handle_animations()
+	_handle_attack()
 	
 
 func _handle_movement():
@@ -30,3 +32,7 @@ func _handle_animations():
 	else:
 		$Object/Node2D.rotation_degrees = 0
 		animationtree.travel("idle")
+
+func _handle_attack():
+	if Input.is_action_just_pressed("attack"):
+		animationtree.travel("attack")

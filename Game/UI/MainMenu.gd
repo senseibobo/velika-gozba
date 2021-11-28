@@ -1,7 +1,5 @@
 extends Control
 
-export var center_contained_path : NodePath
-onready var cc : CenterContainer = get_node(center_contained_path)
 enum VCONTAINER{
 	MAIN,
 	ABOUT,
@@ -32,6 +30,7 @@ var visible_container : int = VCONTAINER.MAIN
 var c : Array
 
 func _ready() -> void:
+	c = mainc.get_children()
 	_update_visible()
 
 func _process(delta) -> void:

@@ -20,6 +20,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+center_contained_path = null
 center_container_path = NodePath("CenterContainer")
 menu_cointaner_path = NodePath("CenterContainer/MenuContainer")
 about_cointaner_path = NodePath("CenterContainer/AboutContainer")

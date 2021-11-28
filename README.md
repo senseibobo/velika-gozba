@@ -8,8 +8,8 @@ HZS 4.0 domaci<br/>
 -slika za main menu
 -movemnt za glavnog lika<br/>
 -attack za glavnog lika<br/>
--animacije za movement glavnog lika<br/>
--animacije za udarac glavog lika<br/>
+<strike>-animacije za movement glavnog lika<br/></strike>
+<strike>-animacije za udarac glavog lika<br/></strike>
 -kod za neprijatelje<br/>
 -kod za bossove<br/>
 -muzika za levele<br/>

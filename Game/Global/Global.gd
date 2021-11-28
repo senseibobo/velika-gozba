@@ -11,6 +11,8 @@ var enemies : Array
 var enemy_generators : Array
 var player_generators : Array
 
+func _process(delta):
+	pass#print(enemy_generators)
 
 func get_all_bullets():
 	var arr = []
@@ -27,6 +29,7 @@ func get_player_bullets():
 func get_enemy_bullets():
 	var arr = []
 	update_enemy_generators()
+	print("A")
 	for gen in enemy_generators: arr.append_array(gen.bullets)
 	return arr
 

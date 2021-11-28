@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paradajz.png-0d0c54f5ead5d3df2625a3c90381e2f0.stex"
+path="res://.import/puska.png-8df4c5922ed60e883487de441816eafb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/paradajz/paradajz.png"
-dest_files=[ "res://.import/paradajz.png-0d0c54f5ead5d3df2625a3c90381e2f0.stex" ]
+source_file="res://Textures/enemies/puska.png"
+dest_files=[ "res://.import/puska.png-8df4c5922ed60e883487de441816eafb.stex" ]
 
 [params]
 

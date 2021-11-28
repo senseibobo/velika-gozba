@@ -84,7 +84,6 @@ enabled_focus_mode = 0
 text = "Quit"
 
 [node name="AboutContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -173.0
 margin_top = -152.0
 margin_right = 172.0
@@ -122,7 +121,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="CreditsContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -152.0
 margin_right = 120.0
@@ -160,7 +158,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="AboutUsContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -96.0
 margin_right = 120.0
@@ -188,7 +185,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="MusicContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -424.0
 margin_top = -259.0
 margin_right = 424.0
@@ -227,7 +223,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="SFXContainter" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -96.0
 margin_right = 120.0

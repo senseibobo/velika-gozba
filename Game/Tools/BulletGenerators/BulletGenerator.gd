@@ -30,6 +30,9 @@ func _ready() -> void:
 	add_child(multimeshinstance)
 	multimeshinstance.set_as_toplevel(true)
 	multimeshinstance.z_index = -5
+	match targets:
+		TARGETS.PLAYER: Global.player_generators.append(self)
+		TARGETS.ENEMY: Global.enemy_generators.append(self)
 	
 func _process(delta) -> void:
 	_process_shooting(delta)

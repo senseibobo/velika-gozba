@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackParticles.png" type="Texture" id=13]
 [ext_resource path="res://Textures/Player/attack/playerAttackSplash.png" type="Texture" id=14]
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
+[ext_resource path="res://Player/Player.gd" type="Script" id=16]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -326,8 +327,84 @@ tracks/29/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/30/type = "value"
+tracks/30/path = NodePath("attack:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("levaNoga:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 140, -48 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("desnaNoga:offset")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -25.8532, 29 ) ]
+}
 
-[node name="Player" type="Node2D"]
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "attack"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/attack/node = SubResource( 3 )
+states/attack/position = Vector2( 641, 144 )
+states/idle/node = SubResource( 4 )
+states/idle/position = Vector2( 534, 55 )
+states/run/node = SubResource( 5 )
+states/run/position = Vector2( 415, 138 )
+transitions = [ "run", "attack", SubResource( 6 ), "idle", "attack", SubResource( 7 ), "attack", "idle", SubResource( 8 ), "idle", "run", SubResource( 9 ), "run", "idle", SubResource( 10 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 5 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 16 )
+health = 100.0
+movement_speed = 200.0
+object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
 scale = Vector2( 0.08, 0.08 )
@@ -382,6 +459,7 @@ anims/run = ExtResource( 10 )
 visible = false
 modulate = Color( 1, 1, 1, 0.94902 )
 position = Vector2( -43, 11 )
+rotation = -0.00274417
 
 [node name="tiganj" type="Sprite" parent="Object/attack"]
 position = Vector2( 506, -50 )
@@ -389,6 +467,7 @@ texture = ExtResource( 12 )
 offset = Vector2( 244, 0 )
 
 [node name="vfx" type="Node2D" parent="Object/attack"]
+modulate = Color( 1, 1, 1, 0.994365 )
 position = Vector2( 859, -25 )
 
 [node name="hit" type="Sprite" parent="Object/attack/vfx"]
@@ -403,3 +482,11 @@ texture = ExtResource( 15 )
 [node name="smoke" type="Sprite" parent="Object/attack/vfx"]
 position = Vector2( -100, -103 )
 texture = ExtResource( 13 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Object"]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

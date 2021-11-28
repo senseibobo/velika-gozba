@@ -41,6 +41,7 @@ func _process(delta) -> void:
 	var mpos : Vector2 = get_viewport().get_mouse_position()
 	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/16.0 + menu_offset
 	for button in c:
+		if not button is Button: continue
 		var new_scale : float = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.4
 		button.rect_scale = lerp(button.rect_scale,Vector2(new_scale,new_scale),10*delta)
 

@@ -45,7 +45,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Global/Global.gd"
-MusicSingleton="*res://Sound/Music/MusicSingleton.gd"
 Music="*res://Sound/Music/Music.gd"
 
 [display]

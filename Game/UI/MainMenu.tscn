@@ -38,7 +38,6 @@ __meta__ = {
 }
 
 [node name="MenuContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -151.0
 margin_top = -208.0
 margin_right = 150.0
@@ -133,7 +132,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="AboutContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -173.0
 margin_top = -152.0
 margin_right = 172.0
@@ -171,7 +169,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="CreditsContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -152.0
 margin_right = 120.0
@@ -209,7 +206,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="AboutUsContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -96.0
 margin_right = 120.0
@@ -237,7 +233,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="MusicContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -424.0
 margin_top = -259.0
 margin_right = 424.0
@@ -276,7 +271,6 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="SFXContainter" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -120.0
 margin_top = -96.0
 margin_right = 120.0
@@ -303,6 +297,7 @@ custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Back"
 
+[connection signal="pressed" from="CenterContainer/MenuContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/About" to="." method="_on_About_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="CenterContainer/PlayContainer/Back" to="." method="_on_Back_pressed"]

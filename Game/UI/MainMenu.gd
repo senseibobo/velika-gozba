@@ -1,8 +1,9 @@
 extends Control
 
-onready var cc : CenterContainer = get_node(center_contained_path)
+
 export var center_contained_path : NodePath
 export var menu_offset : Vector2 = Vector2(0,120)
+onready var cc : CenterContainer = get_node(center_contained_path)
 
 func _process(delta) -> void:
 	var screen_size : Vector2 = get_viewport_rect().size

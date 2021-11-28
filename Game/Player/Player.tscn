@@ -424,6 +424,7 @@ tracks/38/keys = {
 [node name="Player" type="Node2D"]
 
 [node name="Object" type="Node2D" parent="."]
+scale = Vector2( 0.08, 0.08 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
 position = Vector2( 140, -48 )

@@ -21,12 +21,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 center_container_path = NodePath("CenterContainer")
-menu_cointaner_path = NodePath("CenterContainer/MenuContainer")
-about_cointaner_path = NodePath("CenterContainer/AboutContainer")
-credits_cointaner_path = NodePath("CenterContainer/CreditsContainer")
-aboutus_cointaner_path = NodePath("CenterContainer/AboutUsContainer")
-music_cointaner_path = NodePath("CenterContainer/MusicContainer")
-sfx_cointaner_path = NodePath("CenterContainer/SFXContainter")
+menu_container_path = NodePath("CenterContainer/MenuContainer")
+about_container_path = NodePath("CenterContainer/AboutContainer")
+credits_container_path = NodePath("CenterContainer/CreditsContainer")
+aboutus_container_path = NodePath("CenterContainer/AboutUsContainer")
+music_container_path = NodePath("CenterContainer/MusicContainer")
+sfx_container_path = NodePath("CenterContainer/SFXContainter")
+play_container_path = NodePath("CenterContainer/PlayContainter")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -82,6 +83,53 @@ focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Quit"
+
+[node name="PlayContainter" type="VBoxContainer" parent="CenterContainer"]
+margin_left = -235.0
+margin_top = -208.0
+margin_right = 234.0
+margin_bottom = 208.0
+custom_constants/separation = 32
+
+[node name="StartGame" type="Button" parent="CenterContainer/PlayContainter"]
+margin_right = 469.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 150.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="CenterContainer/PlayContainter"]
+margin_top = 112.0
+margin_right = 469.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 150.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Load Game"
+
+[node name="SelectLevel" type="Button" parent="CenterContainer/PlayContainter"]
+margin_top = 224.0
+margin_right = 469.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 150.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Select Level"
+
+[node name="PlayBack" type="Button" parent="CenterContainer/PlayContainter"]
+margin_top = 336.0
+margin_right = 469.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 150.5, 40 )
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Back"
 
 [node name="AboutContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = -173.0
@@ -249,8 +297,10 @@ custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Back"
 
+[connection signal="pressed" from="CenterContainer/MenuContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/About" to="." method="_on_About_pressed"]
 [connection signal="pressed" from="CenterContainer/MenuContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CenterContainer/PlayContainter/PlayBack" to="." method="_on_PlayBack_pressed"]
 [connection signal="pressed" from="CenterContainer/AboutContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="CenterContainer/AboutContainer/About Us" to="." method="_on_About_Us_pressed"]
 [connection signal="pressed" from="CenterContainer/AboutContainer/Back" to="." method="_on_Back_pressed"]

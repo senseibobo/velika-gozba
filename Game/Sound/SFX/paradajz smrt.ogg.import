@@ -11,5 +11,5 @@ dest_files=[ "res://.import/paradajz smrt.ogg-f1e8b25b9cd9b40d46c66f6886891e76.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

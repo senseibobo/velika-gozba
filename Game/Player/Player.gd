@@ -43,6 +43,9 @@ func _handle_attack():
 		animationtree.travel("attack")
 
 func attack():
+	match randi()%2:
+		0: SFX.play_sound(SFX.TIGANJ1,0.45)
+		1: SFX.play_sound(SFX.TIGANJ2,0.3)
 	var pos = object.get_node("attack/vfx").global_position
 	deflect_bullets(pos)
 	hit_enemies(pos)
@@ -53,7 +56,9 @@ func deflect_bullets(pos):
 			bullet.velocity = -bullet.velocity
 			bullet.generator.bullets.erase(bullet)
 			bullet.current_time = 0
+			var old_texture = bullet.texture
 			deflect_generator.add_bullet(bullet)
+			bullet.texture = old_texture
 			
 
 func hit_enemies(pos):

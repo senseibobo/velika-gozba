@@ -15,7 +15,7 @@ health = 50.0
 movement_speed = 150.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 26, -31 )
+position = Vector2( 12, -16 )
 scale = Vector2( 0.17, 0.17 )
 texture = ExtResource( 1 )
 
@@ -33,8 +33,7 @@ speed = 800.0
 life_time = 8.0
 texture = ExtResource( 5 )
 bullet_size = Vector2( 12, 4 )
-bullet_radius = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 11 )
+position = Vector2( -17, 27 )
 shape = SubResource( 1 )

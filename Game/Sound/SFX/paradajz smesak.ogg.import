@@ -11,5 +11,5 @@ dest_files=[ "res://.import/paradajz smesak.ogg-77ba2244d8e68ddf906429faae4e4d85
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

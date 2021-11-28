@@ -11,5 +11,5 @@ dest_files=[ "res://.import/tiganj1.ogg-4dc385384bd5a045663a951022aaa403.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

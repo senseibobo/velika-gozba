@@ -8,6 +8,8 @@ var rotation : float
 var life_time : float = 2.0
 var current_time : float = 0.0
 var generator
+var size : Vector2
+var texture : Texture
 
 func _process(delta) -> void:
 	current_time += delta

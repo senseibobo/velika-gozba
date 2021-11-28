@@ -13,7 +13,7 @@ export var life_time : float = 3.0
 export var bullet_script : GDScript = preload("res://Tools/Bullets/Bullet.gd")
 export var texture : Texture = preload("res://icon.png")
 export var bullet_size : Vector2 = Vector2(8,8)
-export var bullet_radius  : float = 8.0
+export var bullet_radius  : float = 32.0
 export var shooting : bool = true
 export(TARGETS) var targets : int = TARGETS.PLAYER
 
@@ -24,13 +24,6 @@ var time : float = 0.0
 var bullets : Array
 
 func _ready() -> void:
-	multimesh.mesh = mesh
-	multimeshinstance.texture = texture
-	multimeshinstance.multimesh = multimesh
-	mesh.size = bullet_size
-	add_child(multimeshinstance)
-	multimeshinstance.set_as_toplevel(true)
-	multimeshinstance.z_index = -5
 	match targets:
 		TARGETS.ENEMY: Global.player_generators.append(self)
 		TARGETS.PLAYER: Global.enemy_generators.append(self)
@@ -38,19 +31,18 @@ func _ready() -> void:
 func _process(delta) -> void:
 	_process_shooting(delta)
 	_process_bullets(delta)
-	_update_bullet_positions()
 
-func add_bullet(bullet) -> void:
+func add_bullet(bullet):
+	bullet.texture = texture
+	bullet.life_time = life_time
 	bullet.generator = self
+	bullet.size = bullet_size
 	bullets.append(bullet)
-	multimesh.instance_count = bullets.size()
-	_update_bullet_positions()
+	return bullet
 
 func remove_bullet(bullet) -> void:
 	if bullet is Bullet: bullets.erase(bullet)
 	else: bullet.remove(bullet)
-	multimesh.instance_count = bullets.size()
-	_update_bullet_positions()
 
 func _process_shooting(delta) -> void:
 	time += delta
@@ -66,11 +58,22 @@ func _process_bullets(delta) -> void:
 			erased_bullets.append(bullet)
 	for bullet in erased_bullets:
 		remove_bullet(bullet)
+	update()
 
-func _update_bullet_positions() -> void:
-	for i in range(bullets.size()):
-		var t : Transform2D = Transform2D(bullets[i].rotation,bullets[i].position)
-		multimesh.set_instance_transform_2d(i,t)
+func _draw():
+	_draw_bullets()
+
+func _draw_bullets():
+	for bullet in bullets:
+		var rect = Rect2()
+		rect.size = bullet.size
+		rect.position = Vector2()
+		var pos = bullet.position
+		var rot = bullet.rotation
+		draw_set_transform(pos - rect.size.rotated(rot)/2-global_position,rot,Vector2(1,1))
+		draw_texture_rect(bullet.texture,rect,false)
+		draw_set_transform(Vector2(),0,Vector2(1,1))
+
 
 func shoot() -> void:
 	pass

@@ -19,7 +19,7 @@ func _handle_movement():
 		var dest : Vector2
 		var ppr = sign(global_position.x - pp.x)
 		dest.x = pp.x + ppr*approach_range
-		dest.y = pp.y 
+		dest.y = pp.y + 20
 		var dir = global_position.direction_to(dest)
 		move_and_slide(dir*movement_speed)
 		if dir.x != 0:

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/KrompirSmrt2.ogg-939bd83fb82d52350186d41f8404a3f3.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/KrompirSmrt2.ogg"
+dest_files=[ "res://.import/KrompirSmrt2.ogg-939bd83fb82d52350186d41f8404a3f3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

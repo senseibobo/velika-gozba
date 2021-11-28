@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tiganj2.ogg-e12c4e1f0c252be7d3008d652f93271f.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/tiganj2.ogg"
+dest_files=[ "res://.import/tiganj2.ogg-e12c4e1f0c252be7d3008d652f93271f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

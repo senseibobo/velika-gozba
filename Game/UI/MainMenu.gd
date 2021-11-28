@@ -9,6 +9,10 @@ enum VCONTAINER{
 	SFX,
 	PLAY
 }
+
+export var paja_texture_path : NodePath
+export var petar_texture_path : NodePath
+export var background_texture_path : NodePath
 export var center_container_path : NodePath
 export var menu_container_path : NodePath
 export var about_container_path : NodePath
@@ -18,6 +22,9 @@ export var music_container_path : NodePath
 export var sfx_container_path : NodePath
 export var play_container_path : NodePath
 
+onready var paja_texture : TextureRect = get_node(paja_texture_path)
+onready var petar_texture : TextureRect = get_node(petar_texture_path)
+onready var background_texture : TextureRect = get_node(background_texture_path)
 onready var centerc : CenterContainer = get_node(center_container_path)
 onready var mainc : VBoxContainer = get_node(menu_container_path)
 onready var aboutc : VBoxContainer = get_node(about_container_path)
@@ -39,7 +46,10 @@ func _ready() -> void:
 func _process(delta) -> void:
 	var screen_size : Vector2 = get_viewport_rect().size
 	var mpos : Vector2 = get_viewport().get_mouse_position()
-	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/16.0 + menu_offset
+	petar_texture.rect_position = Vector2(0.1,0.43)*screen_size-(screen_size/2-mpos)/40.0 - Vector2(64,64)
+	paja_texture.rect_position = Vector2(0.4,-0.13)*screen_size-(screen_size/2-mpos)/60.0 - Vector2(-64,64)
+	background_texture.rect_position = -(screen_size/2-mpos)/100.0 - Vector2(64,64)
+	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/12.0 + menu_offset
 	for button in c:
 		if not button is Button: continue
 		var new_scale : float = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.4
@@ -57,10 +67,13 @@ func _update_visible() -> void:
 
 func _update_offset() -> void:
 	match(visible_container):
-		VCONTAINER.MAIN,VCONTAINER.ABOUT,VCONTAINER.ABOUTUS,VCONTAINER.CREDITS:
-			menu_offset = Vector2(0,120)
-		VCONTAINER.MUSIC,VCONTAINER.SFX,VCONTAINER.PLAY:
+		VCONTAINER.MAIN:
+			menu_offset = Vector2(0,-10)
+		
+		VCONTAINER.ABOUT,VCONTAINER.ABOUTUS,VCONTAINER.CREDITS:
 			menu_offset = Vector2(0,50)
+		VCONTAINER.MUSIC,VCONTAINER.SFX,VCONTAINER.PLAY:
+			menu_offset = Vector2(0,40)
 
 #------------MAIN MENU-------------------
 func _on_Play_pressed():

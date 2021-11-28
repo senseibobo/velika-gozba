@@ -9,7 +9,7 @@ func shoot() -> void:
 	for i in shot_count:
 		var place : float = i - shot_count/2.0
 		var rot : float = current_rotation + (place+0.5)*(deg2rad(cone_angle)/shot_count)
-		var bullet : Bullet = bullet_script.new()
+		var bullet = bullet_script.new()
 		bullet.rotation = rot
 		bullet.position = global_position
 		bullet.velocity = Vector2.RIGHT.rotated(rot)*speed

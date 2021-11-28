@@ -58,7 +58,7 @@ NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!
 		Bundeva
 -Opis: Neprijatelj koji kad ga ubijes, od njega nastanu dva manja neprijatelja(isto bundeve ali manje)
 -Napad: Kotrlja se i pokusava da te udari, dok se kotrlja, ubrzava se i sto je brza to ti vise skine.
--Abiliti koji dobijas: --------------------------
+-Abiliti koji dobijas: Dobijes stit koji je kao aura, prvog minuta odbija 100% napada, drugog minuta 75% i sledecih 3 minuta 50%(kada igrac umre, abiliti se ponistava)
 -----------------------------------------------------------------------------------------------
 
 
@@ -71,7 +71,10 @@ NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!
 -----------------------------------------------------------------------------------------------
 		Pitaja(dragon fruit)....
 -Baca roze tecnost koja ti skida helt ako stanes u nju(5 sec)
--
+-Puca te svojim crnim semenkama
+-Moze da skace i kada padne na ili blizu tebe uzima 10% igracevog health-a
+-Kada dodje na 50% health-a, svoje abilitije ubrza za 25%
+-Kada dodje na 10% health-a, svoje abilitije ubrza za 65%(rage mod)
 
 
 

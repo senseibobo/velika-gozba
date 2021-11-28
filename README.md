@@ -14,7 +14,7 @@ HZS 4.0 domaci<br/>
 -muzika za levele<br/>
 -ui u levelima(hp?)<br/>
 -highscore sistem<br/>
-<strike>-baza podataka<br/>
+-baza podataka<br/><strike/>
 -singlton<br/>
 -shaderi<br/>
 -level select screen<br/>

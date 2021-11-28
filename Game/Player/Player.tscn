@@ -553,12 +553,12 @@ offset = Vector2( 244, 0 )
 position = Vector2( 859, -25 )
 
 [node name="hit" type="Sprite" parent="Object/attack/vfx"]
-z_index = -79
+z_index = -3
 texture = ExtResource( 14 )
 
 [node name="trail" type="Sprite" parent="Object/attack/vfx"]
 position = Vector2( -153, -364 )
-z_index = -79
+z_index = -2
 texture = ExtResource( 15 )
 
 [node name="smoke" type="Sprite" parent="Object/attack/vfx"]

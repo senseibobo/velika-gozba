@@ -24,16 +24,19 @@ position = Vector2( -33, 58 )
 texture = ExtResource( 3 )
 offset = Vector2( -128, 0 )
 
-[node name="KrastavacGenerator" type="Node2D" parent="Sprite/Puska"]
+[node name="PuskaPos" type="Position2D" parent="Sprite/Puska"]
 position = Vector2( -343.471, -34.4706 )
-scale = Vector2( 5.88235, 5.88235 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -17, 27 )
+shape = SubResource( 1 )
+
+[node name="KrastavacGenerator" type="Node2D" parent="."]
+position = Vector2( -52, -12 )
+scale = Vector2( 1, 1 )
 script = ExtResource( 4 )
 shot_interval = 0.5
 speed = 800.0
 life_time = 8.0
 texture = ExtResource( 5 )
 bullet_size = Vector2( 12, 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -17, 27 )
-shape = SubResource( 1 )

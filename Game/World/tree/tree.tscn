@@ -52,27 +52,27 @@ shader_param/wave_width = 1.0
 shader_param/noise = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 25, 13 )
+extents = Vector2( 38, 27 )
 
 [node name="tree" type="StaticBody2D"]
 
 [node name="object" type="Node2D" parent="."]
-position = Vector2( 0, -44 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 0, -128 )
+scale = Vector2( 0.3, 0.3 )
 
 [node name="trunk" type="Sprite" parent="object"]
 position = Vector2( -837, -167 )
+scale = Vector2( 1, 1.583 )
 texture = ExtResource( 2 )
 offset = Vector2( 837, 167 )
 
 [node name="canopy" type="Sprite" parent="object"]
 modulate = Color( 0.572549, 0.843137, 0.345098, 1 )
 material = SubResource( 2 )
-position = Vector2( -1696, -951 )
+position = Vector2( 0, -600 )
 scale = Vector2( 2.0102, 2.0102 )
 texture = ExtResource( 1 )
-offset = Vector2( 837, 167 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 0, 12 )
 shape = SubResource( 5 )

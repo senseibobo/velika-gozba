@@ -12,6 +12,7 @@ var deflect_generator : BulletGenerator = BulletGenerator.new()
 func _ready():
 	Global.player = self
 	deflect_generator.targets = deflect_generator.TARGETS.ENEMY
+	deflect_generator.z_index = -1
 	add_child(deflect_generator)
 
 func _process(delta):

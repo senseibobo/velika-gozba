@@ -1,12 +1,18 @@
 extends Character
 
+export var basic_attack_damage : float = 20.0
+export var basic_attack_radius : float = 50.0
 export var object_path : NodePath 
 onready var object : Node2D = get_node(object_path)
 onready var animationplayer : AnimationPlayer = object.get_node("AnimationPlayer")
 onready var animationtree : AnimationNodeStateMachinePlayback = object.get_node("AnimationTree").get("parameters/playback")
 
+var deflect_generator : BulletGenerator = BulletGenerator.new()
+
 func _ready():
 	Global.player = self
+	deflect_generator.targets = deflect_generator.TARGETS.ENEMY
+	add_child(deflect_generator)
 
 func _process(delta):
 	if animationtree.get_current_node() != "attack":
@@ -36,3 +42,22 @@ func _handle_animations():
 func _handle_attack():
 	if Input.is_action_just_pressed("attack"):
 		animationtree.travel("attack")
+
+func attack():
+	var pos = object.get_node("attack/vfx").global_position
+	deflect_bullets(pos)
+	hit_enemies(pos)
+
+func deflect_bullets(pos):
+	for bullet in Global.get_enemy_bullets():
+		if bullet.position.distance_to(pos) < basic_attack_radius:
+			bullet.velocity = -bullet.velocity
+			bullet.generator.bullets.erase(bullet)
+			bullet.current_time = 0
+			deflect_generator.add_bullet(bullet)
+			
+
+func hit_enemies(pos):
+	for enemy in Global.enemies:
+		if enemy.global_position.distance_to(pos) < basic_attack_radius:
+			enemy.hit(basic_attack_damage,self)

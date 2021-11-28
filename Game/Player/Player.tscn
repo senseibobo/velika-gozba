@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -15,6 +15,49 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackParticles.png" type="Texture" id=13]
 [ext_resource path="res://Textures/Player/attack/playerAttackSplash.png" type="Texture" id=14]
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
+[ext_resource path="res://Player/Player.gd" type="Script" id=16]
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "RESET"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "attack"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/RESET/node = SubResource( 3 )
+states/RESET/position = Vector2( 239, 167 )
+states/attack/node = SubResource( 4 )
+states/attack/position = Vector2( 486, 300 )
+states/idle/node = SubResource( 5 )
+states/idle/position = Vector2( 877, 175 )
+states/run/node = SubResource( 6 )
+states/run/position = Vector2( 380, 57 )
+transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ) ]
+start_node = "RESET"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -421,7 +464,14 @@ tracks/38/keys = {
 "values": [ true ]
 }
 
-[node name="Player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 5 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 16 )
+health = 100.0
+movement_speed = 200.0
+object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
 scale = Vector2( 0.08, 0.08 )
@@ -466,6 +516,12 @@ offset = Vector2( -1, 108.965 )
 position = Vector2( 51, -566.327 )
 texture = ExtResource( 6 )
 
+[node name="AnimationTree" type="AnimationTree" parent="Object"]
+tree_root = SubResource( 13 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 14 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
 anims/RESET = SubResource( 1 )
 anims/attack = ExtResource( 11 )
@@ -497,3 +553,6 @@ texture = ExtResource( 15 )
 [node name="smoke" type="Sprite" parent="Object/attack/vfx"]
 position = Vector2( -100, -103 )
 texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

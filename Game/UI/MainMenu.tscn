@@ -84,9 +84,9 @@ __meta__ = {
 
 [node name="MenuContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = -630.0
-margin_top = -366.0
+margin_top = -338.0
 margin_right = 629.0
-margin_bottom = 366.0
+margin_bottom = 338.0
 custom_constants/separation = 18
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MenuContainer"]

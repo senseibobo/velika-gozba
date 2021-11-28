@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Character",
 "language": "GDScript",
 "path": "res://Characters/Character.gd"
+}, {
+"base": "Character",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemies/Enemy.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
 "BulletGenerator": "",
-"Character": ""
+"Character": "",
+"Enemy": ""
 }
 
 [application]
@@ -39,7 +45,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Global/Global.gd"
-MusicSingleton="*res://Sound/Music/MusicSingleton.gd"
 Music="*res://Sound/Music/Music.gd"
 
 [display]

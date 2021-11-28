@@ -31,8 +31,8 @@ func _ready() -> void:
 	multimeshinstance.set_as_toplevel(true)
 	multimeshinstance.z_index = -5
 	match targets:
-		TARGETS.PLAYER: Global.player_generators.append(self)
-		TARGETS.ENEMY: Global.enemy_generators.append(self)
+		TARGETS.ENEMY: Global.player_generators.append(self)
+		TARGETS.PLAYER: Global.enemy_generators.append(self)
 	
 func _process(delta) -> void:
 	_process_shooting(delta)
@@ -40,6 +40,7 @@ func _process(delta) -> void:
 	_update_bullet_positions()
 
 func add_bullet(bullet) -> void:
+	bullet.generator = self
 	bullets.append(bullet)
 	multimesh.instance_count = bullets.size()
 	_update_bullet_positions()

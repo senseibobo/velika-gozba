@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 318, 195 )
 script = ExtResource( 1 )
-shot_interval = 0.04
+shot_interval = 0.2
 speed = 500.0
 cone_angle = 360.0
 
@@ -16,7 +16,12 @@ cone_angle = 360.0
 position = Vector2( 940, 235 )
 script = ExtResource( 1 )
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+=======
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 141, 64 )
+>>>>>>> 3845a83d4c49ba1920ba3246e68f01375902784d

@@ -7,6 +7,7 @@ var velocity : Vector2
 var rotation : float
 var life_time : float = 2.0
 var current_time : float = 0.0
+var generator
 
 func _process(delta) -> void:
 	current_time += delta
@@ -26,4 +27,4 @@ func check_collision(radius,targets) -> bool:
 				if dist_to_enemy < radius:
 					enemy.hit(damage,source)
 					return true
-	return false 
+	return false

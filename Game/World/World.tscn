@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tools/BulletGenerators/ConeGenerator.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemies/Paradajz/Paradajz.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Krastavac/Krastavac.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node2D"]
 
@@ -22,5 +22,5 @@ script = ExtResource( 1 )
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 141, 64 )
 
-[node name="Paradajz" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 500, 279 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 426, 218 )

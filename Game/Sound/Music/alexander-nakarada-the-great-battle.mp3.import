@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-the-great-battle.mp3-4b2d5b3c5ab77ba92d39d6e8cda3570d.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/alexander-nakarada-the-great-battle.mp3"
+dest_files=[ "res://.import/alexander-nakarada-the-great-battle.mp3-4b2d5b3c5ab77ba92d39d6e8cda3570d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

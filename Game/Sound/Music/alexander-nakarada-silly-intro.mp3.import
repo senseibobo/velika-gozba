@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-silly-intro.mp3-6cd97fe387fc988662cd792c75b609f8.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/alexander-nakarada-silly-intro.mp3"
+dest_files=[ "res://.import/alexander-nakarada-silly-intro.mp3-6cd97fe387fc988662cd792c75b609f8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

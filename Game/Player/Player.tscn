@@ -396,6 +396,18 @@ tracks/36/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/37/type = "value"
+tracks/37/path = NodePath("attack:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0.001 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [node name="Player" type="Node2D"]
 
@@ -448,6 +460,7 @@ anims/idle = ExtResource( 9 )
 anims/run = ExtResource( 10 )
 
 [node name="attack" type="Node2D" parent="Object"]
+visible = false
 modulate = Color( 1, 1, 1, 0.94902 )
 position = Vector2( -43, 11 )
 
@@ -469,5 +482,31 @@ z_index = -79
 texture = ExtResource( 15 )
 
 [node name="smoke" type="Sprite" parent="Object/attack/vfx"]
+position = Vector2( -100, -103 )
+texture = ExtResource( 13 )
+
+[node name="attack2" type="Node2D" parent="Object"]
+visible = false
+modulate = Color( 1, 1, 1, 0.94902 )
+position = Vector2( -43, 11 )
+
+[node name="tiganj" type="Sprite" parent="Object/attack2"]
+position = Vector2( 506, -50 )
+texture = ExtResource( 12 )
+offset = Vector2( 244, 0 )
+
+[node name="vfx" type="Node2D" parent="Object/attack2"]
+position = Vector2( 859, -25 )
+
+[node name="hit" type="Sprite" parent="Object/attack2/vfx"]
+z_index = -79
+texture = ExtResource( 14 )
+
+[node name="trail" type="Sprite" parent="Object/attack2/vfx"]
+position = Vector2( -153, -364 )
+z_index = -79
+texture = ExtResource( 15 )
+
+[node name="smoke" type="Sprite" parent="Object/attack2/vfx"]
 position = Vector2( -100, -103 )
 texture = ExtResource( 13 )

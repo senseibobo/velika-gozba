@@ -1,290 +1,323 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
 [ext_resource path="res://Textures/Player/desna noga.png" type="Texture" id=3]
 [ext_resource path="res://Textures/Player/desna ruka.png" type="Texture" id=4]
-[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Player/leva noga copy.png" type="Texture" id=5]
 [ext_resource path="res://Textures/Player/lice.png" type="Texture" id=6]
 [ext_resource path="res://Textures/Player/telo.png" type="Texture" id=7]
 [ext_resource path="res://Textures/Player/uvo.png" type="Texture" id=8]
 [ext_resource path="res://Animations/Player/idle.anim" type="Animation" id=9]
+[ext_resource path="res://Animations/Player/run.anim" type="Animation" id=10]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("lice:position")
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Node2D/lice:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 51, -567 ) ]
+"points": PoolRealArray( 51, -0.25, 0, 0.25, 0, 51, -0.25, 0, 0.25, 0, 51, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( -0.1, 0.5, 1.1 )
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("desnaRuka:position")
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Node2D/lice:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -264, -237 ) ]
+"points": PoolRealArray( -566.327, -0.25, 0, 0.25, 0, -536.791, -0.25, 0, 0.25, 0, -566.327, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1.1 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("uvo:position")
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Node2D/desnaRuka:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -260, -537 ) ]
+"points": PoolRealArray( -266, -0.25, 0, 0.25, 0, -266, -0.25, 0, 0.25, 0, -266, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("kapa:position")
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Node2D/desnaRuka:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -96, -773 ) ]
+"points": PoolRealArray( -339, -0.25, 0, 0.25, 0, -309.465, -0.25, 0, 0.25, 0, -339, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("telo:position")
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Node2D/uvo:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -375 ) ]
+"points": PoolRealArray( -260, -0.25, 0, 0.25, 0, -260, -0.25, 0, 0.25, 0, -260, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("levaRuka:position")
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Node2D/uvo:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 260, -257 ) ]
+"points": PoolRealArray( -537, -0.25, 0, 0.25, 0, -507.465, -0.25, 0, 0.25, 0, -537, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("levaNoga:position")
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Node2D/kapa:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 140, -34 ) ]
+"points": PoolRealArray( -57, -0.25, 0, 0.25, 0, -57, -0.25, 0, 0.25, 0, -57, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("desnaNoga:position")
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Node2D/kapa:position:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -140, -13 ) ]
+"points": PoolRealArray( -545, -0.25, 0, 0.25, 0, -515.465, -0.25, 0, 0.25, 0, -545, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1 )
 }
 tracks/8/type = "bezier"
-tracks/8/path = NodePath("lice:position:x")
+tracks/8/path = NodePath("Node2D/telo:position:x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"points": PoolRealArray( 51, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/9/type = "bezier"
-tracks/9/path = NodePath("lice:position:y")
+tracks/9/path = NodePath("Node2D/telo:position:y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"points": PoolRealArray( -567, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( -375, -0.25, 0, 0.25, 0, -345.465, -0.25, 0, 0.25, 0, -375, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/10/type = "bezier"
-tracks/10/path = NodePath("desnaRuka:position:x")
+tracks/10/path = NodePath("Node2D/levaRuka:position:x")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"points": PoolRealArray( -264, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/11/type = "bezier"
-tracks/11/path = NodePath("desnaRuka:position:y")
+tracks/11/path = NodePath("Node2D/levaRuka:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"points": PoolRealArray( -237, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( -383, -0.25, 0, 0.25, 0, -353.465, -0.25, 0, 0.25, 0, -383, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/12/type = "bezier"
-tracks/12/path = NodePath("uvo:position:x")
+tracks/12/path = NodePath("levaNoga:position:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"points": PoolRealArray( -260, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 140, -0.25, 0, 0.25, 0, 150, -0.25, 0, 0.25, 0, 140, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/13/type = "bezier"
-tracks/13/path = NodePath("uvo:position:y")
+tracks/13/path = NodePath("levaNoga:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"points": PoolRealArray( -537, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( -48, -0.25, 0, 0.25, 0, -48, -0.25, 0, 0.25, 0, -48, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/14/type = "bezier"
-tracks/14/path = NodePath("kapa:position:x")
+tracks/14/path = NodePath("desnaNoga:position:x")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"points": PoolRealArray( -96, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( -136, -0.25, 0, 0.25, 0, -148, -0.25, 0, 0.25, 0, -136, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/15/type = "bezier"
-tracks/15/path = NodePath("kapa:position:y")
+tracks/15/path = NodePath("desnaNoga:position:y")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"points": PoolRealArray( -773, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( -53, -0.25, 0, 0.25, 0, -53, -0.25, 0, 0.25, 0, -53, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/16/type = "bezier"
-tracks/16/path = NodePath("telo:position:x")
+tracks/16/path = NodePath("Node2D/desnaRuka:rotation_degrees")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 3.59049, -0.25, 0, 0.25, 0, 3.59187, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.391615, 0.4, 0.8 )
 }
 tracks/17/type = "bezier"
-tracks/17/path = NodePath("telo:position:y")
+tracks/17/path = NodePath("Node2D/levaRuka:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"points": PoolRealArray( -375, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -5.03724, -0.25, 0, 0.25, 0, -0.00722503, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.783985, 0.8 )
 }
 tracks/18/type = "bezier"
-tracks/18/path = NodePath("levaRuka:position:x")
+tracks/18/path = NodePath("Node2D/lice:rotation_degrees")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"points": PoolRealArray( 260, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/19/type = "bezier"
-tracks/19/path = NodePath("levaRuka:position:y")
+tracks/19/path = NodePath("Node2D/uvo:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"points": PoolRealArray( -257, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/20/type = "bezier"
-tracks/20/path = NodePath("levaNoga:position:x")
+tracks/20/path = NodePath("Node2D/kapa:rotation_degrees")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"points": PoolRealArray( 140, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/21/type = "bezier"
-tracks/21/path = NodePath("levaNoga:position:y")
+tracks/21/path = NodePath("Node2D/telo:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"points": PoolRealArray( -34, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/22/type = "bezier"
-tracks/22/path = NodePath("desnaNoga:position:x")
+tracks/22/path = NodePath("levaNoga:rotation_degrees")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"points": PoolRealArray( -140, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
 tracks/23/type = "bezier"
-tracks/23/path = NodePath("desnaNoga:position:y")
+tracks/23/path = NodePath("desnaNoga:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"points": PoolRealArray( -13, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
-tracks/24/type = "bezier"
-tracks/24/path = NodePath("desnaRuka:rotation_degrees")
+tracks/24/type = "value"
+tracks/24/path = NodePath("desnaNoga:texture")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
 }
-tracks/25/type = "bezier"
-tracks/25/path = NodePath("levaRuka:rotation_degrees")
+tracks/25/type = "value"
+tracks/25/path = NodePath("levaNoga:texture")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Node2D:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.005, 0 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Node2D:rotation_degrees")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "bezier"
+tracks/28/path = NodePath("Node2D:position:x")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"points": PoolRealArray( 0.005, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/29/type = "bezier"
+tracks/29/path = NodePath("Node2D:position:y")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
@@ -293,43 +326,47 @@ tracks/25/keys = {
 
 [node name="Object" type="Node2D" parent="."]
 
-[node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -140, -13 )
-texture = ExtResource( 3 )
-offset = Vector2( -25.8532, 29 )
-
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 140, -34 )
+position = Vector2( 140, -48 )
 texture = ExtResource( 5 )
 offset = Vector2( 30.4709, 7 )
 
-[node name="levaRuka" type="Sprite" parent="Object"]
-position = Vector2( 260, -257 )
+[node name="desnaNoga" type="Sprite" parent="Object"]
+position = Vector2( -136, -53 )
+texture = ExtResource( 3 )
+offset = Vector2( -25.8532, 29 )
+
+[node name="Node2D" type="Node2D" parent="Object"]
+position = Vector2( 0.005, 0 )
+
+[node name="levaRuka" type="Sprite" parent="Object/Node2D"]
+position = Vector2( 224, -383 )
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
-[node name="telo" type="Sprite" parent="Object"]
+[node name="telo" type="Sprite" parent="Object/Node2D"]
 position = Vector2( 0, -375 )
 texture = ExtResource( 7 )
 
-[node name="kapa" type="Sprite" parent="Object"]
-position = Vector2( -96, -773 )
+[node name="kapa" type="Sprite" parent="Object/Node2D"]
+position = Vector2( -57, -545 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
-[node name="uvo" type="Sprite" parent="Object"]
+[node name="uvo" type="Sprite" parent="Object/Node2D"]
 position = Vector2( -260, -537 )
 texture = ExtResource( 8 )
 
-[node name="desnaRuka" type="Sprite" parent="Object"]
-position = Vector2( -264, -237 )
+[node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
+position = Vector2( -266, -339 )
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
-[node name="lice" type="Sprite" parent="Object"]
-position = Vector2( 51, -567 )
+[node name="lice" type="Sprite" parent="Object/Node2D"]
+position = Vector2( 51, -566.327 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
 anims/RESET = SubResource( 1 )
 anims/idle = ExtResource( 9 )
+anims/run = ExtResource( 10 )

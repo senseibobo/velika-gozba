@@ -3,6 +3,7 @@ extends Character
 export var object_path : NodePath 
 onready var object : Node2D = get_node(object_path)
 onready var animationplayer : AnimationPlayer = object.get_node("AnimationPlayer")
+onready var animationtree : AnimationNodeStateMachinePlayback = object.get_node("AnimationTree").get("parameters/playback")
 
 func _ready():
 	Global.player = self
@@ -25,6 +26,7 @@ func _handle_animations():
 	if !is_zero_approx(_dir.x):
 		object.scale.x = sign(_dir.x)*abs(object.scale.x)
 	if _dir != Vector2():
-		animationplayer.play("run")
+		animationtree.travel("run")
 	else:
-		animationplayer.play("idle")
+		$Object/Node2D.rotation_degrees = 0
+		animationtree.travel("idle")

@@ -29,19 +29,19 @@ HZS 4.0 domaci<br/>
 -animacije za neprijatelje<br/>
 !------------------------------------------------------------------------!<br/>
 <br/>
-!----------------------CREDITS ZA MUZIKU--------------------------------!<br/>
-Le Baguette by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/>
-Music promoted on https://www.chosic.com/free-music/all/<br/>
-Creative Commons Attribution 4.0 International (CC BY 4.0)<br/>
-https://creativecommons.org/licenses/by/4.0/<br/>
-!------------------------------------------------------------------------!<br/>
-Silly Intro by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/>
-Music promoted by https://www.chosic.com/free-music/all/free-music/<br/>
-Attribution 4.0 International (CC BY 4.0)<br/>
-https://creativecommons.org/licenses/by/4.0/<br/>
-!------------------------------------------------------------------------!<br/>
-The Great Battle by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/>
-Attribution 4.0 International (CC BY 4.0)<br/>
-https://creativecommons.org/licenses/by/4.0/<br/>
-Music promoted by https://www.chosic.com/free-music/all/<br/>
-!------------------------------------------------------------------------!<br/>
+<strike>!----------------------CREDITS ZA MUZIKU--------------------------------!<br/></strike>
+<strike>Le Baguette by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/></strike>
+<strike>Music promoted on https://www.chosic.com/free-music/all/<br/></strike>
+<strike>Creative Commons Attribution 4.0 International (CC BY 4.0)<br/></strike>
+<strike>https://creativecommons.org/licenses/by/4.0/<br/></strike>
+<strike>!------------------------------------------------------------------------!<br/></strike>
+<strike>Silly Intro by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/></strike>
+<strike>Music promoted by https://www.chosic.com/free-music/all/free-music/<br/></strike>
+<strike>Attribution 4.0 International (CC BY 4.0)<br/></strike>
+<strike>https://creativecommons.org/licenses/by/4.0/<br/></strike>
+<strike>!------------------------------------------------------------------------!<br/></strike>
+<strike>The Great Battle by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/></strike>
+<strike>Attribution 4.0 International (CC BY 4.0)<br/></strike>
+<strike>https://creativecommons.org/licenses/by/4.0/<br/></strike>
+<strike>Music promoted by https://www.chosic.com/free-music/all/<br/></strike>
+<strike>!------------------------------------------------------------------------!<br/></strike>

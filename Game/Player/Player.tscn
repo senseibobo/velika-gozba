@@ -463,6 +463,28 @@ tracks/38/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/39/type = "value"
+tracks/39/path = NodePath("desnaNoga:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -80, -48 ) ]
+}
+tracks/40/type = "bezier"
+tracks/40/path = NodePath("levaNoga:position")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 5 )
@@ -474,7 +496,7 @@ movement_speed = 200.0
 object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
-scale = Vector2( 0.08, 0.08 )
+scale = Vector2( 0.16, 0.16 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
 position = Vector2( 140, -48 )

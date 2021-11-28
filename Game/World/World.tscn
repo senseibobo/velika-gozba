@@ -16,12 +16,5 @@ cone_angle = 360.0
 position = Vector2( 940, 235 )
 script = ExtResource( 1 )
 
-<<<<<<< HEAD
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-=======
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 141, 64 )
->>>>>>> 3845a83d4c49ba1920ba3246e68f01375902784d

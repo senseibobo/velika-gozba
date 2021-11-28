@@ -407,6 +407,7 @@ movement_speed = 200.0
 object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
+scale = Vector2( 0.08, 0.08 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
 position = Vector2( 140, -48 )
@@ -458,7 +459,6 @@ anims/run = ExtResource( 10 )
 visible = false
 modulate = Color( 1, 1, 1, 0.94902 )
 position = Vector2( -43, 11 )
-rotation = -0.00274417
 
 [node name="tiganj" type="Sprite" parent="Object/attack"]
 position = Vector2( 506, -50 )
@@ -466,7 +466,7 @@ texture = ExtResource( 12 )
 offset = Vector2( 244, 0 )
 
 [node name="vfx" type="Node2D" parent="Object/attack"]
-modulate = Color( 1, 1, 1, 0.994365 )
+modulate = Color( 1, 1, 1, 0.0490232 )
 position = Vector2( 859, -25 )
 
 [node name="hit" type="Sprite" parent="Object/attack/vfx"]

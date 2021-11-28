@@ -2,7 +2,7 @@
 												PRICA
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Petar(glavni lik) uticajni kuvar iz Pekograda uobicajeno provodi vreme na poslu.
-Dolazi kralj opasnog carstva koji mu naredjuje da spremi najbolju gozbu koju je svet ikada video, ali zeli da tu gozbu Petar napravi od carobnih namernica.Ali tu postoji jedan problem.
+Dolazi kralj opasnog carstva koji mu naredjuje da spremi najbolju gozbu koju je svet ikada video, ali zeli da tu gozbu Petar napravi od carobnih namirnica.Ali tu postoji jedan problem.
 Te carobne namirnice su najopasnija bica na svetu i oni se nalaze u Zmajevom vrtu.Petar tako odvazno i hrabro se probija kroz horde carobnih namirnica kako bi prikupio odredjene sastojke za gozbu.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,12 +53,12 @@ NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!
 		Brokoli
 -Opis: Veliki,zelene boje
 -Napad: Baca bombe(manje brokolije)
--Abiliti koji dobijas: -------------------------
+-Abiliti koji dobijas: Dobijes abiliti da mozes da bacas male brokolije koji predstavljaju mini bombe, mozes to da radis dok ne umres(mogu da se kotrljaju po podu)
 --------------------------------------------------------------------------
 		Bundeva
 -Opis: Neprijatelj koji kad ga ubijes, od njega nastanu dva manja neprijatelja(isto bundeve ali manje)
 -Napad: Kotrlja se i pokusava da te udari, dok se kotrlja, ubrzava se i sto je brza to ti vise skine.
--Abiliti koji dobijas: -------------------------
+-Abiliti koji dobijas: --------------------------
 -----------------------------------------------------------------------------------------------
 
 
@@ -71,5 +71,7 @@ NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!
 -----------------------------------------------------------------------------------------------
 		Pitaja(dragon fruit)....
 -Baca roze tecnost koja ti skida helt ako stanes u nju(5 sec)
+-
+
 
 

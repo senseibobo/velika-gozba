@@ -19,7 +19,7 @@ func _handle_movement():
 		var dest : Vector2
 		var ppr = sign(global_position.x - pp.x)
 		dest.x = pp.x + ppr*approach_range
-		dest.y = pp.y + 20
+		dest.y = pp.y
 		var dir = global_position.direction_to(dest)
 		dir.y *= 2.0
 		if global_position.distance_to(dest) > 10:

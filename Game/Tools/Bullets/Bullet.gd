@@ -1,5 +1,7 @@
 class_name Bullet
 
+
+const height : float = 20.0
 var damage : float
 var source
 var position : Vector2
@@ -19,13 +21,13 @@ func check_collision(radius,targets) -> bool:
 	match targets:
 		Global.TARGETS.PLAYER:
 			if is_instance_valid(Global.player):
-				var dist_to_player : float = position.distance_to(Global.player.global_position)
+				var dist_to_player : float = position.distance_to(Global.player.global_position - Vector2(0,height))
 				if dist_to_player < radius:
 					Global.player.hit(damage,source)
 					return true
 		Global.TARGETS.ENEMY:
 			for enemy in Global.enemies:
-				var dist_to_enemy : float = position.distance_to(enemy.global_position)
+				var dist_to_enemy : float = position.distance_to(enemy.global_position - Vector2(0,height))
 				if dist_to_enemy < radius:
 					enemy.hit(damage,source)
 					return true

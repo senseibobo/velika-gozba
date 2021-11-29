@@ -485,16 +485,15 @@ movement_speed = 350.0
 object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
-position = Vector2( 0, 32 )
 scale = Vector2( 0.16, 0.16 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 149.193, -48 )
+position = Vector2( 143.191, -48 )
 texture = ExtResource( 17 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -147.031, -53 )
+position = Vector2( -139.829, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -502,32 +501,32 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -355.85 )
-rotation = -0.087861
+position = Vector2( 224, -373.577 )
+rotation = -0.0456557
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -347.85 )
+position = Vector2( 0, -365.577 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -523.093 )
+position = Vector2( -57, -537.922 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -509.85 )
+position = Vector2( -260, -527.576 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -311.85 )
-rotation = 0.062664
+position = Vector2( -266, -329.577 )
+rotation = 0.0344544
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -544.42 )
+position = Vector2( 51, -559.248 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
@@ -569,5 +568,5 @@ position = Vector2( -100, -103 )
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 29 )
+position = Vector2( 0, -3 )
 shape = SubResource( 2 )

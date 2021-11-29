@@ -6,8 +6,8 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
-uniform float spread = 3.0; //wave loop speed
-uniform float wave_freq = 10.0; //wave vertical freq
+uniform float spread = 5.0; //wave loop speed
+uniform float wave_freq = 1.0; //wave freq
 uniform float wave_width = 1; //wave width 
 
 uniform sampler2D noise;
@@ -23,8 +23,8 @@ void fragment(){
 
 	//wave_uv_offset.x = cos((TIME*wave_speed)+UV.x+UV.y*wave_freq*2.0)*wave_width*0.01;
 	//wave_uv_offset.y = cos((TIME*wave_speed)+UV.x+UV.x*wave_freq*2.0)*wave_width*0.01;
-	wave_uv_offset.x =texture(noise,vec2(UV.y/spread+time,time)).r ;
-	wave_uv_offset.y= texture(noise,vec2(time,UV.x/spread+time)).r  ;
+	wave_uv_offset.x =texture(noise,vec2(UV.y/spread+time*wave_freq,time)*wave_width).r ;
+	wave_uv_offset.y= texture(noise,vec2(time,UV.x/spread+time)*wave_width).r  ;
 	
 	//wave_uv_offset.x = (texture(noise,UV+TIME/5f).x)/10f+0.8;
 	//wave_uv_offset.y= (texture(noise,UV+TIME/5f).y)/10f+0.8;
@@ -46,8 +46,8 @@ noise = SubResource( 3 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/spread = 3.0
-shader_param/wave_freq = 10.0
+shader_param/spread = 5.0
+shader_param/wave_freq = 1.0
 shader_param/wave_width = 1.0
 shader_param/noise = SubResource( 4 )
 

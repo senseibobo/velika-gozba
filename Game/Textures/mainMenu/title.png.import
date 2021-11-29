@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Velika gozba.png-3b24cd04676b42e091bc10616c64a9e6.stex"
+path="res://.import/title.png-f47b58c81b147b99fc001c87a6929b3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/mainMenu/Velika gozba.png"
-dest_files=[ "res://.import/Velika gozba.png-3b24cd04676b42e091bc10616c64a9e6.stex" ]
+source_file="res://Textures/mainMenu/title.png"
+dest_files=[ "res://.import/title.png-f47b58c81b147b99fc001c87a6929b3a.stex" ]
 
 [params]
 

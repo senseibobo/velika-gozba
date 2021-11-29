@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Group 3.png-9e22deffdf056b87d349b600c8b416ac.stex"
+path="res://.import/petar.png-570a4165e9baffa3dd127e14bec7c96e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/mainMenu/Group 3.png"
-dest_files=[ "res://.import/Group 3.png-9e22deffdf056b87d349b600c8b416ac.stex" ]
+source_file="res://Textures/mainMenu/petar.png"
+dest_files=[ "res://.import/petar.png-570a4165e9baffa3dd127e14bec7c96e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Layer 21.png-858bc16bdf82913ee5de4553ab9d5de9.stex"
+path="res://.import/paja.png-e6aa6fae8e0afd06ee12de7c200e27aa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/mainMenu/Layer 21.png"
-dest_files=[ "res://.import/Layer 21.png-858bc16bdf82913ee5de4553ab9d5de9.stex" ]
+source_file="res://Textures/mainMenu/paja.png"
+dest_files=[ "res://.import/paja.png-e6aa6fae8e0afd06ee12de7c200e27aa.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

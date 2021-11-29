@@ -14,9 +14,11 @@ func _ready():
 	deflect_generator.targets = deflect_generator.TARGETS.ENEMY
 	deflect_generator.z_index = -1
 	add_child(deflect_generator)
+	var hud = preload("res://UI/HUD/HUD.tscn").instance()
+	get_tree().current_scene.call_deferred("add_child",hud)
 
 func _process(delta):
-	if animationtree.get_current_node() != "attack":
+	if not animationtree.get_current_node() in ["attack","knockback"]:
 		_handle_movement()
 		_handle_animations()
 	_handle_attack()
@@ -70,3 +72,7 @@ func hit_enemies(pos):
 	for enemy in Global.enemies:
 		if enemy.global_position.distance_to(pos) < basic_attack_radius:
 			enemy.hit(basic_attack_damage,self)
+
+func hit(damage,source):
+	if animationtree.get_current_node() == "hit": return
+	.hit(damage,source)

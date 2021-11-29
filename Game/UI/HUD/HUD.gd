@@ -3,14 +3,13 @@ extends Control
 var max_health : float
 var health : float
 
+export var healthbar_path : NodePath
 
-func set_health(new_health):
-	health = new_health
-	update_healthbar()
+onready var healthbar = get_node(healthbar_path)
 
-func set_max_health(new_max_health):
-	max_health = new_max_health
-	update_healthbar()
+func _ready():
+	set_as_toplevel(true)
 
-func update_healthbar():
-	pass
+func _process(delta):
+	if is_instance_valid(Global.player):
+		healthbar.get_material().set_shader_param("health_percentage",Global.player.health/Global.player.max_health)

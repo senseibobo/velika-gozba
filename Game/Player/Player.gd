@@ -82,3 +82,7 @@ func hit_enemies(pos):
 func hit(damage,source):
 	if animationtree.get_current_node() == "hit": return
 	.hit(damage,source)
+	match randi()%3:
+		0: SFX.play_sound(SFX.PLAYERHIT1)
+		1: SFX.play_sound(SFX.PLAYERHIT2)
+		2: SFX.play_sound(SFX.PLAYERHIT3)

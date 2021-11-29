@@ -6,7 +6,10 @@ enum {
 	TIGANJ2,
 	PARADAJZ_DEATH,
 	PARADAJZ_SMESAK,
-	DEFLECT
+	DEFLECT,
+	PLAYERHIT1,
+	PLAYERHIT2,
+	PLAYERHIT3
 }
 
 var sfx = [
@@ -14,7 +17,10 @@ var sfx = [
 	preload("res://Sound/SFX/tiganj2.ogg"),
 	preload("res://Sound/SFX/paradajz smrt.ogg"),
 	preload("res://Sound/SFX/paradajz smesak.ogg"),
-	preload("res://Sound/SFX/deflect.ogg")
+	preload("res://Sound/SFX/deflect.ogg"),
+	preload("res://Sound/SFX/bol1.ogg"),
+	preload("res://Sound/SFX/bol2.ogg"),
+	preload("res://Sound/SFX/bol3.ogg")
 ]
 
 func play_sound(sound, from = 0.0):

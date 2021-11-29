@@ -3,14 +3,14 @@
 HZS 4.0 domaci<br/>
 <br/>
 !-------------------------------OBAVEZNO--------------------------------!<br/>
--muzika za main menu<br/>
+<strike>-muzika za main menu<br/></strike>
 <strike>-main menu ui<br/></strike>
--slika za main menu
--movemnt za glavnog lika<br/>
--attack za glavnog lika<br/>
+<strike>-slika za main menu</strike>
+<strike>-movemnt za glavnog lika<br/></strike>
+<strike>-attack za glavnog lika<br/></strike>
 <strike>-animacije za movement glavnog lika<br/></strike>
 <strike>-animacije za udarac glavog lika<br/></strike>
--kod za neprijatelje<br/>
+<strike>-kod za neprijatelje<br/></strike>
 -kod za bossove<br/>
 -muzika za levele<br/>
 -ui u levelima(hp?)<br/>
@@ -18,7 +18,7 @@ HZS 4.0 domaci<br/>
 <strike>-baza podataka<br/></strike>
 <strike>-singleton<br/></strike>
 <strike>-music-singleton<br/></strike>
--shaderi<br/>
+<strike>-shaderi<br/></strike>
 -level select screen<br/>
 -about<br/>
 -settings<br/>
@@ -30,6 +30,19 @@ HZS 4.0 domaci<br/>
 -vise bossova<br/>
 -animacije za neprijatelje<br/>
 !------------------------------------------------------------------------!<br/>
+<br/>
+!--------------------------MUZIKA---------------------------------------------!<br/>
+Izmedju Scena(za one slicice/loading)<br/>
+https://www.chosic.com/download-audio/28659/<br/>
+https://www.chosic.com/download-audio/28657/<br/>
+https://www.chosic.com/download-audio/28662/<br/>
+<br/>
+Treci level muzika<br/>
+https://www.chosic.com/download-audio/29510/<br/>
+<br/>
+Neka muzika sad nzm za sta<br/>
+https://www.chosic.com/download-audio/28664/<br/>
+https://www.chosic.com/download-audio/28665/<br/>
 <br/>
 <strike>!----------------------CREDITS ZA MUZIKU--------------------------------!<br/></strike>
 <strike>Le Baguette by Alexander Nakarada | https://www.serpentsoundstudios.com/<br/></strike>

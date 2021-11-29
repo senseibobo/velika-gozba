@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/KrompirSmesak.ogg-e190897e8dc0d2de6b734ca79f700425.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/KrompirSmesak.ogg"
+dest_files=[ "res://.import/KrompirSmesak.ogg-e190897e8dc0d2de6b734ca79f700425.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

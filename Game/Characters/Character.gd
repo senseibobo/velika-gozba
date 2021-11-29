@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 class_name Character
 
-export var health : float
+export var max_health : float
+onready var health : float = max_health
 export var movement_speed : float
 
 func hit(damage,source):

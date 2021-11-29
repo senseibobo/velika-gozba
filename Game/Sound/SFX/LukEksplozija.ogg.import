@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LukEksplozija.ogg-451d988f80bcb3e6a6358d3f3862509a.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/LukEksplozija.ogg"
+dest_files=[ "res://.import/LukEksplozija.ogg-451d988f80bcb3e6a6358d3f3862509a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

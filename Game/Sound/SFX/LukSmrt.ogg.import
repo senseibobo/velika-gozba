@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LukSmrt.ogg-c22d74acde6d33dc507bc19ed8ce50aa.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/LukSmrt.ogg"
+dest_files=[ "res://.import/LukSmrt.ogg-c22d74acde6d33dc507bc19ed8ce50aa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

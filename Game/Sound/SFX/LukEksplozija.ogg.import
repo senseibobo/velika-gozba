@@ -11,5 +11,5 @@ dest_files=[ "res://.import/LukEksplozija.ogg-451d988f80bcb3e6a6358d3f3862509a.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

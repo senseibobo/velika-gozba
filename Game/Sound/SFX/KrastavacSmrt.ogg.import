@@ -11,5 +11,5 @@ dest_files=[ "res://.import/KrastavacSmrt.ogg-4a949b009e11bd9102e14b69d980a553.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

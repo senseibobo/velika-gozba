@@ -11,5 +11,5 @@ dest_files=[ "res://.import/KrompirSmrt2.ogg-939bd83fb82d52350186d41f8404a3f3.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

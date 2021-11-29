@@ -11,5 +11,5 @@ dest_files=[ "res://.import/KrompirSmesak.ogg-e190897e8dc0d2de6b734ca79f700425.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

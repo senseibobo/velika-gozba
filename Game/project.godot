@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Characters/Character.gd"
 }, {
+"base": "BulletGenerator",
+"class": "DeflectGenerator",
+"language": "GDScript",
+"path": "res://Tools/BulletGenerators/DeflectGenerator.gd"
+}, {
 "base": "Character",
 "class": "Enemy",
 "language": "GDScript",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "Bullet": "",
 "BulletGenerator": "",
 "Character": "",
+"DeflectGenerator": "",
 "Enemy": ""
 }
 

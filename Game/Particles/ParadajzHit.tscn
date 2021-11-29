@@ -6,10 +6,12 @@
 
 [node name="ParadajzHit" type="Particles2D"]
 emitting = false
-amount = 314
-lifetime = 0.25
+amount = 154
+lifetime = 0.66
 one_shot = true
-explosiveness = 0.18
+preprocess = 0.1
+explosiveness = 0.81
+randomness = 1.0
 process_material = ExtResource( 1 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )

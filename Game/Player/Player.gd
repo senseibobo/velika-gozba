@@ -7,19 +7,17 @@ onready var object : Node2D = get_node(object_path)
 onready var animationplayer : AnimationPlayer = object.get_node("AnimationPlayer")
 onready var animationtree : AnimationNodeStateMachinePlayback = object.get_node("AnimationTree").get("parameters/playback")
 
-var deflect_generator : BulletGenerator = BulletGenerator.new()
+var deflect_generator : BulletGenerator = DeflectGenerator.new()
 
 func _ready():
-	LevelManager.call_deferred("start_level",1)
-	Global.player = self
-	deflect_generator.targets = deflect_generator.TARGETS.ENEMY
-	deflect_generator.z_index = -1
 	add_child(deflect_generator)
+	Global.player = self
 	var hud = preload("res://UI/HUD/HUD.tscn").instance()
 	get_tree().current_scene.call_deferred("add_child",hud)
+	LevelManager.call_deferred("start_level",1)
 
 func _process(delta):
-	if not animationtree.get_current_node() in ["attack","knockback"]:
+	if animationtree.get_current_node() in ["run","idle"]:
 		_handle_movement()
 		_handle_animations()
 	_handle_attack()
@@ -60,16 +58,8 @@ func deflect_bullets(pos):
 	var deflected = false
 	for bullet in Global.get_enemy_bullets():
 		if bullet.position.distance_to(pos) < basic_attack_radius:
-			bullet.velocity = -bullet.velocity
 			bullet.generator.bullets.erase(bullet)
-			bullet.current_time = 0
-			var old_texture = bullet.texture
-			var old_damage = bullet.damage
-			var old_size = bullet.size
 			deflect_generator.add_bullet(bullet)
-			bullet.texture = old_texture
-			bullet.size = old_size
-			bullet.damage = old_damage
 			deflected = true
 	return deflected
 			
@@ -80,9 +70,7 @@ func hit_enemies(pos):
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):
-	if animationtree.get_current_node() == "hit": return
+	if animationtree.get_current_node() == "stagger": return
+	elif animationtree.get_current_node() in ["run","idle"]: animationtree.travel("stagger")
 	.hit(damage,source)
-	match randi()%3:
-		0: SFX.play_sound(SFX.PLAYERHIT1)
-		1: SFX.play_sound(SFX.PLAYERHIT2)
-		2: SFX.play_sound(SFX.PLAYERHIT3)
+	SFX.play_sound(SFX.PLAYERHIT1 + randi()%3)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Enemies/Krastavac/Krastavac.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/environment/tekiBeLikwe.png" type="Texture" id=2]
 [ext_resource path="res://World/tree/tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Paradajz/Paradajz.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Krompir/Krompir.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 32, 128, 0, 128, 0, 0, 128, 0, 128, 32, 32, 32 )
@@ -540,3 +542,9 @@ position = Vector2( 474, 274 )
 
 [node name="tree" parent="Elements" instance=ExtResource( 3 )]
 position = Vector2( 989, 350 )
+
+[node name="Paradajz" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 495, 369 )
+
+[node name="Krompir" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 517, 470 )

@@ -51,7 +51,7 @@ func _process(delta) -> void:
 	handle_menu_motion()
 	handle_button_sizes(delta)
 
-func handle_menu_motion():
+func handle_menu_motion() -> void:
 	var screen_size : Vector2 = get_viewport_rect().size
 	var mpos : Vector2 = get_viewport().get_mouse_position()
 	petar_texture.rect_position = Vector2(0.1,0.43)*screen_size-(screen_size/2-mpos)/40.0 - Vector2(64,64)
@@ -59,7 +59,7 @@ func handle_menu_motion():
 	background_texture.rect_position = -(screen_size/2-mpos)/100.0 - Vector2(64,64)
 	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/12.0 + menu_offset
 
-func handle_button_sizes(delta):
+func handle_button_sizes(delta) -> void:
 	for button in c:
 		if not button is Button: continue
 		var new_scale : float 

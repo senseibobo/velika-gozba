@@ -16,7 +16,7 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackSplash.png" type="Texture" id=14]
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
 [ext_resource path="res://Player/Player.gd" type="Script" id=16]
-[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=17]
+[ext_resource path="res://Animations/Player/stagger.anim" type="Animation" id=17]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "RESET"
@@ -474,6 +474,58 @@ tracks/39/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/40/type = "bezier"
+tracks/40/path = NodePath("Node2D/uvo:modulate:r")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/41/type = "bezier"
+tracks/41/path = NodePath("Node2D/uvo:modulate:g")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/42/type = "bezier"
+tracks/42/path = NodePath("Node2D/uvo:modulate:b")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/43/type = "bezier"
+tracks/43/path = NodePath("Node2D/uvo:modulate:a")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Node2D/uvo:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 46, 13 )
@@ -488,12 +540,12 @@ object_path = NodePath("Object")
 scale = Vector2( 0.16, 0.16 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 146.56, -48 )
-texture = ExtResource( 17 )
+position = Vector2( 140, -48 )
+texture = ExtResource( 5 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -143.873, -53 )
+position = Vector2( -136, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -501,32 +553,30 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -363.623 )
-rotation = -0.0034798
+position = Vector2( 224, -383 )
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -355.623 )
+position = Vector2( 0, -375 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -518.285 )
+position = Vector2( -57, -545 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -517.623 )
+position = Vector2( -260, -537 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -319.623 )
-rotation = 0.00370522
+position = Vector2( -266, -339 )
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -539.133 )
+position = Vector2( 51, -566.327 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
@@ -540,6 +590,7 @@ anims/RESET = SubResource( 1 )
 anims/attack = ExtResource( 11 )
 anims/idle = ExtResource( 9 )
 anims/run = ExtResource( 10 )
+anims/stagger = ExtResource( 17 )
 
 [node name="attack" type="Node2D" parent="Object"]
 visible = false

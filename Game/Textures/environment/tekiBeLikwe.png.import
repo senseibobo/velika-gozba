@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tekiBeLikwe.png-f8feba767487489bd9520b513fcb05cf.stex"
+path="res://.import/tekiBeLikwe.png-ef880c9fc380f51fc3dc3bbcd428c226.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/tilemaps/tekiBeLikwe.png"
-dest_files=[ "res://.import/tekiBeLikwe.png-f8feba767487489bd9520b513fcb05cf.stex" ]
+source_file="res://Textures/environment/tekiBeLikwe.png"
+dest_files=[ "res://.import/tekiBeLikwe.png-ef880c9fc380f51fc3dc3bbcd428c226.stex" ]
 
 [params]
 

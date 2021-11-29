@@ -59,8 +59,11 @@ func deflect_bullets(pos):
 			bullet.current_time = 0
 			var old_texture = bullet.texture
 			var old_damage = bullet.damage
+			var old_size = bullet.size
 			deflect_generator.add_bullet(bullet)
 			bullet.texture = old_texture
+			bullet.size = old_size
+			bullet.damage = old_damage
 			
 
 func hit_enemies(pos):

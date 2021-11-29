@@ -34,7 +34,7 @@ shape = SubResource( 1 )
 [node name="KrastavacGenerator" type="Node2D" parent="."]
 position = Vector2( -37, -34 )
 script = ExtResource( 4 )
-shot_interval = 0.55
+shot_interval = 0.9
 speed = 800.0
 life_time = 8.0
 texture = ExtResource( 5 )

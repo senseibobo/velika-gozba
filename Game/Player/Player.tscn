@@ -488,12 +488,12 @@ object_path = NodePath("Object")
 scale = Vector2( 0.16, 0.16 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 143.191, -48 )
+position = Vector2( 146.56, -48 )
 texture = ExtResource( 17 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -139.829, -53 )
+position = Vector2( -143.873, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -501,32 +501,32 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -373.577 )
-rotation = -0.0456557
+position = Vector2( 224, -363.623 )
+rotation = -0.0034798
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -365.577 )
+position = Vector2( 0, -355.623 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -537.922 )
+position = Vector2( -57, -518.285 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -527.576 )
+position = Vector2( -260, -517.623 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -329.577 )
-rotation = 0.0344544
+position = Vector2( -266, -319.623 )
+rotation = 0.00370522
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -559.248 )
+position = Vector2( 51, -539.133 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
@@ -570,3 +570,8 @@ texture = ExtResource( 13 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 4.0

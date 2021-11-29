@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 var max_health : float
 var health : float
@@ -6,9 +6,6 @@ var health : float
 export var healthbar_path : NodePath
 
 onready var healthbar = get_node(healthbar_path)
-
-func _ready():
-	set_as_toplevel(true)
 
 func _process(delta):
 	if is_instance_valid(Global.player):

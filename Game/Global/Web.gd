@@ -1,10 +1,8 @@
 extends Node
 
-func _ready():
-	request_highscores()
 
-func request_highscores():
-	make_request("https://velika-gozba.herokuapp.com/highscores",HTTPClient.METHOD_GET,self,"on_highscores_received")
+func request_highscores(result_node, result_function):
+	make_request("https://velika-gozba.herokuapp.com/highscores",HTTPClient.METHOD_GET,result_node,result_function)
 
 func on_highscores_received(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())

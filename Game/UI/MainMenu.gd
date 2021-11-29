@@ -43,6 +43,9 @@ var changing : bool = false
 func _ready() -> void:
 	c = mainc.get_children()
 	_update_visible()
+	var mainmusic = preload("res://Sound/Music/LeBaguette-320bit.mp3")
+	Music.stream = mainmusic
+	Music.play()
 
 func _process(delta) -> void:
 	var screen_size : Vector2 = get_viewport_rect().size

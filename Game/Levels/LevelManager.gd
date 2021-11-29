@@ -1,5 +1,7 @@
 extends Node
 
+var score : float = 0.0
+
 
 func start_level(level : int):
 	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
@@ -11,3 +13,6 @@ func start_level(level : int):
 	for element in elements.get_children():
 		elements.remove_child(element)
 		get_tree().current_scene.get_node("YSort").add_child(element)
+
+func finish_level():
+	pass

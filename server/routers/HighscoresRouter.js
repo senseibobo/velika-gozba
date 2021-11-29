@@ -2,7 +2,7 @@ let router = require("express").Router();
 let db = require("../db.js");
 
 router.get("/", (req, res) => {
-  highscores.find().toArray((err, result) => {
+  db.highscores.find().toArray((err, result) => {
     if (err) {
       res.sendStatus(404);
       throw err;
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   if (highscores) {
     let highscore = req.body;
-    highscores.find({ name: req.body.name }).toArray((err, result) => {
+    db.highscores.find({ name: req.body.name }).toArray((err, result) => {
       if (result.length > 0) {
         let oldscore = result[0];
         if (oldscore.score < req.body.score) {

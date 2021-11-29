@@ -38,6 +38,7 @@ export var menu_offset : Vector2 = Vector2(0,120)
 
 var visible_container : int = VCONTAINER.MAIN
 var c : Array
+var changing : bool = false
 
 func _ready() -> void:
 	c = mainc.get_children()
@@ -52,7 +53,12 @@ func _process(delta) -> void:
 	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/12.0 + menu_offset
 	for button in c:
 		if not button is Button: continue
-		var new_scale : float = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.4
+		
+		var new_scale : float 
+		if not Input.get_mouse_button_mask() % 2 == 0:
+			new_scale = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.2
+		else:
+			new_scale = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.4
 		button.rect_scale = lerp(button.rect_scale,Vector2(new_scale,new_scale),10*delta)
 
 func _update_visible() -> void:
@@ -77,67 +83,71 @@ func _update_offset() -> void:
 
 #------------MAIN MENU-------------------
 func _on_Play_pressed():
-	visible_container = VCONTAINER.PLAY
-	c = playc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.PLAY)
 	
 func _on_About_pressed() -> void:
-	visible_container = VCONTAINER.ABOUT
-	c = aboutc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.ABOUT)
 	
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 #------------PLAY-----------------------
 func _on_PlayBack_pressed():
-	visible_container = VCONTAINER.MAIN
-	c = mainc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.MAIN)
 #------------ABOUT-----------------------
 func _on_Credits_pressed() -> void:
-	visible_container = VCONTAINER.CREDITS
-	c = creditsc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.CREDITS)
 
 func _on_About_Us_pressed() -> void:
-	visible_container = VCONTAINER.ABOUTUS
-	c = aboutusc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.ABOUTUS)
 
 func _on_Back_pressed() -> void:
-	visible_container = VCONTAINER.MAIN
-	c = mainc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.MAIN)
 #------------CREDITS----------------------
 func _on_Music_pressed() -> void:
-	visible_container = VCONTAINER.MUSIC
-	c = musicc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.MUSIC)
 
 func _on_SFX_pressed() -> void:
-	visible_container = VCONTAINER.SFX
-	c = sfxc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.SFX)
 
 func _on_CreditsBack_pressed() -> void:
-	visible_container = VCONTAINER.ABOUT
-	c = aboutc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.ABOUT)
 #------------MUSIC----------------------
 func _on_MusicBack_pressed() -> void:
-	visible_container = VCONTAINER.CREDITS
-	c = creditsc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.CREDITS)
 #------------SFX----------------------
 func _on_SFXBack_pressed() -> void:
-	visible_container = VCONTAINER.CREDITS
-	c = creditsc.get_children()
-	_update_visible()
+	change_menu(VCONTAINER.CREDITS)
 #------------ABOUTUS----------------------
 func _on_AboutUsBack_pressed() -> void:
-	visible_container = VCONTAINER.ABOUT
-	c = aboutc.get_children()
+	change_menu(VCONTAINER.ABOUT)
+
+func change_menu(new_menu):
+	if changing: return
+	changing = true
+	var tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property(centerc,"rect_scale",Vector2.ONE,Vector2.ZERO,0.2,Tween.TRANS_CUBIC,Tween.EASE_IN)
+	tween.start()
+	tween.connect("tween_all_completed",self,"on_menu_change",[new_menu])
+	tween.connect("tween_all_completed",tween,"queue_free")
+	
+func on_menu_change(new_menu):
+	visible_container = new_menu
+	match new_menu:
+		VCONTAINER.MAIN: c = mainc.get_children()
+		VCONTAINER.PLAY: c = playc.get_children()
+		VCONTAINER.ABOUT: c = aboutc.get_children()
+		VCONTAINER.CREDITS: c = creditsc.get_children()
+		VCONTAINER.MUSIC: c = musicc.get_children()
+		VCONTAINER.ABOUTUS: c = aboutusc.get_children()
+		VCONTAINER.SFX: c = sfxc.get_children()
 	_update_visible()
+	var tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property(centerc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.2,Tween.TRANS_CUBIC,Tween.EASE_OUT)
+	tween.start()
+	tween.connect("tween_all_completed",tween,"queue_free")
+	tween.connect("tween_all_completed",self,"set",["changing",false])
 
 
 

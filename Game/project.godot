@@ -48,6 +48,7 @@ Global="*res://Global/Global.gd"
 Music="*res://Sound/Music/Music.gd"
 SFX="*res://Sound/SFX/SFX.gd"
 Web="*res://Global/Web.gd"
+LevelManager="*res://Levels/LevelManager.gd"
 
 [display]
 

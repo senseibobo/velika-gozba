@@ -10,6 +10,7 @@ onready var animationtree : AnimationNodeStateMachinePlayback = object.get_node(
 var deflect_generator : BulletGenerator = BulletGenerator.new()
 
 func _ready():
+	LevelManager.call_deferred("start_level",1)
 	Global.player = self
 	deflect_generator.targets = deflect_generator.TARGETS.ENEMY
 	deflect_generator.z_index = -1

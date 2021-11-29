@@ -21,6 +21,8 @@ func _handle_movement():
 		dest.x = pp.x + ppr*approach_range
 		dest.y = pp.y + 20
 		var dir = global_position.direction_to(dest)
-		move_and_slide(dir*movement_speed)
+		dir.y *= 2.0
+		if global_position.distance_to(dest) > 10:
+			move_and_slide(dir.normalized()*movement_speed)
 		if dir.x != 0:
 			sprite.scale.x = ppr*abs(sprite.scale.x)

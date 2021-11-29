@@ -47,14 +47,17 @@ func _handle_attack():
 		animationtree.travel("attack")
 
 func attack():
-	match randi()%2:
-		0: SFX.play_sound(SFX.TIGANJ1,0.45)
-		1: SFX.play_sound(SFX.TIGANJ2,0.3)
 	var pos = object.get_node("attack/vfx").global_position
-	deflect_bullets(pos)
+	var deflected = deflect_bullets(pos)
 	hit_enemies(pos)
+	if deflected: SFX.play_sound(SFX.DEFLECT)
+	else:
+		match randi()%2:
+			0: SFX.play_sound(SFX.TIGANJ1,0.45)
+			1: SFX.play_sound(SFX.TIGANJ2,0.3)
 
 func deflect_bullets(pos):
+	var deflected = false
 	for bullet in Global.get_enemy_bullets():
 		if bullet.position.distance_to(pos) < basic_attack_radius:
 			bullet.velocity = -bullet.velocity
@@ -67,6 +70,8 @@ func deflect_bullets(pos):
 			bullet.texture = old_texture
 			bullet.size = old_size
 			bullet.damage = old_damage
+			deflected = true
+	return deflected
 			
 
 func hit_enemies(pos):

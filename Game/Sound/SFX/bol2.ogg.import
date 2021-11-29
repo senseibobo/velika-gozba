@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bol2.ogg-0403132a20f489bed579ba08e8c18bb6.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFX/bol2.ogg"
+dest_files=[ "res://.import/bol2.ogg-0403132a20f489bed579ba08e8c18bb6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

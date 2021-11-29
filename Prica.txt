@@ -54,11 +54,13 @@ NAPOMENA: Nakon sto ubijes mini boseve dobijes poseban abiliti!!!!!!!!!!!!!!!!!!
 -Opis: Veliki,zelene boje
 -Napad: Baca bombe(manje brokolije)
 -Abiliti koji dobijas: Dobijes abiliti da mozes da bacas male brokolije koji predstavljaju mini bombe, mozes to da radis dok ne umres(mogu da se kotrljaju po podu)
+Udaranje tiganjom postaje jace za 20% na 30 sekundi
 --------------------------------------------------------------------------
 		Bundeva
 -Opis: Neprijatelj koji kad ga ubijes, od njega nastanu dva manja neprijatelja(isto bundeve ali manje)
 -Napad: Kotrlja se i pokusava da te udari, dok se kotrlja, ubrzava se i sto je brza to ti vise skine.
 -Abiliti koji dobijas: Dobijes stit koji je kao aura, prvog minuta odbija 100% napada, drugog minuta 75% i sledecih 3 minuta 50%(kada igrac umre, abiliti se ponistava)
+Obnavlja 25% health-a
 -----------------------------------------------------------------------------------------------
 
 

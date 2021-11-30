@@ -6,7 +6,7 @@
 
 [node name="ParadajzHit" type="Particles2D"]
 emitting = false
-amount = 154
+amount = 15
 lifetime = 0.66
 one_shot = true
 preprocess = 0.1

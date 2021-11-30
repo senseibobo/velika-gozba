@@ -40,7 +40,6 @@ func hit(damage,source):
 	.hit(damage,source)
 
 func hit_flash():
-	print("As")
 	var tween = Tween.new()
 	add_child(tween)
 	tween.connect("tween_all_completed",tween,"queue_free")

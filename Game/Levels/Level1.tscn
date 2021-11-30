@@ -572,6 +572,15 @@ position = Vector2( 743, 596 )
 [node name="Bush" parent="Elements" instance=ExtResource( 7 )]
 position = Vector2( 501, 507 )
 
+[node name="Luk2" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1355, 1025 )
+
+[node name="Luk3" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1919, 1330 )
+
+[node name="Luk4" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 3268, 1452 )
+
 [node name="LevelFinish" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2

@@ -21,8 +21,8 @@ HZS 4.0 domaci<br/>
 <strike>-shaderi<br/></strike>
 <strike>-level select screen<br/></strike>
 <strike>-about<br/></strike>
--settings<br/>
--difficulty<br/>
+<strike>-settings<br/></strike>
+<strike>-difficulty<br/></strike>
 !------------------------------------------------------------------------!<br/>
 <br/>
 !-------------------------------EXTRA------------------------------------!<br/>

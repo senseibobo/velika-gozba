@@ -2,6 +2,8 @@ extends VBoxContainer
 
 func _ready():
 	$Difficulty.text = "Difficulty: " + ["Easy","Medium","Hard"][Global.difficulty]
+	var bus = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus,-15)
 
 
 func increase_volume():

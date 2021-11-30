@@ -22,10 +22,9 @@ func _handle_movement(delta):
 				SFX.play_sound(explosion_sound)
 
 func explode():
-	print("EXPLODE")
 	exploded = true
 	yield(get_tree().create_timer(0.5,false),"timeout")
-	if Global.player.global_position.distance_to(global_position) < 70:
+	if Global.player.global_position.distance_to(global_position) < 115:
 		Global.player.hit(damage,self)
 	var particles = preload("res://Particles/LukEksplozijaParticles.tscn").instance()
 	particles.global_position = global_position

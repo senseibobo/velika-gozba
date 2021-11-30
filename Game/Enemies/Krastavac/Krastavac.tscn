@@ -17,6 +17,8 @@ max_health = 60.0
 movement_speed = 150.0
 death_sound = ExtResource( 6 )
 spotted_sound = ExtResource( 7 )
+aggro_range = 700
+deaggro_range = 1200
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 27, -38 )

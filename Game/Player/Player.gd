@@ -1,7 +1,7 @@
 extends Character
 
 export var basic_attack_damage : float = 20.0
-export var basic_attack_radius : float = 50.0
+export var basic_attack_radius : float = 100.0
 export var object_path : NodePath 
 onready var object : Node2D = get_node(object_path)
 onready var animationplayer : AnimationPlayer = object.get_node("AnimationPlayer")
@@ -51,7 +51,7 @@ func _handle_attack():
 		animationtree.travel("attack")
 
 func attack():
-	var pos = object.get_node("attack/vfx").global_position
+	var pos = object.get_node("attack/tiganj").global_position
 	var deflected = deflect_bullets(pos)
 	hit_enemies(pos)
 	if deflected: SFX.play_sound(SFX.DEFLECT)

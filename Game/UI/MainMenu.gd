@@ -67,9 +67,9 @@ func _input(event):
 		var is_space = (event.unicode == ord(' '))
 		if is_lowercase  || is_uppercase || is_digit || is_space:
 			Global.ime += char(event.unicode)
+			Global.ime = Global.ime.substr(0,12)
 		elif event.scancode == 16777220:
 			Global.ime = Global.ime.substr(0,max(0,Global.ime.length()-1))
-		print(Global.ime)
 	update()
 
 func _draw():

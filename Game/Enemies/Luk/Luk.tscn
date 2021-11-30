@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Textures/enemies/luk.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Luk/Luk.gd" type="Script" id=2]
 [ext_resource path="res://Sound/SFX/LukSmrt.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Sound/SFX/LukSmesak.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sound/SFX/LukEksplozija.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 2.5 )
@@ -15,6 +16,7 @@ movement_speed = 200.0
 death_sound = ExtResource( 3 )
 spotted_sound = ExtResource( 4 )
 aggro_range = 300
+explosion_sound = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 4, -29 )

@@ -19,7 +19,7 @@ HZS 4.0 domaci<br/>
 <strike>-singleton<br/></strike>
 <strike>-music-singleton<br/></strike>
 <strike>-shaderi<br/></strike>
--level select screen<br/>
+<strike>-level select screen<br/></strike>
 <strike>-about<br/></strike>
 -settings<br/>
 -difficulty<br/>

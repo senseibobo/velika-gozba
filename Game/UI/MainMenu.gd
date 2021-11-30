@@ -7,7 +7,11 @@ enum VCONTAINER{
 	CREDITS, #3
 	MUSIC, #4
 	SFX, #5
-	PLAY #6
+	PLAY, #6
+	ART, #7
+	SELECT, #8
+	SETTINGS, #9
+	
 }
 
 export var paja_texture_path : NodePath
@@ -21,6 +25,9 @@ export var aboutus_container_path : NodePath
 export var music_container_path : NodePath
 export var sfx_container_path : NodePath
 export var play_container_path : NodePath
+export var art_container_path : NodePath
+export var select_container_path : NodePath
+export var settings_container_path : NodePath
 
 onready var paja_texture : TextureRect = get_node(paja_texture_path)
 onready var petar_texture : TextureRect = get_node(petar_texture_path)
@@ -33,6 +40,9 @@ onready var aboutusc : VBoxContainer = get_node(aboutus_container_path)
 onready var musicc : VBoxContainer = get_node(music_container_path)
 onready var sfxc : VBoxContainer = get_node(sfx_container_path)
 onready var playc : VBoxContainer = get_node(play_container_path)
+onready var artc : VBoxContainer = get_node(art_container_path)
+onready var selectc : VBoxContainer = get_node(select_container_path)
+onready var settingsc : VBoxContainer = get_node(settings_container_path)
 
 export var menu_offset : Vector2 = Vector2(0,120)
 
@@ -89,8 +99,7 @@ func handle_menu_motion() -> void:
 	centerc.rect_position = screen_size/2 - (screen_size/2-mpos)/12.0 + menu_offset
 
 func handle_button_sizes(delta) -> void:
-	for button in c:
-		if not button is Button: continue
+	for button in get_all_buttons(self):
 		var new_scale : float 
 		if not Input.get_mouse_button_mask() % 2 == 0:
 			new_scale = 1.0 + int(button.get_global_rect().has_point(get_global_mouse_position()))*0.2
@@ -105,6 +114,9 @@ func _update_visible() -> void:
 	musicc.visible = visible_container == VCONTAINER.MUSIC
 	sfxc.visible = visible_container == VCONTAINER.SFX
 	playc.visible = visible_container == VCONTAINER.PLAY
+	artc.visible = visible_container == VCONTAINER.ART
+	selectc.visible = visible_container == VCONTAINER.SELECT
+	settingsc.visible = visible_container == VCONTAINER.SETTINGS
 	_update_offset()
 
 func _update_offset() -> void:
@@ -114,7 +126,7 @@ func _update_offset() -> void:
 		
 		VCONTAINER.ABOUT,VCONTAINER.ABOUTUS,VCONTAINER.CREDITS:
 			menu_offset = Vector2(0,50)
-		VCONTAINER.MUSIC,VCONTAINER.SFX,VCONTAINER.PLAY:
+		_:#VCONTAINER.MUSIC,VCONTAINER.SFX,VCONTAINER.PLAY:
 			menu_offset = Vector2(0,40)
 
 #------------MAIN MENU-------------------
@@ -142,6 +154,9 @@ func on_menu_change(new_menu):
 		VCONTAINER.MUSIC: c = musicc.get_children()
 		VCONTAINER.ABOUTUS: c = aboutusc.get_children()
 		VCONTAINER.SFX: c = sfxc.get_children()
+		VCONTAINER.ART: c = artc.get_children()
+		VCONTAINER.SELECT: c = selectc.get_children()
+		VCONTAINER.SETTINGS: c = settingsc.get_children()
 	_update_visible()
 	var tween = Tween.new()
 	add_child(tween)
@@ -151,6 +166,12 @@ func on_menu_change(new_menu):
 	tween.connect("tween_all_completed",self,"set",["changing",false])
 
 
+func get_all_buttons(node):
+	var arr = []
+	if node is Button: arr.append(node)
+	for child in node.get_children():
+		arr.append_array(get_all_buttons(child))
+	return arr
 
 
 

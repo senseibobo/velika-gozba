@@ -14,7 +14,7 @@ func send_highscore(level,score,result_node = null,result_function = ""):
 		var request = make_request("https://velika-gozba.herokuapp.com/highscores/",HTTPClient.METHOD_POST,self,"on_highscore_received",body)
 	else:
 		var request = make_request("https://velika-gozba.herokuapp.com/highscores/",HTTPClient.METHOD_POST,result_node,result_function,body)
-
+	
 func on_highscore_received(result, response_code, headers, body):
 	pass
 
@@ -26,7 +26,8 @@ func make_request(url,method,result_node,result_function,body : Dictionary = {})
 	var query = JSON.print(body)
 	var request = HTTPRequest.new()
 	add_child(request)
-	request.request(url,PoolStringArray(),true,method,query)
+	var headers = ["Content-Type: application/json"]
+	request.request(url,headers,true,method,query)
 	request.connect("request_completed",result_node,result_function)
 	request.connect("request_completed",self,"free_request",[request])
 	return request

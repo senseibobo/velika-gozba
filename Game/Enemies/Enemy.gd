@@ -5,6 +5,7 @@ class_name Enemy
 export var death_particles_scene : PackedScene
 export var hit_sound : AudioStream
 export var death_sound : AudioStream
+export var spotted_sound : AudioStream
 export var hitbox_radius : float = 5
 export var aggro_range = 400
 export var deaggro_range = 600
@@ -29,6 +30,8 @@ func _process(delta):
 		if spotted_player and dist > deaggro_range:
 			spotted_player = false
 		elif is_instance_valid(Global.player) and dist < aggro_range:
+			if not spotted_player:
+				SFX.play_sound(spotted_sound)
 			spotted_player = true
 
 func hit(damage,source):

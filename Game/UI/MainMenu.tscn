@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainTheme.theme" type="Theme" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Textures/mainMenu/environment.png" type="Texture" id=5]
 [ext_resource path="res://Textures/mainMenu/petar.png" type="Texture" id=6]
 [ext_resource path="res://Textures/mainMenu/paja.png" type="Texture" id=7]
+[ext_resource path="res://UI/LevelButtons.gd" type="Script" id=8]
+[ext_resource path="res://UI/Settings.gd" type="Script" id=9]
 
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
@@ -51,6 +53,12 @@ extra_spacing_top = -24
 extra_spacing_bottom = -31
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 102
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,6 +78,9 @@ aboutus_container_path = NodePath("CenterContainer/AboutUsContainer")
 music_container_path = NodePath("CenterContainer/MusicContainer")
 sfx_container_path = NodePath("CenterContainer/SFXContainter")
 play_container_path = NodePath("CenterContainer/PlayContainer")
+art_container_path = NodePath("CenterContainer/ArtContainer")
+select_container_path = NodePath("CenterContainer/SelectContainer")
+settings_container_path = NodePath("CenterContainer/SettingsContainer")
 
 [node name="Background" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -116,6 +127,7 @@ __meta__ = {
 }
 
 [node name="MenuContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
 margin_left = -630.0
 margin_top = -338.0
 margin_right = 629.0
@@ -140,7 +152,7 @@ focus_mode = 0
 enabled_focus_mode = 0
 text = "Play"
 
-[node name="Options" type="Button" parent="CenterContainer/MenuContainer"]
+[node name="Settings" type="Button" parent="CenterContainer/MenuContainer"]
 margin_top = 400.0
 margin_right = 1259.0
 margin_bottom = 480.0
@@ -148,7 +160,7 @@ rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 629.5, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-text = "Options"
+text = "Settings"
 
 [node name="About" type="Button" parent="CenterContainer/MenuContainer"]
 margin_top = 498.0
@@ -219,6 +231,112 @@ custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Back"
 
+[node name="SettingsContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = -358.0
+margin_top = -302.0
+margin_right = 357.0
+margin_bottom = 301.0
+custom_constants/separation = 32
+script = ExtResource( 9 )
+
+[node name="Volume" type="HBoxContainer" parent="CenterContainer/SettingsContainer"]
+margin_right = 715.0
+margin_bottom = 155.0
+alignment = 1
+
+[node name="minus" type="Button" parent="CenterContainer/SettingsContainer/Volume"]
+margin_left = 53.0
+margin_right = 153.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 50, 87.5 )
+text = "-"
+
+[node name="Volume" type="Label" parent="CenterContainer/SettingsContainer/Volume"]
+margin_left = 157.0
+margin_right = 557.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 7 )
+text = " Volume"
+
+[node name="plus" type="Button" parent="CenterContainer/SettingsContainer/Volume"]
+margin_left = 561.0
+margin_right = 661.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 100, 0 )
+rect_pivot_offset = Vector2( 50, 87.5 )
+text = "+"
+
+[node name="Fullscreen" type="Button" parent="CenterContainer/SettingsContainer"]
+margin_top = 187.0
+margin_right = 715.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 357.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Toggle Fullscreen"
+
+[node name="Difficulty" type="Button" parent="CenterContainer/SettingsContainer"]
+margin_top = 299.0
+margin_right = 715.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 357.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Difficulty: Medium"
+
+[node name="\?\?\?\?" type="Button" parent="CenterContainer/SettingsContainer"]
+margin_top = 411.0
+margin_right = 715.0
+margin_bottom = 491.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 357.5, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "????"
+
+[node name="Back" type="Button" parent="CenterContainer/SettingsContainer"]
+margin_top = 523.0
+margin_right = 715.0
+margin_bottom = 603.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 357.5, 40 )
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Back"
+
+[node name="SelectContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+margin_left = -250.0
+margin_top = -156.0
+margin_right = 250.0
+margin_bottom = 156.0
+custom_constants/separation = 32
+
+[node name="LevelButtons" type="GridContainer" parent="CenterContainer/SelectContainer"]
+margin_right = 500.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 200 )
+custom_constants/vseparation = 114
+custom_constants/hseparation = 70
+columns = 5
+script = ExtResource( 8 )
+
+[node name="Back" type="Button" parent="CenterContainer/SelectContainer"]
+margin_top = 232.0
+margin_right = 500.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 234.5, 40 )
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Back"
+
 [node name="AboutContainer" type="VBoxContainer" parent="CenterContainer"]
 visible = false
 margin_left = -173.0
@@ -260,9 +378,9 @@ text = "Back"
 [node name="CreditsContainer" type="VBoxContainer" parent="CenterContainer"]
 visible = false
 margin_left = -120.0
-margin_top = -152.0
+margin_top = -208.0
 margin_right = 120.0
-margin_bottom = 152.0
+margin_bottom = 208.0
 custom_constants/separation = 32
 
 [node name="Music" type="Button" parent="CenterContainer/CreditsContainer"]
@@ -284,10 +402,20 @@ focus_mode = 0
 enabled_focus_mode = 0
 text = "SFX"
 
-[node name="CreditsBack" type="Button" parent="CenterContainer/CreditsContainer"]
+[node name="Art" type="Button" parent="CenterContainer/CreditsContainer"]
 margin_top = 224.0
 margin_right = 240.0
 margin_bottom = 304.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 120, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Art"
+
+[node name="CreditsBack" type="Button" parent="CenterContainer/CreditsContainer"]
+margin_top = 336.0
+margin_right = 240.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 focus_mode = 0
@@ -308,7 +436,7 @@ margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "Coming soon..."
+text = "ko ovo uopste cita"
 align = 1
 uppercase = true
 
@@ -325,36 +453,30 @@ text = "Back"
 
 [node name="MusicContainer" type="VBoxContainer" parent="CenterContainer"]
 visible = false
-margin_left = -424.0
-margin_top = -259.0
-margin_right = 424.0
-margin_bottom = 258.0
+margin_left = -214.0
+margin_top = -157.0
+margin_right = 214.0
+margin_bottom = 156.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/MusicContainer"]
-margin_right = 848.0
-margin_bottom = 405.0
+margin_right = 428.0
+margin_bottom = 201.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "Le Baguette by Alexander Nakarada | https://www.serpentsoundstudios.com/
-Music promoted on https://www.chosic.com/free-music/all/
+text = "Le Baguette by Alexander Nakarada 
 
-Silly Intro by Alexander Nakarada | https://www.serpentsoundstudios.com/
-Music promoted by https://www.chosic.com/free-music/all/free-music/
+Silly INTRO BY ALEXANDER NAKARADA
 
-The Great Battle by Alexander Nakarada | https://www.serpentsoundstudios.com/
-Music promoted by https://www.chosic.com/free-music/all/
-
-Attribution 4.0 International (CC BY 4.0)
-https://creativecommons.org/licenses/by/4.0/
+The Great Battle by Alexander Nakarada 
 "
 align = 1
 uppercase = true
 
 [node name="MusicBack" type="Button" parent="CenterContainer/MusicContainer"]
-margin_top = 437.0
-margin_right = 848.0
-margin_bottom = 517.0
+margin_top = 233.0
+margin_right = 428.0
+margin_bottom = 313.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 424, 40 )
 focus_mode = 0
@@ -375,7 +497,7 @@ margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "Coming soon..."
+text = "sfx by randjelovic"
 align = 1
 uppercase = true
 
@@ -390,17 +512,56 @@ custom_fonts/font = SubResource( 2 )
 enabled_focus_mode = 0
 text = "Back"
 
+[node name="ArtContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+margin_left = -120.0
+margin_top = -96.0
+margin_right = 120.0
+margin_bottom = 96.0
+custom_constants/separation = 32
+
+[node name="Credits" type="Label" parent="CenterContainer/ArtContainer"]
+margin_right = 240.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 120, 40 )
+text = "Art by nikola jankovic"
+align = 1
+uppercase = true
+
+[node name="ArtBack" type="Button" parent="CenterContainer/ArtContainer"]
+margin_top = 112.0
+margin_right = 240.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 120, 40 )
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Back"
+
 [connection signal="pressed" from="CenterContainer/MenuContainer/Play" to="." method="change_menu" binds= [ 6 ]]
+[connection signal="pressed" from="CenterContainer/MenuContainer/Settings" to="." method="change_menu" binds= [ 9 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/About" to="." method="change_menu" binds= [ 1 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="CenterContainer/PlayContainer/New Game" to="." method="_on_New_Game_pressed"]
+[connection signal="pressed" from="CenterContainer/PlayContainer/Select Level" to="." method="change_menu" binds= [ 8 ]]
 [connection signal="pressed" from="CenterContainer/PlayContainer/Back" to="." method="change_menu" binds= [ 0 ]]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/Volume/minus" to="CenterContainer/SettingsContainer" method="decrease_volume"]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/Volume/plus" to="CenterContainer/SettingsContainer" method="increase_volume"]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/Fullscreen" to="CenterContainer/SettingsContainer" method="toggle_fullscreen"]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/Difficulty" to="CenterContainer/SettingsContainer" method="change_difficulty"]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/????" to="CenterContainer/SettingsContainer" method="toggle_shader"]
+[connection signal="pressed" from="CenterContainer/SettingsContainer/Back" to="." method="change_menu" binds= [ 0 ]]
+[connection signal="pressed" from="CenterContainer/SelectContainer/Back" to="." method="change_menu" binds= [ 6 ]]
 [connection signal="pressed" from="CenterContainer/AboutContainer/Credits" to="." method="change_menu" binds= [ 3 ]]
 [connection signal="pressed" from="CenterContainer/AboutContainer/About Us" to="." method="change_menu" binds= [ 2 ]]
 [connection signal="pressed" from="CenterContainer/AboutContainer/Back" to="." method="change_menu" binds= [ 0 ]]
 [connection signal="pressed" from="CenterContainer/CreditsContainer/Music" to="." method="change_menu" binds= [ 4 ]]
 [connection signal="pressed" from="CenterContainer/CreditsContainer/SFX" to="." method="change_menu" binds= [ 5 ]]
+[connection signal="pressed" from="CenterContainer/CreditsContainer/Art" to="." method="change_menu" binds= [ 7 ]]
 [connection signal="pressed" from="CenterContainer/CreditsContainer/CreditsBack" to="." method="change_menu" binds= [ 1 ]]
 [connection signal="pressed" from="CenterContainer/AboutUsContainer/AboutUsBack" to="." method="change_menu" binds= [ 1 ]]
 [connection signal="pressed" from="CenterContainer/MusicContainer/MusicBack" to="." method="change_menu" binds= [ 3 ]]
 [connection signal="pressed" from="CenterContainer/SFXContainter/SFXBack" to="." method="change_menu" binds= [ 3 ]]
+[connection signal="pressed" from="CenterContainer/ArtContainer/ArtBack" to="." method="change_menu" binds= [ 3 ]]

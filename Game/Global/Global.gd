@@ -4,6 +4,11 @@ enum TARGETS {
 	PLAYER,
 	ENEMY
 }
+enum DIFFICULTY {
+	EASY,
+	MEDIUM,
+	HARD
+}
 
 var player : Node2D
 var enemies : Array
@@ -12,6 +17,9 @@ var enemy_generators : Array
 var player_generators : Array
 
 var ime : String = ""
+var in_game : bool = false
+
+var difficulty : int = 1
 
 func _process(delta):
 	pass#print(enemy_generators)

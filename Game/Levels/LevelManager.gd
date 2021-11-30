@@ -1,7 +1,9 @@
 extends Node
 
-var score : float = 0.0
+var score : float = 200.0
 var level : int = 1
+
+const level_count : int = 1
 
 func start_level():
 	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
@@ -25,4 +27,5 @@ func finish_level(body):
 
 func on_highscore_received(result, response_code, headers, body):
 	var level_complete = preload("res://UI/FinishLevel/FinishLevel.tscn").instance()
-	add_child(level_complete)
+	Global.in_game = false
+	get_tree().current_scene.add_child(level_complete)

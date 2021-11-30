@@ -14,6 +14,8 @@ func _ready():
 	tween.interpolate_property(cc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.4,Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
 	tween.start()
 	Web.request_highscores(LevelManager.level,self,"on_highscores_received")
+	if LevelManager.level >= LevelManager.level_count:
+		$CenterContainer/vb/NextLevel.visible = false
 
 func on_highscores_received(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
@@ -31,3 +33,9 @@ func on_highscores_received(result, response_code, headers, body):
 			highscore_node.visible = true
 			highscore_node.text = str(highscore.score)
 			highscores_node.get_node("highscores").add_child(highscore_node)
+	$CenterContainer/vb/hb/vb2/ScoreAmount.text = str(LevelManager.score)
+
+
+func _on_NextLevel_pressed():
+	LevelManager.level += 1
+	get_tree().reload_current_scene()

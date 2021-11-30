@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Particles/lukeksplozijaparticles.material" type="Material" id=1]
+[ext_resource path="res://Textures/Player/attack/playerAttackParticles.png" type="Texture" id=2]
+[ext_resource path="res://Particles/DeathParticles.gd" type="Script" id=3]
+
+[node name="LukEksplozijaParticles" type="Particles2D"]
+amount = 747
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.97
+randomness = 1.0
+process_material = ExtResource( 1 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

@@ -33,7 +33,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 837, 167 )
 
 [node name="canopy" type="Sprite" parent="object"]
-modulate = Color( 0.572549, 0.843137, 0.345098, 1 )
+modulate = Color( 0.388235, 0.670588, 0.14902, 1 )
 material = SubResource( 2 )
 position = Vector2( 0, -600 )
 scale = Vector2( 2.0102, 2.0102 )

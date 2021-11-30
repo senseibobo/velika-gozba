@@ -21,7 +21,8 @@ var sfx = [
 func play_sound(sound, from = 0.0):
 	var audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
-	if sound is AudioStream: audio_player.stream = sound;
+	if sound == null: return
+	elif sound is AudioStream: audio_player.stream = sound;
 	else: audio_player.stream = sfx[sound]
 	audio_player.play(from)
 	audio_player.connect("finished",audio_player,"queue_free")

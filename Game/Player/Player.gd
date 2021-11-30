@@ -49,10 +49,7 @@ func attack():
 	var deflected = deflect_bullets(pos)
 	hit_enemies(pos)
 	if deflected: SFX.play_sound(SFX.DEFLECT)
-	else:
-		match randi()%2:
-			0: SFX.play_sound(SFX.TIGANJ1,0.45)
-			1: SFX.play_sound(SFX.TIGANJ2,0.3)
+	else: SFX.play_sound(SFX.TIGANJ1 + randi()%2)
 
 func deflect_bullets(pos):
 	var deflected = false
@@ -66,7 +63,7 @@ func deflect_bullets(pos):
 
 func hit_enemies(pos):
 	for enemy in Global.enemies:
-		if enemy.global_position.distance_to(pos) < basic_attack_radius:
+		if enemy.global_position.distance_to(pos) < basic_attack_radius + enemy.hitbox_radius:
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):

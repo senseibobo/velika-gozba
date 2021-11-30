@@ -5,6 +5,7 @@ class_name Enemy
 export var death_particles_scene : PackedScene
 export var hit_sound : AudioStream
 export var death_sound : AudioStream
+export var hitbox_radius : float = 5
 
 
 onready var sprite : Sprite = get_node("Sprite")

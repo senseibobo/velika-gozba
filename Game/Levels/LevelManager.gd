@@ -1,9 +1,9 @@
 extends Node
 
 var score : float = 0.0
+var level : int = 1
 
-
-func start_level(level : int):
+func start_level():
 	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
 	var tilemap = level_scene.get_node("TileMap")
 	var elements = level_scene.get_node("Elements")
@@ -19,7 +19,10 @@ func start_level(level : int):
 	finish.connect("body_entered",self,"finish_level")
 
 func finish_level(body):
-	var level_complete = preload("res://UI/FinishLevel/FinishLevel.tscn").instance()
-	add_child(level_complete)
 	Global.player.frozen = true
 	Global.player.animationtree.travel("idle")
+	Web.send_highscore(level,score,self,"on_highscore_received")
+
+func on_highscore_received(result, response_code, headers, body):
+	var level_complete = preload("res://UI/FinishLevel/FinishLevel.tscn").instance()
+	add_child(level_complete)

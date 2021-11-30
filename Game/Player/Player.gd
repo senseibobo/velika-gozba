@@ -19,7 +19,6 @@ func _ready():
 	Global.player = self
 	var hud = preload("res://UI/HUD/HUD.tscn").instance()
 	get_tree().current_scene.call_deferred("add_child",hud)
-	LevelManager.call_deferred("start_level",1)
 
 
 func _physics_process(delta):

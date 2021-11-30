@@ -39,6 +39,8 @@ export var menu_offset : Vector2 = Vector2(0,120)
 var visible_container : int = VCONTAINER.MAIN
 var c : Array
 var changing : bool = false
+var ime : String = ""
+
 
 func _ready() -> void:
 	c = mainc.get_children()
@@ -46,6 +48,33 @@ func _ready() -> void:
 	var mainmusic = preload("res://Sound/Music/LeBaguette-320bit.mp3")
 	Music.stream = mainmusic
 	Music.play()
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		var is_lowercase = (event.unicode >= ord('a') && event.unicode <= ord('z'))
+		var is_uppercase = (event.unicode >= ord('A') && event.unicode <= ord('Z'))
+		var is_digit = (event.unicode >= ord('0') && event.unicode <= ord('9'))
+		var is_space = (event.unicode == ord(' '))
+		if is_lowercase  || is_uppercase || is_digit || is_space:
+			Global.ime += char(event.unicode)
+		elif event.scancode == 16777220:
+			Global.ime = Global.ime.substr(0,max(0,Global.ime.length()-1))
+		print(Global.ime)
+	update()
+
+func _draw():
+	_draw_name()
+
+func _draw_name():
+	var screen_size : Vector2 = get_viewport_rect().size
+	var mpos : Vector2 = get_viewport().get_mouse_position()
+	var pos = Vector2(0.1,0.43)*screen_size-(screen_size/2-mpos)/40.0 + Vector2(100,370)
+	if Global.ime == "":
+		var strlen = get_font("").get_string_size("Type to insert name").x
+		draw_string(get_font(""),pos-Vector2(strlen/2.0,0),"Type to insert name",Color(0.5,0.5,0.5))
+	else:
+		var strlen = get_font("").get_string_size(Global.ime).x
+		draw_string(get_font(""),pos-Vector2(strlen/2.0,0),Global.ime)
 
 func _process(delta) -> void:
 	handle_menu_motion()
@@ -126,3 +155,7 @@ func on_menu_change(new_menu):
 
 
 
+
+
+func _on_New_Game_pressed():
+	get_tree().change_scene("res://World/World.tscn")

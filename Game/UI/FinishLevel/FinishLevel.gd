@@ -13,7 +13,7 @@ func _ready():
 	tween.connect("tween_all_completed",tween,"queue_free")
 	tween.interpolate_property(cc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.4,Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
 	tween.start()
-	Web.request_highscores(self,"on_highscores_received")
+	Web.request_highscores(LevelManager.level,self,"on_highscores_received")
 
 func on_highscores_received(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())

@@ -72,6 +72,7 @@ sfx_container_path = NodePath("CenterContainer/SFXContainter")
 play_container_path = NodePath("CenterContainer/PlayContainer")
 
 [node name="Background" type="TextureRect" parent="."]
+show_behind_parent = true
 margin_left = -15772.0
 margin_top = -14210.0
 margin_right = 15539.0
@@ -84,6 +85,7 @@ __meta__ = {
 }
 
 [node name="Petar" type="TextureRect" parent="."]
+show_behind_parent = true
 margin_left = -152.5
 margin_top = -204.5
 margin_right = 152.5
@@ -95,11 +97,15 @@ __meta__ = {
 }
 
 [node name="Paja" type="TextureRect" parent="."]
+show_behind_parent = true
 margin_left = -479.0
 margin_top = -524.0
 margin_right = 479.0
 margin_bottom = 524.0
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -387,6 +393,7 @@ text = "Back"
 [connection signal="pressed" from="CenterContainer/MenuContainer/Play" to="." method="change_menu" binds= [ 6 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/About" to="." method="change_menu" binds= [ 1 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CenterContainer/PlayContainer/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="CenterContainer/PlayContainer/Back" to="." method="change_menu" binds= [ 0 ]]
 [connection signal="pressed" from="CenterContainer/AboutContainer/Credits" to="." method="change_menu" binds= [ 3 ]]
 [connection signal="pressed" from="CenterContainer/AboutContainer/About Us" to="." method="change_menu" binds= [ 2 ]]

@@ -11,6 +11,8 @@ var enemies : Array
 var enemy_generators : Array
 var player_generators : Array
 
+var ime : String = ""
+
 func _process(delta):
 	pass#print(enemy_generators)
 

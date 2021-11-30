@@ -1,6 +1,8 @@
 extends Node2D
 class_name BulletGenerator
 
+signal shot
+
 
 enum TARGETS {
 	PLAYER,

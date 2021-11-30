@@ -2,6 +2,8 @@ extends Enemy
 
 var damage : float = 70
 
+export var explosion_sound : AudioStream
+
 var exploded : bool = false
 
 func _physics_process(delta):
@@ -17,14 +19,16 @@ func _handle_movement(delta):
 			movement_speed = 300
 			if dist < 120 and not exploded:
 				explode()
+				SFX.play_sound(explosion_sound)
 
 func explode():
+	print("EXPLODE")
 	exploded = true
-	yield(get_tree().create_timer(0.2,false),"timeout")
+	yield(get_tree().create_timer(0.5,false),"timeout")
 	if Global.player.global_position.distance_to(global_position) < 70:
 		Global.player.hit(damage,self)
-		var particles = preload("res://Particles/LukEksplozijaParticles.tscn").instance()
-		particles.global_position = global_position
-		get_parent().add_child(particles)
-		yield(get_tree(),"idle_frame")
-		death(self)
+	var particles = preload("res://Particles/LukEksplozijaParticles.tscn").instance()
+	particles.global_position = global_position
+	get_parent().add_child(particles)
+	yield(get_tree(),"idle_frame")
+	death(self)

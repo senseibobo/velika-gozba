@@ -14,13 +14,13 @@ HZS 4.0 domaci<br/>
 -kod za bossove<br/>
 -muzika za levele<br/>
 -ui u levelima(hp?)<br/>
--highscore sistem<br/>
+<strike>-highscore sistem<br/></strike>
 <strike>-baza podataka<br/></strike>
 <strike>-singleton<br/></strike>
 <strike>-music-singleton<br/></strike>
 <strike>-shaderi<br/></strike>
 -level select screen<br/>
--about<br/>
+<strike>-about<br/></strike>
 -settings<br/>
 -difficulty<br/>
 !------------------------------------------------------------------------!<br/>

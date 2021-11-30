@@ -4,7 +4,7 @@ extends Boss
 var velocity : Vector2 = Vector2(500,0)
 export var steer_speed : float = 0.5
 
-func _process(delta):
+func _physics_process(delta):
 	_handle_movement(delta)
 
 func _handle_movement(delta):

@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemies/Enemy.gd"
+}, {
+"base": "Camera2D",
+"class": "WorldCamera",
+"language": "GDScript",
+"path": "res://Tools/WorldCamera.gd"
 } ]
 _global_script_class_icons={
 "Boss": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "BulletGenerator": "",
 "Character": "",
 "DeflectGenerator": "",
-"Enemy": ""
+"Enemy": "",
+"WorldCamera": ""
 }
 
 [application]

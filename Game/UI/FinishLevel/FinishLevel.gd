@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 export var cc_path : NodePath
@@ -8,6 +8,11 @@ onready var cc = get_node(cc_path)
 onready var highscores_node = get_node(highscores_path)
 
 func _ready():
+	var tween = Tween.new()
+	add_child(tween)
+	tween.connect("tween_all_completed",tween,"queue_free")
+	tween.interpolate_property(cc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.4,Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
+	tween.start()
 	Web.request_highscores(self,"on_highscores_received")
 
 func on_highscores_received(result, response_code, headers, body):

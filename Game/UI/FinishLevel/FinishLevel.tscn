@@ -16,14 +16,8 @@ outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[node name="FinishLevel" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 3 )
+[node name="FinishLevel" type="CanvasLayer"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 cc_path = NodePath("CenterContainer")
 highscores_path = NodePath("CenterContainer/vb/highscores")
 
@@ -31,6 +25,7 @@ highscores_path = NodePath("CenterContainer/vb/highscores")
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 640, 360 )
+theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

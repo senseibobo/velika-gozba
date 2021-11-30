@@ -8,15 +8,22 @@ onready var animationplayer : AnimationPlayer = object.get_node("AnimationPlayer
 onready var animationtree : AnimationNodeStateMachinePlayback = object.get_node("AnimationTree").get("parameters/playback")
 
 var deflect_generator : BulletGenerator = DeflectGenerator.new()
+var frozen : bool = false
+
 
 func _ready():
+	var camera = WorldCamera.new()
+	add_child(camera)
+	camera.target_node = self
 	add_child(deflect_generator)
 	Global.player = self
 	var hud = preload("res://UI/HUD/HUD.tscn").instance()
 	get_tree().current_scene.call_deferred("add_child",hud)
 	LevelManager.call_deferred("start_level",1)
 
-func _process(delta):
+
+func _physics_process(delta):
+	if frozen: return
 	if animationtree.get_current_node() in ["run","idle"]:
 		_handle_movement()
 		_handle_animations()

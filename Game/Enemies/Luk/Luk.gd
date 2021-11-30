@@ -27,4 +27,4 @@ func explode():
 		particles.global_position = global_position
 		get_parent().add_child(particles)
 		yield(get_tree(),"idle_frame")
-		queue_free()
+		death(self)

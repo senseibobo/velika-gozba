@@ -69,6 +69,7 @@ func deflect_bullets(pos):
 
 func hit_enemies(pos):
 	for enemy in Global.enemies:
+		if not is_instance_valid(enemy): continue
 		if enemy.global_position.distance_to(pos) < basic_attack_radius + enemy.hitbox_radius:
 			enemy.hit(basic_attack_damage,self)
 

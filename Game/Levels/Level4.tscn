@@ -19,7 +19,7 @@ tile_data = PoolIntArray( -1376278, 8, 0, -1376277, 8, 0, -1376276, 8, 0, -13762
 [node name="Elements" type="Node2D" parent="."]
 
 [node name="Player" parent="Elements" instance=ExtResource( 4 )]
-position = Vector2( 401, 381 )
+position = Vector2( 391, 124 )
 
 [node name="kaktus" parent="Elements" instance=ExtResource( 3 )]
 position = Vector2( -980, -561 )
@@ -178,4 +178,4 @@ position = Vector2( -276, 563 )
 position = Vector2( 1134, 577 )
 
 [node name="Paja" parent="Elements" instance=ExtResource( 6 )]
-position = Vector2( 393, -377 )
+position = Vector2( 391, -303 )

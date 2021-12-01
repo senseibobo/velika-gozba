@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Textures/PajaPitaja/glava.png" type="Texture" id=1]
 [ext_resource path="res://Textures/PajaPitaja/bullet.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Bosses/Paja/Paja.gd" type="Script" id=3]
 [ext_resource path="res://Enemies/Bosses/Paja/Napad1Generator.gd" type="Script" id=4]
+[ext_resource path="res://Enemies/Bosses/Paja/Napad2Generator.gd" type="Script" id=5]
 [ext_resource path="res://UI/HUD/Healthbar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/MainTheme.theme" type="Theme" id=7]
 [ext_resource path="res://Fonts/Modak-Regular.ttf" type="DynamicFontData" id=8]
@@ -16,6 +17,7 @@
 [ext_resource path="res://Enemies/Bosses/Paja/Paja1napad.anim" type="Animation" id=15]
 [ext_resource path="res://Enemies/Bosses/Paja/Paja2napad.anim" type="Animation" id=16]
 [ext_resource path="res://Enemies/Bosses/Paja/Paja3napad.anim" type="Animation" id=17]
+[ext_resource path="res://Enemies/Bosses/Paja/Napad3Generator.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -311,7 +313,7 @@ tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/28/type = "value"
 tracks/28/path = NodePath("desni arm4:visible")
@@ -323,7 +325,7 @@ tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/29/type = "value"
 tracks/29/path = NodePath("../Napad1Generator:shooting")
@@ -332,6 +334,30 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("../Napad2Generator:shooting")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("../Napad3Generator:shooting")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -368,12 +394,14 @@ font_data = ExtResource( 8 )
 [node name="Paja" type="KinematicBody2D"]
 script = ExtResource( 3 )
 max_health = 2000.0
-hitbox_radius = 16.0
+movement_speed = 200.0
+hitbox_radius = 70.0
 
 [node name="Sprite" type="Node2D" parent="."]
 scale = Vector2( 0.2, 0.2 )
 
 [node name="desni arm4" type="Sprite" parent="Sprite"]
+visible = false
 position = Vector2( -85, -645 )
 texture = ExtResource( 9 )
 offset = Vector2( -307, -222 )
@@ -416,6 +444,7 @@ rotation = -0.312414
 scale = Vector2( 5, 5 )
 
 [node name="left ruka2" type="Sprite" parent="Sprite"]
+visible = false
 position = Vector2( 105, -640 )
 texture = ExtResource( 10 )
 offset = Vector2( 288, -57 )
@@ -435,14 +464,41 @@ anims/idle = ExtResource( 12 )
 
 [node name="Napad1Generator" type="Node2D" parent="."]
 script = ExtResource( 4 )
-shot_interval = 0.2
-speed = 150.0
+shot_interval = 0.3
+speed = 300.0
 life_time = 10.0
 texture = ExtResource( 2 )
 bullet_size = Vector2( 16, 40 )
 shooting = false
-shot_count = 3
+shot_count = 2
 cone_angle = 90.0
+
+[node name="Napad2Generator" type="Node2D" parent="."]
+script = ExtResource( 5 )
+damage = 10.0
+count = 5
+shot_interval = 0.4
+speed = 300.0
+life_time = 10.0
+texture = ExtResource( 2 )
+bullet_size = Vector2( 16, 40 )
+shooting = false
+shot_delay = 0.02
+shot_count = 3
+cone_angle = 120.0
+
+[node name="Napad3Generator" type="Node2D" parent="."]
+script = ExtResource( 18 )
+damage = 1.5
+count = 30
+shot_interval = 0.03
+speed = 1250.0
+texture = ExtResource( 2 )
+bullet_size = Vector2( 16, 40 )
+shooting = false
+shot_count = 1
+rand_offset = Vector2( 35, 100 )
+rand_dir = 0.12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2 )

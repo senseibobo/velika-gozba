@@ -28,3 +28,4 @@ func play_sound(sound, from = 0.0):
 	else: audio_player.stream = sfx[sound]
 	audio_player.play(from)
 	audio_player.connect("finished",audio_player,"queue_free")
+	return audio_player

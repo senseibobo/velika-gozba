@@ -54,6 +54,7 @@ func start_level():
 		finish.connect("body_entered",self,"finish_level")
 
 func finish_level(body) -> void:
+	Global.in_game = false
 	LevelManager.level += 1
 	Save.save_game()
 	Global.player.frozen = true

@@ -9,7 +9,7 @@ var is_pausing : bool = false
 var is_unpausing : bool = false
 
 func _unhandled_key_input(event):
-	if not Global.in_menu and event.scancode == 16777217 and not is_pausing and not is_unpausing:
+	if (Global.in_game or (not Global.in_menu and get_tree().paused)) and not Global.in_menu and event.scancode == 16777217 and not is_pausing and not is_unpausing:
 		if not get_tree().paused:
 			pause()
 		else:

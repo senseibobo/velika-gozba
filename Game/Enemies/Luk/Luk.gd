@@ -5,7 +5,7 @@ var damage : float = 70
 export var explosion_sound : AudioStream
 
 var exploded : bool = false
-
+var s = null
 func _physics_process(delta):
 	_handle_movement(delta)
 
@@ -19,7 +19,7 @@ func _handle_movement(delta):
 			movement_speed = 300
 			if dist < 120 and not exploded:
 				explode()
-				SFX.play_sound(explosion_sound)
+				s = SFX.play_sound(explosion_sound)
 
 func explode():
 	exploded = true
@@ -31,3 +31,11 @@ func explode():
 	get_parent().add_child(particles)
 	yield(get_tree(),"idle_frame")
 	death(self)
+
+func death(source):
+	if source == self:
+		pass
+	elif is_instance_valid(s):
+		s.queue_free()
+		SFX.play_sound(death_sound)
+	.death(source)

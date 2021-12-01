@@ -59,9 +59,10 @@ func _process_shooting(delta) -> void:
 	while shooting and time > shot_interval:
 		time -= shot_interval
 		for i in count:
-			shoot()
-			if shot_delay != 0.0:
-				yield(get_tree().create_timer(shot_delay),"timeout")
+			if shooting:
+				shoot()
+				if shot_delay != 0.0:
+					yield(get_tree().create_timer(shot_delay),"timeout")
 
 func _process_bullets(delta) -> void:
 	var erased_bullets : Array = []

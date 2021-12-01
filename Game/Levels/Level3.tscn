@@ -1031,6 +1031,9 @@ position = Vector2( 17800, -735 )
 [node name="Luk2" parent="Elements" instance=ExtResource( 7 )]
 position = Vector2( 3876, 642 )
 
+[node name="Luk12" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 156, 722 )
+
 [node name="LevelFinish" type="Area2D" parent="."]
 position = Vector2( 21104, -1007 )
 collision_layer = 0

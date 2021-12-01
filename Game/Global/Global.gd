@@ -24,6 +24,9 @@ var in_menu : bool = false
 var difficulty : int = 1
 var volume : float = 0.0
 
+func _ready():
+	randomize()
+
 func get_all_bullets() -> Array:
 	var arr : Array = []
 	arr.append_array(get_player_bullets())

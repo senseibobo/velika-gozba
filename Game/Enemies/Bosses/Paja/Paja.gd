@@ -3,7 +3,7 @@ extends Boss
 var attack_timer : float = 2.0
 var attack_cooldown : float = 1.5
 var attacking : bool = false
-var current_attack : int = -1
+var current_attack : int = 2
 var rand_location : Vector2
 
 onready var animationplayer : AnimationPlayer = $Sprite/AnimationPlayer
@@ -30,7 +30,7 @@ func _physics_process(delta):
 			1: _physics_process_attack2(delta)
 
 func attack():
-	current_attack = int(max(current_attack+randi()%3,0))%3
+	current_attack = (current_attack+1+randi()%2)%3
 	attacking = true
 	animationplayer.play(str(current_attack+1)+"napad")
 	rand_location = Vector2(rand_range(-440,1270),rand_range(-700,-200))

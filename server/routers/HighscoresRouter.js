@@ -37,7 +37,10 @@ router.post("/", (req, res) => {
       .toArray((err, result) => {
         if (result && result[0]) {
           if (result[0].score < req.body.score) {
-            db.highscores.deleteOne({ name: req.body.name });
+            db.highscores.deleteOne({
+              name: req.body.name,
+              level: req.body.level,
+            });
             db.highscores.insertOne(highscore);
           }
         } else {

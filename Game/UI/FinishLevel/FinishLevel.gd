@@ -14,7 +14,7 @@ func _ready():
 	tween.interpolate_property(cc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.4,Tween.TRANS_CUBIC,Tween.EASE_IN_OUT)
 	tween.start()
 	Web.request_highscores(LevelManager.level,self,"on_highscores_received")
-	if LevelManager.level >= LevelManager.level_count:
+	if LevelManager.level > LevelManager.level_count:
 		$CenterContainer/vb/LevelComplete.text = "Well Done!"
 		$CenterContainer/vb/NextLevel.text = "Return to menu"
 		$CenterContainer/vb/NextLevel.disconnect("pressed",self,"_on_NextLevel_pressed")

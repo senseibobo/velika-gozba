@@ -893,9 +893,6 @@ position = Vector2( 10665, 664 )
 [node name="Paradajz9" parent="Elements" instance=ExtResource( 6 )]
 position = Vector2( 14384, 178 )
 
-[node name="Paradajz13" parent="Elements" instance=ExtResource( 6 )]
-position = Vector2( 14384, 178 )
-
 [node name="Paradajz24" parent="Elements" instance=ExtResource( 6 )]
 position = Vector2( 14072, 370 )
 

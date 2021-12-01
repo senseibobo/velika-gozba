@@ -81,6 +81,7 @@ play_container_path = NodePath("CenterContainer/PlayContainer")
 art_container_path = NodePath("CenterContainer/ArtContainer")
 select_container_path = NodePath("CenterContainer/SelectContainer")
 settings_container_path = NodePath("CenterContainer/SettingsContainer")
+menu_offset = null
 
 [node name="Background" type="TextureRect" parent="."]
 show_behind_parent = true

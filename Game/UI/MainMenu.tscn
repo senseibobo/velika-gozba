@@ -127,7 +127,6 @@ __meta__ = {
 }
 
 [node name="MenuContainer" type="VBoxContainer" parent="CenterContainer"]
-visible = false
 margin_left = -630.0
 margin_top = -338.0
 margin_right = 629.0
@@ -433,8 +432,8 @@ margin_bottom = 139.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/AboutUsContainer"]
-margin_right = 240.0
-margin_bottom = 80.0
+margin_right = 344.0
+margin_bottom = 167.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 text = "By Marinovi Sledbenici
@@ -446,9 +445,9 @@ align = 1
 uppercase = true
 
 [node name="AboutUsBack" type="Button" parent="CenterContainer/AboutUsContainer"]
-margin_top = 112.0
-margin_right = 240.0
-margin_bottom = 192.0
+margin_top = 199.0
+margin_right = 344.0
+margin_bottom = 279.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 focus_mode = 0
@@ -502,7 +501,7 @@ margin_bottom = 96.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/SFXContainter"]
-margin_right = 240.0
+margin_right = 301.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
@@ -512,7 +511,7 @@ uppercase = true
 
 [node name="SFXBack" type="Button" parent="CenterContainer/SFXContainter"]
 margin_top = 112.0
-margin_right = 240.0
+margin_right = 301.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
@@ -530,8 +529,8 @@ margin_bottom = 122.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/ArtContainer"]
-margin_right = 240.0
-margin_bottom = 80.0
+margin_right = 621.0
+margin_bottom = 133.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 text = "Art by nikola jankovic
@@ -542,9 +541,50 @@ align = 1
 uppercase = true
 
 [node name="ArtBack" type="Button" parent="CenterContainer/ArtContainer"]
-margin_top = 112.0
-margin_right = 240.0
-margin_bottom = 192.0
+margin_top = 165.0
+margin_right = 621.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 120, 40 )
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Back"
+
+[node name="StoryContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+margin_left = -600.0
+margin_top = -293.0
+margin_right = 600.0
+margin_bottom = 292.0
+custom_constants/separation = 32
+
+[node name="Credits" type="Label" parent="CenterContainer/StoryContainer"]
+margin_right = 1200.0
+margin_bottom = 473.0
+rect_min_size = Vector2( 240, 80 )
+rect_pivot_offset = Vector2( 120, 40 )
+text = "Petar le Fishe je uticajni kuvar iz Pekograda koji uobičajeno provodi vreme na poslu. 
+Dolazi kralj “Pekarskog“ carstva koji mu naredjuje da spremi najbolju gozbu koju je svet
+ ikada video, ali želi da tu gozbu Petar napravi od “čarobnih namirnica“. 
+Ali tu postoji jedan problem. Te čarobne namirnice su najopasnija bića na svetu i 
+oni se nalaze u “Zmajevom“ vrtu. Naime, dok je Petar išao u pohod na namirnice, 
+njegov dolazak je osetio Paja (\"Zmaj). Paja šalje svoje vojnike sa generalom Narinom na čelu, da ga uhvate i zarobe. 
+Posle toga, sve je za njega postalo crno. Nakon nekog vremena, probudio se u sasvim nepoznatom mestu. 
+To je bila tamnica povrća. Pošto je Petar bio veoma arogantan i 
+agresivan čovek, voleo je da provocira, te su mu za kaznu odsekli nogu. 
+Uspeo je da pobegne iz ćelije i krenuo je ka potencijalnom izlazu. Na samom izlazu, našao je jednu staru viljušku 
+koju je iskoristio da “napravi” sebi nogu.
+Petar se tako odvažno i hrabro probija kroz horde čarobnih namirnica
+ kako bi dobio ono po šta je došao.
+"
+align = 1
+uppercase = true
+
+[node name="StoryBack" type="Button" parent="CenterContainer/StoryContainer"]
+margin_top = 505.0
+margin_right = 1200.0
+margin_bottom = 585.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 focus_mode = 0
@@ -578,3 +618,4 @@ text = "Back"
 [connection signal="pressed" from="CenterContainer/MusicContainer/MusicBack" to="." method="change_menu" binds= [ 3 ]]
 [connection signal="pressed" from="CenterContainer/SFXContainter/SFXBack" to="." method="change_menu" binds= [ 3 ]]
 [connection signal="pressed" from="CenterContainer/ArtContainer/ArtBack" to="." method="change_menu" binds= [ 3 ]]
+[connection signal="pressed" from="CenterContainer/StoryContainer/StoryBack" to="." method="change_menu" binds= [ 0 ]]

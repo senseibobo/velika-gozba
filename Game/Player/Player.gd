@@ -93,5 +93,6 @@ func hit(damage,source):
 func death(source):
 	var deathscreen = preload("res://UI/FinishLevel/DeathScreen.tscn").instance()
 	get_tree().current_scene.add_child(deathscreen)
+	animationtree.travel("death")
 	frozen = true
 	#play animation

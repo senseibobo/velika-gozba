@@ -543,6 +543,7 @@ movement_speed = 350.0
 object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
+rotation = 0.0345936
 scale = Vector2( 0.16, 0.16 )
 
 [node name="potins" type="Sprite" parent="Object"]

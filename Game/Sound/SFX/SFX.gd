@@ -3,6 +3,7 @@ extends Node
 enum {
 	TIGANJ1,
 	TIGANJ2,
+	SERPA,
 	DEFLECT,
 	PLAYERHIT1,
 	PLAYERHIT2,
@@ -12,6 +13,7 @@ enum {
 var sfx = [
 	preload("res://Sound/SFX/tiganj1.ogg"),
 	preload("res://Sound/SFX/tiganj2.ogg"),
+	preload("res://Sound/SFX/serpa.ogg"),
 	preload("res://Sound/SFX/deflect.ogg"),
 	preload("res://Sound/SFX/bol1.ogg"),
 	preload("res://Sound/SFX/bol2.ogg"),

@@ -55,9 +55,13 @@ func _handle_attack():
 func attack():
 	var pos = object.get_node("attack/tiganj").global_position
 	var deflected = deflect_bullets(pos)
-	hit_enemies(pos)
+	hit_enemies(pos,basic_attack_radius)
 	if deflected: SFX.play_sound(SFX.DEFLECT)
 	else: SFX.play_sound(SFX.TIGANJ1 + randi()%2)
+
+func pound():
+	SFX.play_sound(SFX.SERPA)
+	hit_enemies(global_position,basic_attack_radius*2.0)
 
 func deflect_bullets(pos):
 	var deflected = false
@@ -70,10 +74,10 @@ func deflect_bullets(pos):
 	return deflected
 			
 
-func hit_enemies(pos):
+func hit_enemies(pos,radius):
 	for enemy in Global.enemies:
 		if not is_instance_valid(enemy): continue
-		if enemy.global_position.distance_to(pos) < basic_attack_radius + enemy.hitbox_radius:
+		if enemy.global_position.distance_to(pos) < radius + enemy.hitbox_radius:
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):

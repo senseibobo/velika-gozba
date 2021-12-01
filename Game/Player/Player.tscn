@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -17,9 +17,10 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
 [ext_resource path="res://Player/Player.gd" type="Script" id=16]
 [ext_resource path="res://Animations/Player/stagger.anim" type="Animation" id=17]
-[ext_resource path="res://Animations/Player/Playerpound.anim" type="Animation" id=18]
+[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=18]
 [ext_resource path="res://Textures/Player/attack/pot outside.png" type="Texture" id=19]
 [ext_resource path="res://Textures/Player/attack/pot inside.png" type="Texture" id=20]
+[ext_resource path="res://Animations/Player/Playerpound.anim" type="Animation" id=21]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "RESET"
@@ -490,50 +491,6 @@ tracks/39/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
-tracks/40/type = "value"
-tracks/40/path = NodePath("pot2:visible")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/41/type = "value"
-tracks/41/path = NodePath("potins:visible")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/42/type = "bezier"
-tracks/42/path = NodePath("pot2:position:x")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
-tracks/43/type = "bezier"
-tracks/43/path = NodePath("pot2:position:y")
-tracks/43/interp = 1
-tracks/43/loop_wrap = true
-tracks/43/imported = false
-tracks/43/enabled = true
-tracks/43/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
-}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 46, 13 )
@@ -554,12 +511,12 @@ position = Vector2( 0, -212.5 )
 texture = ExtResource( 20 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 140, -48 )
-texture = ExtResource( 5 )
+position = Vector2( 140.053, -48 )
+texture = ExtResource( 18 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -136, -53 )
+position = Vector2( -136.064, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -567,42 +524,45 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -383 )
+position = Vector2( 224, -382.842 )
+rotation = -0.000487979
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -375 )
+position = Vector2( 0, -374.842 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -545 )
+position = Vector2( -57, -544.847 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -537 )
+position = Vector2( -260, -536.842 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -339 )
+position = Vector2( -266, -338.842 )
+rotation = 0.000348927
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -566.327 )
+position = Vector2( 51, -566.174 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
 tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 14 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
 anims/RESET = SubResource( 1 )
 anims/attack = ExtResource( 11 )
 anims/idle = ExtResource( 9 )
-anims/pound = ExtResource( 18 )
+anims/pound = ExtResource( 21 )
 anims/run = ExtResource( 10 )
 anims/stagger = ExtResource( 17 )
 

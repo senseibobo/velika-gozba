@@ -5,7 +5,6 @@ var level : int = 1
 
 const level_count : int = 2
 
-<<<<<<< HEAD
 const music_names_per_level = [
 	"byebyebrain",
 	"sillyintro",
@@ -21,17 +20,10 @@ const music_per_level = [
 
 func start_level():
 	Music.play_music(music_names_per_level[level-1],music_per_level[level-1])
-	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
-	var tilemap = level_scene.get_node("TileMap")
-	var elements = level_scene.get_node("Elements")
-	var finish : Area2D = level_scene.get_node("LevelFinish")
-=======
-func start_level() -> void:
 	var level_scene : Node = load("res://Levels/Level"+str(level)+".tscn").instance()
 	var tilemap : TileMap = level_scene.get_node("TileMap")
 	var elements : Node = level_scene.get_node("Elements")
 	var finish : Area2D = level_scene.get_node_or_null("LevelFinish")
->>>>>>> 48f3fdce17c008b6c2615db7d2fec1e988b5b6da
 	tilemap.z_index = -20
 	level_scene.remove_child(tilemap)
 	get_tree().current_scene.add_child(tilemap)

@@ -11,6 +11,7 @@ enum VCONTAINER{
 	ART, #7
 	SELECT, #8
 	SETTINGS, #9
+	STORY, #10
 	
 }
 
@@ -28,6 +29,7 @@ export var play_container_path : NodePath
 export var art_container_path : NodePath
 export var select_container_path : NodePath
 export var settings_container_path : NodePath
+export var story_container_path : NodePath
 
 onready var paja_texture : TextureRect = get_node(paja_texture_path)
 onready var petar_texture : TextureRect = get_node(petar_texture_path)
@@ -43,6 +45,7 @@ onready var playc : VBoxContainer = get_node(play_container_path)
 onready var artc : VBoxContainer = get_node(art_container_path)
 onready var selectc : VBoxContainer = get_node(select_container_path)
 onready var settingsc : VBoxContainer = get_node(settings_container_path)
+onready var storyc : VBoxContainer = get_node(story_container_path)
 
 export var menu_offset : Vector2 = Vector2(0,120)
 
@@ -122,6 +125,7 @@ func _update_visible() -> void:
 	artc.visible = visible_container == VCONTAINER.ART
 	selectc.visible = visible_container == VCONTAINER.SELECT
 	settingsc.visible = visible_container == VCONTAINER.SETTINGS
+	storyc.visible = visible_container == VCONTAINER.STORY
 	_update_offset()
 
 func _update_offset() -> void:
@@ -162,6 +166,7 @@ func on_menu_change(new_menu) -> void:
 		VCONTAINER.ART: c = artc.get_children()
 		VCONTAINER.SELECT: c = selectc.get_children()
 		VCONTAINER.SETTINGS: c = settingsc.get_children()
+		VCONTAINER.STORY: c = storyc.get_children()
 	_update_visible()
 	var tween : Tween = Tween.new()
 	add_child(tween)

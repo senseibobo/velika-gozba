@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -17,10 +17,12 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
 [ext_resource path="res://Player/Player.gd" type="Script" id=16]
 [ext_resource path="res://Animations/Player/stagger.anim" type="Animation" id=17]
-[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=18]
 [ext_resource path="res://Textures/Player/attack/pot outside.png" type="Texture" id=19]
 [ext_resource path="res://Textures/Player/attack/pot inside.png" type="Texture" id=20]
 [ext_resource path="res://Animations/Player/Playerpound.anim" type="Animation" id=21]
+[ext_resource path="res://Textures/Player/attack/splash.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Player/attack/hit.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Player/attack/swosh.png" type="Texture" id=24]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "RESET"
@@ -30,6 +32,9 @@ animation = "attack"
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "pound"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "run"
@@ -61,19 +66,30 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=13]
 states/RESET/node = SubResource( 3 )
-states/RESET/position = Vector2( 239, 167 )
+states/RESET/position = Vector2( 82, 264 )
 states/attack/node = SubResource( 4 )
-states/attack/position = Vector2( 486, 300 )
+states/attack/position = Vector2( 423, 280 )
 states/idle/node = SubResource( 5 )
-states/idle/position = Vector2( 877, 175 )
+states/idle/position = Vector2( 509, 122 )
+states/pound/node = SubResource( 19 )
+states/pound/position = Vector2( 423, 325 )
 states/run/node = SubResource( 6 )
-states/run/position = Vector2( 380, 57 )
+states/run/position = Vector2( 503, 434 )
 states/stagger/node = SubResource( 15 )
-states/stagger/position = Vector2( 692, 47 )
-transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ) ]
+states/stagger/position = Vector2( 423, 233 )
+transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ), "run", "pound", SubResource( 20 ), "idle", "pound", SubResource( 21 ), "pound", "RESET", SubResource( 22 ) ]
 start_node = "RESET"
+graph_offset = Vector2( -139, 118 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
@@ -491,6 +507,30 @@ tracks/39/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("pot2:visible")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("potins:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 46, 13 )
@@ -510,13 +550,17 @@ visible = false
 position = Vector2( 0, -212.5 )
 texture = ExtResource( 20 )
 
+[node name="smash" type="Sprite" parent="Object/potins"]
+position = Vector2( 6.25, 437.5 )
+texture = ExtResource( 22 )
+
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 140.053, -48 )
-texture = ExtResource( 18 )
+position = Vector2( 140, -48 )
+texture = ExtResource( 5 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -136.064, -53 )
+position = Vector2( -136, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -524,32 +568,30 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -382.842 )
-rotation = -0.000487979
+position = Vector2( 224, -383 )
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -374.842 )
+position = Vector2( 0, -375 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -544.847 )
+position = Vector2( -57, -545 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -536.842 )
+position = Vector2( -260, -537 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -338.842 )
-rotation = 0.000348927
+position = Vector2( -266, -339 )
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -566.174 )
+position = Vector2( 51, -566.327 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
@@ -569,6 +611,16 @@ anims/stagger = ExtResource( 17 )
 [node name="pot2" type="Sprite" parent="Object"]
 visible = false
 texture = ExtResource( 19 )
+
+[node name="swosh" type="Sprite" parent="Object/pot2"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 306.25 )
+texture = ExtResource( 24 )
+
+[node name="hit" type="Sprite" parent="Object/pot2"]
+position = Vector2( 175, 87.5 )
+texture = ExtResource( 23 )
 
 [node name="attack" type="Node2D" parent="Object"]
 visible = false

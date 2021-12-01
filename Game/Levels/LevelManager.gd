@@ -1,7 +1,10 @@
 extends Node
 
-var score : float = 200.0
+var score_multiplier : float = 1.0
+var score : float = 0.0
 var level : int = 1
+var score_timer : float = 5.0
+var score_drop_time : float = 5.0
 
 const level_count : int = 2
 
@@ -17,6 +20,19 @@ const music_per_level = [
 	preload("res://Sound/Music/Countdown.ogg"),
 ]
 
+func add_score(amount):
+	score += amount*score_multiplier
+	score_timer = score_drop_time
+
+func add_score_multiplier(amount):
+	score_multiplier += amount
+	score_timer = score_drop_time
+
+func _process(delta):
+	print(score_timer)
+	score_timer -= delta
+	if score_timer <= 0:
+		score_multiplier = 1.0
 
 func start_level():
 	Music.play_music(music_names_per_level[level-1],music_per_level[level-1])

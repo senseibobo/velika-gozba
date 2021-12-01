@@ -49,6 +49,8 @@ func _handle_animations():
 func _handle_attack():
 	if Input.is_action_just_pressed("attack"):
 		animationtree.travel("attack")
+	elif Input.is_action_just_pressed("pound"):
+		animationtree.travel("pound")
 
 func attack():
 	var pos = object.get_node("attack/tiganj").global_position
@@ -64,6 +66,7 @@ func deflect_bullets(pos):
 			bullet.generator.bullets.erase(bullet)
 			deflect_generator.add_bullet(bullet)
 			deflected = true
+			LevelManager.add_score_multiplier(0.01)
 	return deflected
 			
 
@@ -74,7 +77,9 @@ func hit_enemies(pos):
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):
+	damage *= 1+Global.difficulty/4.0
 	if animationtree.get_current_node() == "stagger": return
-	elif animationtree.get_current_node() in ["run","idle"]: animationtree.travel("stagger")
+	elif animationtree.get_current_node() in ["run","idle"]: 
+		animationtree.travel("stagger")
 	.hit(damage,source)
 	SFX.play_sound(SFX.PLAYERHIT1 + randi()%3)

@@ -1121,9 +1121,6 @@ position = Vector2( 10078, 1246 )
 [node name="Krastavac6" parent="Elements" instance=ExtResource( 1 )]
 position = Vector2( 10498, 691 )
 
-[node name="Krastavac7" parent="Elements" instance=ExtResource( 1 )]
-position = Vector2( 10498, 691 )
-
 [node name="Krastavac9" parent="Elements" instance=ExtResource( 1 )]
 position = Vector2( 15076, 1476 )
 

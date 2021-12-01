@@ -9,6 +9,8 @@ export var spotted_sound : AudioStream
 export var hitbox_radius : float = 5
 export var aggro_range = 400
 export var deaggro_range = 600
+export var score_reward : float = 30.0
+export var score_multiplier_reward : float = 0.1
 
 onready var sprite : Sprite = get_node("Sprite")
 onready var start_pos : Vector2 = global_position
@@ -20,6 +22,8 @@ var stagger_timer : float = 0.0
 
 
 func _ready():
+	max_health *= 1+(Global.difficulty-1)/3.0
+	health = max_health
 	sprite.set_material(preload("res://Materials/HitFlash.material").duplicate())
 	Global.enemies.append(self)
 
@@ -54,5 +58,8 @@ func death(source):
 		get_parent().add_child(particles)
 		particles.emitting = true
 		particles.global_position = global_position
+	LevelManager.add_score(score_reward)
+	LevelManager.add_score_multiplier(score_multiplier_reward)
+	Global.player.health = min(Global.player.health + 10+(2-Global.difficulty)*5,Global.player.max_health)
 	queue_free()
 	Global.enemies.erase(self)

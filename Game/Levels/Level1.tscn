@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Enemies/Krastavac/Krastavac.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/environment/tekiBeLikwe.png" type="Texture" id=2]
 [ext_resource path="res://World/tree/tree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Paradajz/Paradajz.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Luk/Luk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/bush/bush.tscn" type="PackedScene" id=7]
 
@@ -1143,6 +1144,9 @@ position = Vector2( 15580, 880 )
 
 [node name="Luk2" parent="Elements" instance=ExtResource( 6 )]
 position = Vector2( 9722, 91 )
+
+[node name="Player" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( -212, 489 )
 
 [node name="LevelFinish" type="Area2D" parent="."]
 position = Vector2( 16732, 533 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -24,12 +24,16 @@
 [ext_resource path="res://Textures/Player/attack/splash.png" type="Texture" id=22]
 [ext_resource path="res://Textures/Player/attack/hit.png" type="Texture" id=23]
 [ext_resource path="res://Textures/Player/attack/swosh.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=25]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "RESET"
 
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "attack"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "death"
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "idle"
@@ -75,22 +79,36 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
 [sub_resource type="AnimationNodeStateMachine" id=13]
 states/RESET/node = SubResource( 3 )
 states/RESET/position = Vector2( 82, 264 )
 states/attack/node = SubResource( 4 )
 states/attack/position = Vector2( 423, 280 )
+states/death/node = SubResource( 23 )
+states/death/position = Vector2( 751, 287 )
 states/idle/node = SubResource( 5 )
 states/idle/position = Vector2( 583, 142 )
 states/pound/node = SubResource( 19 )
-states/pound/position = Vector2( 423, 325 )
+states/pound/position = Vector2( 423, 327 )
 states/run/node = SubResource( 6 )
 states/run/position = Vector2( 583, 421 )
 states/stagger/node = SubResource( 15 )
-states/stagger/position = Vector2( 423, 233 )
-transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ), "run", "pound", SubResource( 20 ), "idle", "pound", SubResource( 21 ), "pound", "RESET", SubResource( 22 ) ]
+states/stagger/position = Vector2( 430, 233 )
+transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ), "run", "pound", SubResource( 20 ), "idle", "pound", SubResource( 21 ), "pound", "RESET", SubResource( 22 ), "idle", "death", SubResource( 24 ), "stagger", "death", SubResource( 25 ), "attack", "death", SubResource( 26 ), "pound", "death", SubResource( 27 ), "run", "death", SubResource( 28 ), "pound", "stagger", SubResource( 29 ) ]
 start_node = "RESET"
-graph_offset = Vector2( -139, 118 )
+graph_offset = Vector2( -8, 86 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
@@ -556,12 +574,12 @@ position = Vector2( 6.25, 437.5 )
 texture = ExtResource( 22 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 140, -48 )
-texture = ExtResource( 5 )
+position = Vector2( 140.926, -48 )
+texture = ExtResource( 25 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -136, -53 )
+position = Vector2( -137.111, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -569,30 +587,30 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -383 )
+position = Vector2( 224, -380.266 )
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -375 )
+position = Vector2( 0, -372.266 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -545 )
+position = Vector2( -57, -541.637 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -537 )
+position = Vector2( -260, -534.266 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -339 )
+position = Vector2( -266, -336.266 )
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -566.327 )
+position = Vector2( 51, -555.301 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]

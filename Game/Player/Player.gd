@@ -63,6 +63,7 @@ func attack():
 func pound():
 	SFX.play_sound(SFX.SERPA)
 	hit_enemies(global_position,basic_attack_radius*2.0)
+	animationtree.travel("stagger")
 
 func deflect_bullets(pos):
 	var deflected = false
@@ -82,7 +83,7 @@ func hit_enemies(pos,radius):
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):
-	if frozen or animationtree.get_current_node() in ["stagger","pound"]: return false
+	if frozen or animationtree.get_current_node() in ["pound"]: return false
 	LevelManager.score_multiplier = 1.0
 	damage *= 1+Global.difficulty/4.0
 	if animationtree.get_current_node() in ["run","idle"]: 

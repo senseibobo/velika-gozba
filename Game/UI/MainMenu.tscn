@@ -232,6 +232,7 @@ enabled_focus_mode = 0
 text = "Back"
 
 [node name="SettingsContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
 margin_left = -358.0
 margin_top = -302.0
 margin_right = 357.0
@@ -425,10 +426,10 @@ text = "Back"
 
 [node name="AboutUsContainer" type="VBoxContainer" parent="CenterContainer"]
 visible = false
-margin_left = -120.0
-margin_top = -96.0
-margin_right = 120.0
-margin_bottom = 96.0
+margin_left = -172.0
+margin_top = -140.0
+margin_right = 172.0
+margin_bottom = 139.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/AboutUsContainer"]
@@ -436,7 +437,11 @@ margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "ko ovo uopste cita"
+text = "By Marinovi Sledbenici
+Bogdan Jocić aka SenseiBobo
+Mihajlo Ranđelović aka mikikupus
+Nikola Janković aka klipik_rez
+Todor Petrović aka Lajsna00"
 align = 1
 uppercase = true
 
@@ -453,30 +458,34 @@ text = "Back"
 
 [node name="MusicContainer" type="VBoxContainer" parent="CenterContainer"]
 visible = false
-margin_left = -214.0
-margin_top = -157.0
-margin_right = 214.0
-margin_bottom = 156.0
+margin_left = -303.0
+margin_top = -225.0
+margin_right = 303.0
+margin_bottom = 224.0
 custom_constants/separation = 32
 
 [node name="Credits" type="Label" parent="CenterContainer/MusicContainer"]
-margin_right = 428.0
-margin_bottom = 201.0
+margin_right = 606.0
+margin_bottom = 337.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
 text = "Le Baguette by Alexander Nakarada 
-
+Bye, Bye Brain! by Alexander Nakarada 
 Silly INTRO BY ALEXANDER NAKARADA
-
+Countdown by Alexander Nakarada
 The Great Battle by Alexander Nakarada 
-"
+-------------------------------------------------------------
+https://www.serpentsoundstudios.com/
+Music promoted by https://www.chosic.com/free-music/all/
+Creative Commons CC BY 4.0
+https://creativecommons.org/licenses/by/4.0/"
 align = 1
 uppercase = true
 
 [node name="MusicBack" type="Button" parent="CenterContainer/MusicContainer"]
-margin_top = 233.0
-margin_right = 428.0
-margin_bottom = 313.0
+margin_top = 369.0
+margin_right = 606.0
+margin_bottom = 449.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 424, 40 )
 focus_mode = 0
@@ -497,7 +506,7 @@ margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "sfx by randjelovic"
+text = "sfx by mikikupus & SenseiBobo"
 align = 1
 uppercase = true
 
@@ -525,7 +534,10 @@ margin_right = 240.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 240, 80 )
 rect_pivot_offset = Vector2( 120, 40 )
-text = "Art by nikola jankovic"
+text = "Art by nikola jankovic
+___________________________________
+Bread Cursor - Baguette French Cuisine Emoji Bread Food PNG
+by charly75014 from IMGBIN.com"
 align = 1
 uppercase = true
 

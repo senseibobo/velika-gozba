@@ -26,7 +26,7 @@ func _physics_process(delta):
 	if animationtree.get_current_node() in ["run","idle"]:
 		_handle_movement()
 		_handle_animations()
-	_handle_attack()
+		_handle_attack()
 	
 
 func _handle_movement():
@@ -47,6 +47,7 @@ func _handle_animations():
 		animationtree.travel("idle")
 
 func _handle_attack():
+	if frozen: return
 	if Input.is_action_just_pressed("attack"):
 		animationtree.travel("attack")
 	elif Input.is_action_just_pressed("pound"):
@@ -62,6 +63,7 @@ func attack():
 func pound():
 	SFX.play_sound(SFX.SERPA)
 	hit_enemies(global_position,basic_attack_radius*2.0)
+	animationtree.travel("stagger")
 
 func deflect_bullets(pos):
 	var deflected = false
@@ -81,14 +83,14 @@ func hit_enemies(pos,radius):
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):
-	if frozen: return
+	if frozen or animationtree.get_current_node() in ["pound"]: return false
 	LevelManager.score_multiplier = 1.0
 	damage *= 1+Global.difficulty/4.0
-	if animationtree.get_current_node() == "stagger": return
-	elif animationtree.get_current_node() in ["run","idle"]: 
+	if animationtree.get_current_node() in ["run","idle"]: 
 		animationtree.travel("stagger")
 	.hit(damage,source)
 	SFX.play_sound(SFX.PLAYERHIT1 + randi()%3)
+	return true
 
 func death(source):
 	var deathscreen = preload("res://UI/FinishLevel/DeathScreen.tscn").instance()

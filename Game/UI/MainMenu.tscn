@@ -556,6 +556,7 @@ text = "Back"
 [connection signal="pressed" from="CenterContainer/MenuContainer/Settings" to="." method="change_menu" binds= [ 9 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/About" to="." method="change_menu" binds= [ 1 ]]
 [connection signal="pressed" from="CenterContainer/MenuContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CenterContainer/PlayContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="CenterContainer/PlayContainer/New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="CenterContainer/PlayContainer/Select Level" to="." method="change_menu" binds= [ 8 ]]
 [connection signal="pressed" from="CenterContainer/PlayContainer/Back" to="." method="change_menu" binds= [ 0 ]]

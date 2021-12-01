@@ -52,6 +52,8 @@ func start_level():
 		finish.connect("body_entered",self,"finish_level")
 
 func finish_level(body) -> void:
+	LevelManager.level += 1
+	Save.save_game()
 	Global.player.frozen = true
 	Global.player.animationtree.travel("idle")
 	Web.send_highscore(level,score,self,"on_highscore_received")

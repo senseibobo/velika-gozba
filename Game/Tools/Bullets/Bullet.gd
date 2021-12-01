@@ -22,7 +22,7 @@ func check_collision(radius,targets) -> bool:
 		Global.TARGETS.PLAYER:
 			if is_instance_valid(Global.player):
 				var dist_to_player : float = position.distance_to(Global.player.global_position - Vector2(0,height))
-				if dist_to_player < radius:
+				if dist_to_player < radius and Global.player.animationtree.get_current_node() != "pound":
 					Global.player.hit(damage,source)
 					return true
 		Global.TARGETS.ENEMY:

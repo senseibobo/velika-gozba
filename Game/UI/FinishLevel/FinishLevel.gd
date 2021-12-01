@@ -41,5 +41,4 @@ func on_highscores_received(result, response_code, headers, body):
 
 
 func _on_NextLevel_pressed():
-	LevelManager.level += 1
 	get_tree().reload_current_scene()

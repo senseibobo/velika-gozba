@@ -18,6 +18,8 @@ var player_generators : Array
 
 var ime : String = ""
 var in_game : bool = false
+var in_menu : bool = false
+
 
 var difficulty : int = 1
 var volume : float = 0.0

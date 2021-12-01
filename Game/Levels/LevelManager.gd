@@ -6,7 +6,7 @@ var level : int = 1
 var score_timer : float = 5.0
 var score_drop_time : float = 5.0
 
-const level_count : int = 2
+const level_count : int = 3
 
 const music_names_per_level = [
 	"byebyebrain",

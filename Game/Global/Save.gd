@@ -4,7 +4,8 @@ const default_values = {
 	"fullscreen" : false,
 	"difficulty" : Global.DIFFICULTY.MEDIUM,
 	"volume" : -15,
-	"name" : ""
+	"name" : "",
+	"level" : 1
 }
 
 
@@ -16,7 +17,8 @@ func get_save_dict():
 		"fullscreen" : OS.window_fullscreen,
 		"difficulty" : Global.difficulty,
 		"volume" : Global.volume,
-		"name" : Global.ime
+		"name" : Global.ime,
+		"level" : LevelManager.level
 	}
 	return save_dict
 
@@ -44,6 +46,7 @@ func apply_save(save_dict):
 	Global.difficulty = save_dict["difficulty"]
 	Global.volume = save_dict["volume"]
 	Global.ime = save_dict["name"]
+	LevelManager.level = save_dict["level"]
 	var bus = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus,Global.volume)
 	Save.save_game()

@@ -24,8 +24,8 @@ func _physics_process(delta):
 func _check_collision(delta):
 	attack_timer -= delta
 	if attack_timer <= 0 and global_position.distance_to(Global.player.global_position) < attack_range:
-		Global.player.hit(damage,self)
-		attack_timer = attack_interval
+		if Global.player.hit(damage,self):
+			attack_timer = attack_interval
 
 func _handle_movement(delta):
 	var dir : Vector2

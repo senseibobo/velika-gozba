@@ -53,11 +53,14 @@ var ime : String = ""
 
 
 func _ready() -> void:
+	Global.in_menu = true
 	c = mainc.get_children()
 	_update_visible()
 	var mainmusic = preload("res://Sound/Music/LeBaguette-320bit.mp3")
 	Music.stream = mainmusic
 	Music.play()
+	if LevelManager.level == 1:
+		$CenterContainer/PlayContainer/Continue.disabled = true
 
 func _input(event) -> void:
 	if event is InputEventKey and event.pressed:
@@ -181,4 +184,11 @@ func get_all_buttons(node) -> Array:
 
 
 func _on_New_Game_pressed() -> void:
+	LevelManager.level = 1
+	Global.in_menu = false
+	get_tree().change_scene("res://World/World.tscn")
+
+
+func _on_Continue_pressed():
+	Global.in_menu = false
 	get_tree().change_scene("res://World/World.tscn")

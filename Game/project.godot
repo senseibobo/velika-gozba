@@ -70,6 +70,7 @@ LevelManager="*res://Levels/LevelManager.gd"
 SWS="*res://VFX/SWS.tscn"
 Mouse="*res://VFX/Mouse.tscn"
 Save="*res://Global/Save.gd"
+Pause="res://UI/FinishLevel/Pause.tscn"
 
 [display]
 

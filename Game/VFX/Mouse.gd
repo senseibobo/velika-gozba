@@ -4,6 +4,7 @@ var texture : Texture = preload("res://VFX/cursor.png")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pause_mode = PAUSE_MODE_PROCESS
 
 func _process(delta):
 	update()

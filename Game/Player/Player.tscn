@@ -96,16 +96,16 @@ states/attack/position = Vector2( 423, 280 )
 states/death/node = SubResource( 23 )
 states/death/position = Vector2( 751, 287 )
 states/idle/node = SubResource( 5 )
-states/idle/position = Vector2( 509, 122 )
+states/idle/position = Vector2( 583, 142 )
 states/pound/node = SubResource( 19 )
 states/pound/position = Vector2( 423, 325 )
 states/run/node = SubResource( 6 )
-states/run/position = Vector2( 503, 434 )
+states/run/position = Vector2( 583, 421 )
 states/stagger/node = SubResource( 15 )
 states/stagger/position = Vector2( 423, 233 )
 transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ), "run", "pound", SubResource( 20 ), "idle", "pound", SubResource( 21 ), "pound", "RESET", SubResource( 22 ), "idle", "death", SubResource( 24 ), "stagger", "death", SubResource( 25 ), "attack", "death", SubResource( 26 ), "pound", "death", SubResource( 27 ), "run", "death", SubResource( 28 ) ]
 start_node = "RESET"
-graph_offset = Vector2( 14, 14 )
+graph_offset = Vector2( 6, 119 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 

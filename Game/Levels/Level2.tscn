@@ -526,7 +526,7 @@ points = PoolVector2Array( 96, 96, 128, 96, 128, 128, 96, 128 )
 } ]
 21/z_index = 0
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )

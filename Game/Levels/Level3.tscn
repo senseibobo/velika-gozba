@@ -333,7 +333,9 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 [node name="Level3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
 tile_set = SubResource( 14 )
+cell_size = Vector2( 128, 128 )
 format = 1
 
 [node name="Elements" type="Node2D" parent="."]

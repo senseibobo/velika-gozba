@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/ignar nar/ignar nar.png" type="Texture" id=1]
 [ext_resource path="res://Tools/BulletGenerators/ScreenGenerator.gd" type="Script" id=2]
@@ -9,6 +9,24 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 8 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+uniform float health_percentage : hint_range(0,1) = 1.0;
+uniform float healthbar_offset : hint_range(0,0.5) = 0.05;
+uniform vec4 healthbar_color : hint_color;
+
+void fragment() {
+	COLOR = texture(TEXTURE,UV);
+	if(health_percentage+2.0*healthbar_offset < UV.x+(sin(UV.y*9.0+TIME*3.0)/200.0)-healthbar_offset) COLOR.a = 0.0;
+	COLOR.rgb = healthbar_color.rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/health_percentage = 1.0
+shader_param/healthbar_offset = 0.008
+shader_param/healthbar_color = Color( 0.854902, 0, 0, 1 )
 
 [node name="Nar" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -60,6 +78,7 @@ rotation_speed = 1.173
 layer = 10
 
 [node name="Healthbar" parent="CanvasLayer" instance=ExtResource( 6 )]
+material = SubResource( 3 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -51,10 +51,10 @@ Luk<br/>
 !--------------------------------------------------------------------------!<br/>
 <br/>
 !-----------------------MINI BOSS-----------------------------------------!<br/>
-Nar
--Veliki nar koji je zao
--Baca po 5 malih narova
--Proizvodi kišu narova
+Nar<br/>
+-Veliki nar koji je zao<br/>
+-Baca po 5 malih narova<br/>
+-Proizvodi kišu narova<br/>
 !--------------------------------------------------------------------------!<br/>
 <br/>
 !-----------------------GLAVNI BOSS-----------------------------------------!<br/>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Textures/ignar nar/ignar nar.png" type="Texture" id=1]
 [ext_resource path="res://Tools/BulletGenerators/ScreenGenerator.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Textures/Misc/narbullet.png" type="Texture" id=4]
 [ext_resource path="res://Tools/BulletGenerators/ConeGenerator.gd" type="Script" id=5]
 [ext_resource path="res://UI/HUD/Healthbar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/MainTheme.theme" type="Theme" id=7]
+[ext_resource path="res://Fonts/Modak-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 8 )
@@ -27,6 +29,12 @@ shader = SubResource( 2 )
 shader_param/health_percentage = 1.0
 shader_param/healthbar_offset = 0.008
 shader_param/healthbar_color = Color( 0.854902, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
 
 [node name="Nar" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -85,3 +93,20 @@ anchor_bottom = 1.0
 margin_top = -69.0
 margin_right = 0.0
 margin_bottom = 0.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -106.0
+margin_right = 69.0
+margin_bottom = -59.0
+theme = ExtResource( 7 )
+custom_fonts/font = SubResource( 4 )
+text = "Narin"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

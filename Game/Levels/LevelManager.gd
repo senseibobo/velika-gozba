@@ -6,9 +6,9 @@ var level : int = 1
 const level_count : int = 2
 
 func start_level():
-	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
-	var tilemap = level_scene.get_node("TileMap")
-	var elements = level_scene.get_node("Elements")
+	var level_scene : Node = load("res://Levels/Level"+str(level)+".tscn").instance()
+	var tilemap : TileMap = level_scene.get_node("TileMap")
+	var elements : Node = level_scene.get_node("Elements")
 	var finish : Area2D = level_scene.get_node_or_null("LevelFinish")
 	tilemap.z_index = -20
 	level_scene.remove_child(tilemap)

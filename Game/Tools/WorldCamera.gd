@@ -15,6 +15,7 @@ var target_mode : int = NODE
 export var follow_speed : float = 4.0
 
 func _ready():
+	zoom = Vector2(1.5,1.5)
 	set_as_toplevel(true)
 	current = true
 	process_mode = Camera2D.CAMERA2D_PROCESS_PHYSICS

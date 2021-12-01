@@ -21,6 +21,6 @@ shader_param/noise = SubResource( 2 )
 [node name="Bush" type="Sprite"]
 modulate = Color( 0.388235, 0.670588, 0.14902, 1 )
 material = SubResource( 3 )
-position = Vector2( 0, -2.38419e-07 )
+position = Vector2( 0, -20 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 1 )

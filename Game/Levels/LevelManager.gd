@@ -5,7 +5,21 @@ var level : int = 1
 
 const level_count : int = 2
 
+const music_names_per_level = [
+	"byebyebrain",
+	"sillyintro",
+	"countdown",
+]
+
+const music_per_level = [
+	preload("res://Sound/Music/ByeByeBrain320bit.mp3"),
+	preload("res://Sound/Music/alexander-nakarada-silly-intro.mp3"),
+	preload("res://Sound/Music/Countdown.ogg"),
+]
+
+
 func start_level():
+	Music.play_music(music_names_per_level[level-1],music_per_level[level-1])
 	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()
 	var tilemap = level_scene.get_node("TileMap")
 	var elements = level_scene.get_node("Elements")

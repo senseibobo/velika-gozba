@@ -36,7 +36,9 @@ func get_player_bullets():
 func get_enemy_bullets():
 	var arr = []
 	update_enemy_generators()
-	for gen in enemy_generators: arr.append_array(gen.bullets)
+	for gen in enemy_generators:
+		if is_instance_valid(gen):
+			arr.append_array(gen.bullets)
 	return arr
 
 func update_player_generators():

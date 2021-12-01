@@ -26,7 +26,7 @@ func shoot() -> void:
 		var p = i/count * width - ww
 		var q = sin(t) * iw
 		if abs(p-q) < spacing: continue
-		pos.x += p - ww
+		pos.x += p
 		pos += offset
 		pos += Vector2(rand_range(-1,1),rand_range(-1,1)) * rand
 		bullet.velocity = Vector2.DOWN.rotated(rand_range(-rand_angle,rand_angle))*(speed*(1-rand_range(0,rand_speed)))

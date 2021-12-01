@@ -19,6 +19,7 @@ export var texture : Texture = preload("res://icon.png")
 export var bullet_size : Vector2 = Vector2(8,8)
 export var bullet_radius  : float = 32.0
 export var shooting : bool = true setget set_shooting
+export var shot_delay : float = 0.0
 export(TARGETS) var targets : int = TARGETS.PLAYER
 
 var multimeshinstance : MultiMeshInstance2D = MultiMeshInstance2D.new()
@@ -56,9 +57,11 @@ func remove_bullet(bullet) -> void:
 func _process_shooting(delta) -> void:
 	time += delta
 	while shooting and time > shot_interval:
+		time -= shot_interval
 		for i in count:
 			shoot()
-		time -= shot_interval
+			if shot_delay != 0.0:
+				yield(get_tree().create_timer(shot_delay),"timeout")
 
 func _process_bullets(delta) -> void:
 	var erased_bullets : Array = []

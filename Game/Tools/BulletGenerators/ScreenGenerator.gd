@@ -8,7 +8,7 @@ export var spacing : float = 50
 export var rand : Vector2
 export var rand_angle : float = 0.0
 export var offset : Vector2
-
+export(float,0,1) var rand_speed = 0
 var t : float = 0.0
 
 
@@ -29,7 +29,7 @@ func shoot() -> void:
 		pos.x += p - ww
 		pos += offset
 		pos += Vector2(rand_range(-1,1),rand_range(-1,1)) * rand
-		bullet.velocity = Vector2.DOWN.rotated(rand_range(-rand_angle,rand_angle))*speed
+		bullet.velocity = Vector2.DOWN.rotated(rand_range(-rand_angle,rand_angle))*(speed*(1-rand_range(0,rand_speed)))
 		bullet.position = pos
 		add_bullet(bullet)
 	

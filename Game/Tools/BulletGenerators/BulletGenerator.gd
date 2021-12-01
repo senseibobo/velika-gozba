@@ -10,6 +10,7 @@ enum TARGETS {
 }
 
 export var damage : float = 20
+export var count : int = 1
 export var shot_interval : float = 0.1
 export var speed : float = 100.0
 export var life_time : float = 3.0
@@ -17,7 +18,7 @@ export var bullet_script : GDScript = preload("res://Tools/Bullets/Bullet.gd")
 export var texture : Texture = preload("res://icon.png")
 export var bullet_size : Vector2 = Vector2(8,8)
 export var bullet_radius  : float = 32.0
-export var shooting : bool = true
+export var shooting : bool = true setget set_shooting
 export(TARGETS) var targets : int = TARGETS.PLAYER
 
 var multimeshinstance : MultiMeshInstance2D = MultiMeshInstance2D.new()
@@ -25,6 +26,10 @@ var multimesh = MultiMesh.new()
 var mesh : QuadMesh = QuadMesh.new()
 var time : float = 0.0
 var bullets : Array
+
+func set_shooting(value):
+	shooting = value
+	time = 0
 
 func _ready() -> void:
 	match targets:
@@ -51,7 +56,8 @@ func remove_bullet(bullet) -> void:
 func _process_shooting(delta) -> void:
 	time += delta
 	while shooting and time > shot_interval:
-		shoot()
+		for i in count:
+			shoot()
 		time -= shot_interval
 
 func _process_bullets(delta) -> void:

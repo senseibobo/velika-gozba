@@ -3,7 +3,7 @@ extends Node
 var score : float = 200.0
 var level : int = 1
 
-const level_count : int = 1
+const level_count : int = 2
 
 func start_level():
 	var level_scene = load("res://Levels/Level"+str(level)+".tscn").instance()

@@ -13,12 +13,12 @@ var frozen : bool = false
 
 func _ready():
 	var camera = WorldCamera.new()
-	add_child(camera)
 	camera.target_node = self
 	add_child(deflect_generator)
 	Global.player = self
 	var hud = preload("res://UI/HUD/HUD.tscn").instance()
 	get_tree().current_scene.call_deferred("add_child",hud)
+	get_tree().current_scene.call_deferred("add_child",camera)
 
 
 func _physics_process(delta):

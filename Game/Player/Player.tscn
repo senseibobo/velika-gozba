@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Textures/Player/attack/playerAttackTrail.png" type="Texture" id=15]
 [ext_resource path="res://Player/Player.gd" type="Script" id=16]
 [ext_resource path="res://Animations/Player/stagger.anim" type="Animation" id=17]
+[ext_resource path="res://Animations/Player/PlayerDIEDIEDIEDIE.anim" type="Animation" id=18]
 [ext_resource path="res://Textures/Player/attack/pot outside.png" type="Texture" id=19]
 [ext_resource path="res://Textures/Player/attack/pot inside.png" type="Texture" id=20]
 [ext_resource path="res://Animations/Player/Playerpound.anim" type="Animation" id=21]
@@ -531,6 +532,36 @@ tracks/41/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/42/type = "bezier"
+tracks/42/path = NodePath(".:rotation_degrees")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/43/type = "bezier"
+tracks/43/path = NodePath(".:position:x")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/44/type = "bezier"
+tracks/44/path = NodePath(".:position:y")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 46, 13 )
@@ -543,7 +574,6 @@ movement_speed = 350.0
 object_path = NodePath("Object")
 
 [node name="Object" type="Node2D" parent="."]
-rotation = 0.0345936
 scale = Vector2( 0.16, 0.16 )
 
 [node name="potins" type="Sprite" parent="Object"]
@@ -598,10 +628,10 @@ texture = ExtResource( 6 )
 [node name="AnimationTree" type="AnimationTree" parent="Object"]
 tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 14 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Object"]
+anims/DIEDIEDIEDIE = ExtResource( 18 )
 anims/RESET = SubResource( 1 )
 anims/attack = ExtResource( 11 )
 anims/idle = ExtResource( 9 )

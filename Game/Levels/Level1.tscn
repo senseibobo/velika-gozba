@@ -637,9 +637,6 @@ position = Vector2( 7544, -607 )
 rotation = 1.6973
 z_index = 10
 
-[node name="Player" parent="Elements" instance=ExtResource( 5 )]
-position = Vector2( -212, 489 )
-
 [node name="tree29" parent="Elements" instance=ExtResource( 3 )]
 position = Vector2( 6132, 1222 )
 
@@ -1147,6 +1144,9 @@ position = Vector2( 15580, 880 )
 
 [node name="Luk2" parent="Elements" instance=ExtResource( 6 )]
 position = Vector2( 9722, 91 )
+
+[node name="Player" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( -212, 489 )
 
 [node name="LevelFinish" type="Area2D" parent="."]
 position = Vector2( 16732, 533 )

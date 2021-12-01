@@ -1,7 +1,14 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Textures/environment/TekijuNozUGrkljan.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/deserttree/desertree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/desertbush/desertbush.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/kaktus/kaktus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Paradajz/Paradajz.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Luk/Luk.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Krastavac/Krastavac.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Krompir/Krompir.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 16, 128, 0, 128, 0, 0, 128, 0, 128, 16 )
@@ -347,6 +354,682 @@ tile_data = PoolIntArray( -1835048, 8, 0, -1835047, 8, 0, -1835046, 8, 0, -18350
 
 [node name="Player" parent="Elements" instance=ExtResource( 2 )]
 position = Vector2( -261, 732 )
+
+[node name="kaktus" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 146, 489 )
+
+[node name="kaktus2" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 1127, 940 )
+
+[node name="kaktus3" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 922, -401 )
+
+[node name="kaktus32" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 504, -521 )
+
+[node name="kaktus33" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( -383, -32 )
+
+[node name="kaktus34" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 1603, -949 )
+
+[node name="kaktus35" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 2697, -319 )
+
+[node name="kaktus36" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 4344, -219 )
+
+[node name="kaktus37" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 3398, -153 )
+
+[node name="kaktus4" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 3118, 327 )
+
+[node name="kaktus28" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 3539, 1177 )
+
+[node name="kaktus29" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 1447, 172 )
+
+[node name="kaktus30" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( -336, 1400 )
+
+[node name="kaktus27" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 5206, 814 )
+
+[node name="kaktus46" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 6043, 1187 )
+
+[node name="kaktus45" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 7591, 1413 )
+
+[node name="kaktus5" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 1794, 940 )
+
+[node name="kaktus6" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 5280, -428 )
+
+[node name="kaktus31" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 6100, -104 )
+
+[node name="kaktus38" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 5723, -972 )
+
+[node name="kaktus7" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 6686, 550 )
+
+[node name="kaktus39" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 6855, -895 )
+
+[node name="kaktus8" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 7919, -132 )
+
+[node name="kaktus60" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 8394, 370 )
+
+[node name="kaktus61" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 10252, 568 )
+
+[node name="kaktus9" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 9072, 859 )
+
+[node name="kaktus10" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 8828, 1647 )
+
+[node name="kaktus48" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 8828, 1647 )
+
+[node name="kaktus50" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 11301, 1517 )
+
+[node name="kaktus51" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 13339, 1781 )
+
+[node name="kaktus52" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 15064, 545 )
+
+[node name="kaktus53" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 18304, 1311 )
+
+[node name="kaktus54" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 18339, 263 )
+
+[node name="kaktus55" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 20417, 174 )
+
+[node name="kaktus56" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 20056, 1045 )
+
+[node name="kaktus59" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 21256, 1296 )
+
+[node name="kaktus57" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19004, 903 )
+
+[node name="kaktus58" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19004, 903 )
+
+[node name="kaktus49" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 8742, 2447 )
+
+[node name="kaktus47" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 7628, 1879 )
+
+[node name="kaktus11" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 10700, 340 )
+
+[node name="kaktus40" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 14476, 729 )
+
+[node name="kaktus12" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 12441, 963 )
+
+[node name="kaktus13" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 14177, -488 )
+
+[node name="kaktus42" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 14177, -488 )
+
+[node name="kaktus43" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 14519, -1015 )
+
+[node name="kaktus44" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 16958, -773 )
+
+[node name="kaktus41" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 12857, -272 )
+
+[node name="kaktus14" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 16126, -494 )
+
+[node name="kaktus15" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 16126, -494 )
+
+[node name="kaktus16" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 17910, 173 )
+
+[node name="kaktus17" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 18850, -805 )
+
+[node name="kaktus18" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19181, -814 )
+
+[node name="kaktus19" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19482, -822 )
+
+[node name="kaktus20" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19762, -814 )
+
+[node name="kaktus21" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19995, -818 )
+
+[node name="kaktus22" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 18858, -330 )
+
+[node name="kaktus23" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19189, -339 )
+
+[node name="kaktus24" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19490, -347 )
+
+[node name="kaktus25" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 19770, -339 )
+
+[node name="kaktus26" parent="Elements" instance=ExtResource( 5 )]
+position = Vector2( 20003, -343 )
+
+[node name="desertree" parent="Elements" instance=ExtResource( 3 )]
+
+[node name="desertree23" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( -564, -264 )
+
+[node name="desertree24" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( -720, 680 )
+
+[node name="desertree25" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( -824, 248 )
+
+[node name="desertree2" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 577, -61 )
+
+[node name="desertree60" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 1429, 1481 )
+
+[node name="desertree65" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 4765, 1353 )
+
+[node name="desertree64" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 1470, 809 )
+scale = Vector2( 1.48, 1.48 )
+
+[node name="desertree58" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 4478, 629 )
+
+[node name="desertree59" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 1935, -360 )
+
+[node name="desertree26" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 641, -899 )
+
+[node name="desertree3" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 1352, -871 )
+
+[node name="desertree5" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 1929, -874 )
+
+[node name="desertree6" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 2543, -210 )
+rotation = -1.1659
+
+[node name="desertree7" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 2284, -610 )
+
+[node name="desertree22" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 2884, -162 )
+
+[node name="desertree9" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 4003, -137 )
+
+[node name="desertree56" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 4579, -38 )
+
+[node name="desertree57" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 4600, -524 )
+
+[node name="desertree10" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 5001, -446 )
+
+[node name="desertree11" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 5357, 307 )
+
+[node name="desertree62" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 10785, 1593 )
+
+[node name="desertree55" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 6542, -467 )
+
+[node name="desertree61" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 7136, 422 )
+scale = Vector2( 1.84, 1.84 )
+
+[node name="desertree12" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 5250, -872 )
+
+[node name="desertree13" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 6198, -869 )
+
+[node name="desertree14" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 6466, -1082 )
+
+[node name="desertree15" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 7135, -1126 )
+
+[node name="desertree16" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 7611, -856 )
+
+[node name="desertree17" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 7971, -607 )
+
+[node name="desertree18" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 8186, -274 )
+
+[node name="desertree19" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 8216, 250 )
+
+[node name="desertree20" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 8748, 422 )
+
+[node name="desertree21" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 9451, 570 )
+
+[node name="desertree27" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 10002, 570 )
+
+[node name="desertree28" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 10372, 260 )
+
+[node name="desertree29" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 10666, -238 )
+
+[node name="desertree66" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 12084, 1694 )
+
+[node name="desertree75" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 11521, 2164 )
+rotation = -1.26614
+
+[node name="desertree76" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 8199, 1922 )
+
+[node name="desertree74" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 9318, 2335 )
+
+[node name="desertree67" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 15813, 1129 )
+
+[node name="desertree77" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 15603, 224 )
+
+[node name="desertree78" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 16724, -136 )
+
+[node name="desertree68" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 17319, 841 )
+
+[node name="desertree69" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 20819, 905 )
+
+[node name="desertree71" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19059, 178 )
+
+[node name="desertree72" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 21118, 178 )
+
+[node name="desertree73" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19856, 178 )
+
+[node name="desertree70" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19444, 1326 )
+
+[node name="desertree30" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 11157, 56 )
+
+[node name="desertree31" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 11686, 64 )
+
+[node name="desertree32" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 11399, -223 )
+
+[node name="desertree33" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 12547, -253 )
+
+[node name="desertree34" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 13169, -244 )
+
+[node name="desertree36" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 13813, -653 )
+
+[node name="desertree38" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 14174, -1046 )
+
+[node name="desertree39" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 14931, -1017 )
+
+[node name="desertree40" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 15325, -1095 )
+
+[node name="desertree41" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 15706, -1007 )
+
+[node name="desertree54" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 15993, -1078 )
+
+[node name="desertree42" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 16523, -730 )
+
+[node name="desertree43" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 17420, -773 )
+
+[node name="desertree45" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 17473, -1184 )
+
+[node name="desertree46" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 18039, -1291 )
+
+[node name="desertree47" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19037, -1398 )
+
+[node name="desertree49" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19373, -1265 )
+
+[node name="desertree50" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 19870, -1356 )
+
+[node name="desertree51" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 20302, -1276 )
+
+[node name="desertree52" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 20756, -1361 )
+
+[node name="desertree53" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 21098, -1276 )
+
+[node name="desertree48" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 18525, -1259 )
+
+[node name="desertree44" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 16777, -1032 )
+
+[node name="desertree37" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 13665, -244 )
+
+[node name="desertree35" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 12026, -148 )
+
+[node name="desertree63" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 12442, 300 )
+
+[node name="desertree8" parent="Elements" instance=ExtResource( 3 )]
+position = Vector2( 3394, 82 )
+rotation = 1.57237
+
+[node name="DesertBush" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( -403, 878 )
+
+[node name="DesertBush4" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( -1331, 738 )
+
+[node name="DesertBush2" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 494, 159 )
+
+[node name="DesertBush3" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 2406, 504 )
+
+[node name="DesertBush12" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 407, 1433 )
+scale = Vector2( 1.58246, 1.24201 )
+
+[node name="DesertBush13" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 2386, 1395 )
+scale = Vector2( 1.58246, 1.24201 )
+
+[node name="DesertBush14" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 7051, 1090 )
+scale = Vector2( 1.58246, 1.24201 )
+
+[node name="DesertBush5" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 7923, 1195 )
+z_index = 1
+
+[node name="DesertBush27" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 7609, 432 )
+z_index = 1
+
+[node name="DesertBush15" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 12429, 2135 )
+
+[node name="DesertBush16" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 10080, 2274 )
+
+[node name="DesertBush17" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 12953, 1270 )
+
+[node name="DesertBush20" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 15099, -124 )
+scale = Vector2( 1.45205, 1.45205 )
+z_index = 1
+
+[node name="DesertBush18" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 14929, 1259 )
+
+[node name="DesertBush19" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 16671, 1097 )
+
+[node name="DesertBush21" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 17835, -758 )
+
+[node name="DesertBush23" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 17835, -758 )
+z_index = 129
+
+[node name="DesertBush22" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 21383, -579 )
+rotation = 1.59526
+scale = Vector2( 2.36369, 2.36369 )
+
+[node name="DesertBush24" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 21223, -585 )
+rotation = -1.4795
+scale = Vector2( 2.36369, 2.36369 )
+
+[node name="DesertBush25" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 21001, -557 )
+rotation = -1.4795
+scale = Vector2( 2.36369, 2.36369 )
+
+[node name="DesertBush26" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 20958, -641 )
+rotation = -1.4795
+scale = Vector2( 2.36369, 2.36369 )
+
+[node name="DesertBush7" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 3329, 590 )
+
+[node name="DesertBush8" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 3531, 590 )
+
+[node name="DesertBush9" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 3708, 586 )
+
+[node name="DesertBush10" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 3829, 590 )
+z_index = 1
+
+[node name="DesertBush11" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 3436, 590 )
+
+[node name="DesertBush6" parent="Elements" instance=ExtResource( 4 )]
+position = Vector2( 4958, -17 )
+z_index = 1
+
+[node name="Paradajz" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 444, 912 )
+
+[node name="Paradajz2" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 656, 690 )
+
+[node name="Paradajz3" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 817, 903 )
+
+[node name="Paradajz4" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 10697, 901 )
+
+[node name="Paradajz23" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 10967, 767 )
+
+[node name="Paradajz22" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 10665, 664 )
+
+[node name="Paradajz9" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 14384, 178 )
+
+[node name="Paradajz13" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 14384, 178 )
+
+[node name="Paradajz24" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 14072, 370 )
+
+[node name="Paradajz12" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 14237, -222 )
+
+[node name="Paradajz14" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 14836, -366 )
+
+[node name="Paradajz15" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 17668, 176 )
+
+[node name="Paradajz16" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 18157, -415 )
+
+[node name="Paradajz17" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 18335, -821 )
+
+[node name="Paradajz5" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 897, 411 )
+
+[node name="Paradajz6" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1080, 168 )
+
+[node name="Paradajz10" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 5621, -381 )
+
+[node name="Paradajz11" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 7890, 120 )
+
+[node name="Paradajz18" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 8055, 971 )
+
+[node name="Paradajz19" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 8378, 1206 )
+
+[node name="Paradajz7" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1089, -310 )
+
+[node name="Paradajz20" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1795, -61 )
+
+[node name="Paradajz21" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 1941, 121 )
+
+[node name="Krastavac2" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 2824, 360 )
+
+[node name="Krastavac3" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 2818, 887 )
+
+[node name="Krastavac4" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 6323, 527 )
+
+[node name="Krastavac5" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 10068, 1573 )
+
+[node name="Krastavac6" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 10019, 1249 )
+
+[node name="Krastavac7" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 12045, 722 )
+
+[node name="Krastavac8" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 16776, 138 )
+
+[node name="Krastavac11" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 15753, -326 )
+
+[node name="Krastavac9" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 17485, -91 )
+
+[node name="Krastavac10" parent="Elements" instance=ExtResource( 8 )]
+position = Vector2( 20241, -616 )
+
+[node name="Paradajz8" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 885, 7 )
+
+[node name="Krompir" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 1722, -317 )
+
+[node name="Krompir2" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 4987, 545 )
+
+[node name="Krompir3" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 7145, -383 )
+
+[node name="Krompir5" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 13836, 657 )
+
+[node name="Krompir6" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 13098, 324 )
+
+[node name="Krompir4" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 8694, 1033 )
+
+[node name="Krompir7" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 18689, -599 )
+
+[node name="Krompir8" parent="Elements" instance=ExtResource( 9 )]
+position = Vector2( 19336, -612 )
+
+[node name="Luk" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 4957, 11 )
+
+[node name="Luk3" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 7583, 498 )
+
+[node name="Luk4" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 10878, 1594 )
+
+[node name="Luk11" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 7924, 1259 )
+
+[node name="Luk5" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 10755, 248 )
+
+[node name="Luk6" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 14630, 742 )
+
+[node name="Luk10" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 15089, -61 )
+
+[node name="Luk7" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 18952, -329 )
+
+[node name="Luk8" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 19623, -814 )
+
+[node name="Luk9" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 17800, -735 )
+
+[node name="Luk2" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 3876, 642 )
 
 [node name="LevelFinish" type="Area2D" parent="."]
 position = Vector2( 21104, -1007 )

@@ -988,11 +988,11 @@ rotation = 2.30801
 scale = Vector2( 0.476529, 0.432341 )
 
 [node name="Bush36" parent="Elements" instance=ExtResource( 7 )]
-position = Vector2( 12695, 1039 )
+position = Vector2( 12727, 1063 )
 scale = Vector2( 0.260149, 0.236026 )
 
 [node name="Bush37" parent="Elements" instance=ExtResource( 7 )]
-position = Vector2( 12038, 775 )
+position = Vector2( 11951, 786 )
 scale = Vector2( 0.260149, 0.236026 )
 
 [node name="Bush38" parent="Elements" instance=ExtResource( 7 )]
@@ -1059,8 +1059,8 @@ position = Vector2( 11150, 1042 )
 scale = Vector2( 0.260149, 0.236026 )
 
 [node name="Bush28" parent="Elements" instance=ExtResource( 7 )]
-position = Vector2( 11150, 1042 )
-rotation = -1.54334
+position = Vector2( 11279, 1102 )
+rotation = 0.0217979
 scale = Vector2( 0.260149, 0.236026 )
 
 [node name="Bush42" parent="Elements" instance=ExtResource( 7 )]

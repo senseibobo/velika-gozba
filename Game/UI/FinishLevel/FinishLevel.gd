@@ -15,8 +15,10 @@ func _ready():
 	tween.start()
 	Web.request_highscores(LevelManager.level,self,"on_highscores_received")
 	if LevelManager.level >= LevelManager.level_count:
-		$CenterContainer/vb/NextLevel.text = "This is the last level"
-		$CenterContainer/vb/NextLevel.disabled = false
+		$CenterContainer/vb/LevelComplete.text = "Well Done!"
+		$CenterContainer/vb/NextLevel.text = "Return to menu"
+		$CenterContainer/vb/NextLevel.disconnect("pressed",self,"_on_NextLevel_pressed")
+		$CenterContainer/vb/NextLevel.connect("pressed",get_tree(),"change_scene",["res://UI/MainMenu.tscn"])
 		
 
 func on_highscores_received(result, response_code, headers, body):

@@ -64,8 +64,9 @@ func _input(event) -> void:
 		var is_lowercase = (event.unicode >= ord('a') && event.unicode <= ord('z'))
 		var is_uppercase = (event.unicode >= ord('A') && event.unicode <= ord('Z'))
 		var is_digit = (event.unicode >= ord('0') && event.unicode <= ord('9'))
+		var is_special = event.unicode in [ord('_'),ord('-')]
 		var is_space = (event.unicode == ord(' '))
-		if is_lowercase  || is_uppercase || is_digit || is_space:
+		if is_lowercase  || is_uppercase || is_digit || is_space || is_special:
 			Global.ime += char(event.unicode)
 			Global.ime = Global.ime.substr(0,12)
 		elif event.scancode == 16777220:

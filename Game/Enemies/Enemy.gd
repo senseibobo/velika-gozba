@@ -12,7 +12,7 @@ export var deaggro_range = 600
 export var score_reward : float = 30.0
 export var score_multiplier_reward : float = 0.1
 
-onready var sprite : Sprite = get_node("Sprite")
+onready var sprite = get_node("Sprite")
 onready var start_pos : Vector2 = global_position
 
 var spotted_player : bool = false

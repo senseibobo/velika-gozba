@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Textures/PajaPitaja/glava.png" type="Texture" id=1]
+[ext_resource path="res://Textures/PajaPitaja/bullet.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Bosses/Paja/Paja.gd" type="Script" id=3]
+[ext_resource path="res://Enemies/Bosses/Paja/Napad1Generator.gd" type="Script" id=4]
 [ext_resource path="res://UI/HUD/Healthbar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/MainTheme.theme" type="Theme" id=7]
 [ext_resource path="res://Fonts/Modak-Regular.ttf" type="DynamicFontData" id=8]
@@ -323,6 +325,18 @@ tracks/28/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("../Napad1Generator:shooting")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 8 )
@@ -353,81 +367,82 @@ font_data = ExtResource( 8 )
 
 [node name="Paja" type="KinematicBody2D"]
 script = ExtResource( 3 )
+max_health = 2000.0
+hitbox_radius = 16.0
 
-[node name="object" type="Node2D" parent="."]
+[node name="Sprite" type="Node2D" parent="."]
 scale = Vector2( 0.2, 0.2 )
 
-[node name="desni arm4" type="Sprite" parent="object"]
+[node name="desni arm4" type="Sprite" parent="Sprite"]
 position = Vector2( -85, -645 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 9 )
 offset = Vector2( -307, -222 )
 flip_v = true
 
-[node name="desni arm" type="Sprite" parent="object"]
+[node name="desni arm" type="Sprite" parent="Sprite"]
 position = Vector2( -110, -630 )
 texture = ExtResource( 9 )
 offset = Vector2( -282, 210 )
 
-[node name="telo" type="Sprite" parent="object"]
+[node name="telo" type="Sprite" parent="Sprite"]
 position = Vector2( 27.9999, -335 )
 texture = ExtResource( 11 )
 
-[node name="left ruka" type="Sprite" parent="object"]
+[node name="left ruka" type="Sprite" parent="Sprite"]
 position = Vector2( 100, -650 )
 texture = ExtResource( 10 )
 offset = Vector2( 293, 50 )
 
-[node name="desni arm2" type="Sprite" parent="object"]
+[node name="desni arm2" type="Sprite" parent="Sprite"]
 visible = false
 position = Vector2( -107.828, -619.475 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 offset = Vector2( -272.011, 252.342 )
 
-[node name="napad1" type="Node2D" parent="object/desni arm2"]
+[node name="hand1" type="Node2D" parent="Sprite/desni arm2"]
 position = Vector2( -438.73, 384.401 )
+rotation = 0.441568
+scale = Vector2( 5, 5 )
 
-[node name="napad2" type="Node2D" parent="object/desni arm2"]
-position = Vector2( -438.73, 384.401 )
-
-[node name="napad3" type="Node2D" parent="object/desni arm2"]
-position = Vector2( -438.73, 384.401 )
-
-[node name="desni arm3" type="Sprite" parent="object"]
+[node name="desni arm3" type="Sprite" parent="Sprite"]
 visible = false
 position = Vector2( 96.4441, -650.103 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 offset = Vector2( 261.24, 263.302 )
 
-[node name="napad1" type="Node2D" parent="object/desni arm3"]
-position = Vector2( 426.891, 406.676 )
+[node name="hand2" type="Node2D" parent="Sprite/desni arm3"]
+position = Vector2( 429.326, 407.798 )
+rotation = -0.312414
+scale = Vector2( 5, 5 )
 
-[node name="napad2" type="Node2D" parent="object/desni arm3"]
-position = Vector2( 426.891, 406.676 )
-
-[node name="napad3" type="Node2D" parent="object/desni arm3"]
-position = Vector2( 426.891, 406.676 )
-
-[node name="left ruka2" type="Sprite" parent="object"]
+[node name="left ruka2" type="Sprite" parent="Sprite"]
 position = Vector2( 105, -640 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 offset = Vector2( 288, -57 )
 flip_v = true
 
-[node name="head" type="Sprite" parent="object"]
+[node name="head" type="Sprite" parent="Sprite"]
 position = Vector2( -15, -720 )
 texture = ExtResource( 1 )
 offset = Vector2( -37.0001, -220 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="object"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/1napad = ExtResource( 15 )
 anims/2napad = ExtResource( 16 )
 anims/3napad = ExtResource( 17 )
 anims/RESET = SubResource( 6 )
 anims/idle = ExtResource( 12 )
+
+[node name="Napad1Generator" type="Node2D" parent="."]
+script = ExtResource( 4 )
+shot_interval = 0.2
+speed = 150.0
+life_time = 10.0
+texture = ExtResource( 2 )
+bullet_size = Vector2( 16, 40 )
+shooting = false
+shot_count = 3
+cone_angle = 90.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2 )
@@ -461,3 +476,5 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

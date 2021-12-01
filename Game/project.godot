@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Characters/Character.gd"
 }, {
 "base": "BulletGenerator",
+"class": "ConeGenerator",
+"language": "GDScript",
+"path": "res://Tools/BulletGenerators/ConeGenerator.gd"
+}, {
+"base": "BulletGenerator",
 "class": "DeflectGenerator",
 "language": "GDScript",
 "path": "res://Tools/BulletGenerators/DeflectGenerator.gd"
@@ -49,6 +54,7 @@ _global_script_class_icons={
 "Bullet": "",
 "BulletGenerator": "",
 "Character": "",
+"ConeGenerator": "",
 "DeflectGenerator": "",
 "Enemy": "",
 "WorldCamera": ""

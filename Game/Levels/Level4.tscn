@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Desert.tres" type="TileSet" id=1]
 [ext_resource path="res://World/deserttree/desertree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/kaktus/kaktus.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/desertbush/desertbush.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/Bosses/Paja/Paja.tscn" type="PackedScene" id=6]
 
 [node name="Level4" type="Node2D"]
 
@@ -175,3 +176,6 @@ position = Vector2( -276, 563 )
 
 [node name="DesertBush5" parent="Elements" instance=ExtResource( 5 )]
 position = Vector2( 1134, 577 )
+
+[node name="Paja" parent="Elements" instance=ExtResource( 6 )]
+position = Vector2( 393, -377 )

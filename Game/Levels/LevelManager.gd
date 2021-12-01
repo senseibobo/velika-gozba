@@ -6,18 +6,20 @@ var level : int = 1
 var score_timer : float = 5.0
 var score_drop_time : float = 5.0
 
-const level_count : int = 3
+const level_count : int = 4
 
 const music_names_per_level = [
 	"byebyebrain",
 	"sillyintro",
 	"countdown",
+	"thegreatbattle"
 ]
 
 const music_per_level = [
 	preload("res://Sound/Music/ByeByeBrain320bit.mp3"),
 	preload("res://Sound/Music/alexander-nakarada-silly-intro.mp3"),
 	preload("res://Sound/Music/Countdown.ogg"),
+	preload("res://Sound/Music/alexander-nakarada-the-great-battle.mp3")
 ]
 
 func add_score(amount):

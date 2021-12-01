@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tools/BulletGenerators/ConeGenerator.gd" type="Script" id=1]
+
+[node name="napad1" type="Node2D"]
+position = Vector2( -438.73, 384.401 )
+script = ExtResource( 1 )

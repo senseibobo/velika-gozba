@@ -13,4 +13,5 @@ func _ready():
 func on_level_selected(level):
 	LevelManager.level = level
 	get_tree().change_scene("res://World/World.tscn")
+	Global.in_menu = false
 	pass

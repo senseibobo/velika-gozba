@@ -1,5 +1,5 @@
 extends BulletGenerator
-
+class_name ConeGenerator
 export var shot_count : int = 5
 export var cone_angle : float = 45.0
 export var rotation_speed : float = 0.0

@@ -37,6 +37,7 @@ func load_game():
 		apply_save(default_values)
 		return
 	var text = file.get_as_text()
+	file.close()
 	var json = JSON.parse(text).result
 	apply_save(json)
 	

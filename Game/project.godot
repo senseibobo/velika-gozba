@@ -64,6 +64,7 @@ _global_script_class_icons={
 
 config/name="velika-gozba"
 run/main_scene="res://UI/MainMenu.tscn"
+boot_splash/image="res://Textures/bootsplash.png"
 config/icon="res://Textures/icon.png"
 config/windows_native_icon="res://Textures/icon.ico"
 

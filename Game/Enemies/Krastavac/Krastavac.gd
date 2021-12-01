@@ -6,18 +6,22 @@ enum STATES {
 	SHOOTING
 }
 
-var state : int = STATES.WALKING 
 var approach_range : float = 500
 
 onready var generator = $KrastavacGenerator
 
+var old_spotted = false
+
 func _physics_process(delta):
 	if stagger_timer > 0: return
-	if is_instance_valid(Global.player) and state == STATES.WALKING and spotted_player:
+	if not old_spotted and spotted_player: 
 		generator.shooting = true
+	elif old_spotted and not spotted_player:
+		generator.shooting = false
+	old_spotted = spotted_player
+	if is_instance_valid(Global.player) and spotted_player:
 		_handle_movement()
 	else:
-		generator.shooting = false
 		if not spotted_player:
 			var vec = start_pos-global_position
 			var dist = vec.length()

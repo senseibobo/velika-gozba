@@ -45,3 +45,4 @@ speed = 800.0
 life_time = 8.0
 texture = ExtResource( 5 )
 bullet_size = Vector2( 16, 4 )
+shooting = false

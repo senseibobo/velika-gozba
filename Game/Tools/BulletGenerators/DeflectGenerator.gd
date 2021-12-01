@@ -7,6 +7,7 @@ func _ready():
 	z_index = -1
 
 func add_bullet(bullet):
+	bullet.rotation = bullet.rotation + PI
 	bullet.velocity = -bullet.velocity
 	bullet.current_time = 0
 	bullet.generator = self

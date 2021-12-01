@@ -530,7 +530,7 @@ points = PoolVector2Array( 96, 96, 128, 96, 128, 128, 96, 128 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 25, 285 )
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )

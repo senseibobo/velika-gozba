@@ -5,6 +5,7 @@ var level : int = 1
 
 const level_count : int = 2
 
+<<<<<<< HEAD
 const music_names_per_level = [
 	"byebyebrain",
 	"sillyintro",
@@ -24,22 +25,30 @@ func start_level():
 	var tilemap = level_scene.get_node("TileMap")
 	var elements = level_scene.get_node("Elements")
 	var finish : Area2D = level_scene.get_node("LevelFinish")
+=======
+func start_level() -> void:
+	var level_scene : Node = load("res://Levels/Level"+str(level)+".tscn").instance()
+	var tilemap : TileMap = level_scene.get_node("TileMap")
+	var elements : Node = level_scene.get_node("Elements")
+	var finish : Area2D = level_scene.get_node_or_null("LevelFinish")
+>>>>>>> 48f3fdce17c008b6c2615db7d2fec1e988b5b6da
 	tilemap.z_index = -20
 	level_scene.remove_child(tilemap)
 	get_tree().current_scene.add_child(tilemap)
 	for element in elements.get_children():
 		elements.remove_child(element)
 		get_tree().current_scene.get_node("YSort").add_child(element)
-	level_scene.remove_child(finish)
-	get_tree().current_scene.add_child(finish)
-	finish.connect("body_entered",self,"finish_level")
+	if finish != null:
+		level_scene.remove_child(finish)
+		get_tree().current_scene.add_child(finish)
+		finish.connect("body_entered",self,"finish_level")
 
-func finish_level(body):
+func finish_level(body) -> void:
 	Global.player.frozen = true
 	Global.player.animationtree.travel("idle")
 	Web.send_highscore(level,score,self,"on_highscore_received")
 
-func on_highscore_received(result, response_code, headers, body):
+func on_highscore_received(result, response_code, headers, body) -> void:
 	var level_complete = preload("res://UI/FinishLevel/FinishLevel.tscn").instance()
 	Global.in_game = false
 	get_tree().current_scene.add_child(level_complete)

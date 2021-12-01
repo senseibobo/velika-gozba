@@ -20,6 +20,7 @@ var ime : String = ""
 var in_game : bool = false
 
 var difficulty : int = 1
+var volume : float = 0.0
 
 func get_all_bullets() -> Array:
 	var arr : Array = []

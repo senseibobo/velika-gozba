@@ -3,19 +3,23 @@ extends VBoxContainer
 func _ready():
 	$Difficulty.text = "Difficulty: " + ["Easy","Medium","Hard"][Global.difficulty]
 	var bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus,-15)
 
 
 func increase_volume():
 	var bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus,AudioServer.get_bus_volume_db(bus)+5)
+	Global.volume += 5
+	AudioServer.set_bus_volume_db(bus,Global.volume)
+	Save.save_game()
 
 func decrease_volume():
 	var bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus,AudioServer.get_bus_volume_db(bus)-5)
+	Global.volume -= 5
+	AudioServer.set_bus_volume_db(bus,Global.volume)
+	Save.save_game()
 
 func toggle_fullscreen():
 	OS.window_fullscreen = !OS.window_fullscreen
+	Save.save_game()
 
 
 func toggle_shader():
@@ -25,3 +29,4 @@ func toggle_shader():
 func change_difficulty():
 	Global.difficulty = (Global.difficulty + 1) % 3
 	$Difficulty.text = "Difficulty: " + ["Easy","Medium","Hard"][Global.difficulty]
+	Save.save_game()

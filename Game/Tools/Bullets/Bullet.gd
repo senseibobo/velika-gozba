@@ -27,6 +27,7 @@ func check_collision(radius,targets) -> bool:
 					return true
 		Global.TARGETS.ENEMY:
 			for enemy in Global.enemies:
+				if not is_instance_valid(enemy): continue
 				var dist_to_enemy : float = position.distance_to(enemy.global_position - Vector2(0,height))
 				if dist_to_enemy < radius:
 					enemy.hit(damage,source)

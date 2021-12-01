@@ -70,6 +70,7 @@ func _input(event) -> void:
 			Global.ime = Global.ime.substr(0,12)
 		elif event.scancode == 16777220:
 			Global.ime = Global.ime.substr(0,max(0,Global.ime.length()-1))
+		Save.save_game()
 	update()
 
 func _draw() -> void:

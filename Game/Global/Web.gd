@@ -6,7 +6,7 @@ func request_highscores(level,result_node, result_function):
 
 func send_highscore(level,score,result_node = null,result_function = ""):
 	var body : Dictionary = {
-		"name" : Global.ime,
+		"name" : Global.ime if Global.ime != "" else "Bezimeni",
 		"score" : score,
 		"level" : level
 	}

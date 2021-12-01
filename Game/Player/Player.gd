@@ -81,9 +81,17 @@ func hit_enemies(pos,radius):
 			enemy.hit(basic_attack_damage,self)
 
 func hit(damage,source):
+	if frozen: return
+	LevelManager.score_multiplier = 1.0
 	damage *= 1+Global.difficulty/4.0
 	if animationtree.get_current_node() == "stagger": return
 	elif animationtree.get_current_node() in ["run","idle"]: 
 		animationtree.travel("stagger")
 	.hit(damage,source)
 	SFX.play_sound(SFX.PLAYERHIT1 + randi()%3)
+
+func death(source):
+	var deathscreen = preload("res://UI/FinishLevel/DeathScreen.tscn").instance()
+	get_tree().current_scene.add_child(deathscreen)
+	frozen = true
+	#play animation

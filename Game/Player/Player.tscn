@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -33,9 +33,6 @@ animation = "attack"
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "pound"
-
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "run"
 
@@ -66,30 +63,20 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
-switch_mode = 2
-auto_advance = true
-
 [sub_resource type="AnimationNodeStateMachine" id=13]
 states/RESET/node = SubResource( 3 )
-states/RESET/position = Vector2( 82, 264 )
+states/RESET/position = Vector2( 239, 167 )
 states/attack/node = SubResource( 4 )
-states/attack/position = Vector2( 423, 280 )
+states/attack/position = Vector2( 486, 300 )
 states/idle/node = SubResource( 5 )
-states/idle/position = Vector2( 509, 122 )
-states/pound/node = SubResource( 19 )
-states/pound/position = Vector2( 423, 325 )
+states/idle/position = Vector2( 877, 175 )
 states/run/node = SubResource( 6 )
-states/run/position = Vector2( 503, 434 )
+states/run/position = Vector2( 380, 57 )
 states/stagger/node = SubResource( 15 )
-states/stagger/position = Vector2( 423, 233 )
-transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ), "run", "pound", SubResource( 20 ), "idle", "pound", SubResource( 21 ), "pound", "RESET", SubResource( 22 ) ]
+states/stagger/position = Vector2( 692, 47 )
+transitions = [ "run", "attack", SubResource( 7 ), "idle", "attack", SubResource( 8 ), "RESET", "idle", SubResource( 9 ), "idle", "run", SubResource( 10 ), "run", "RESET", SubResource( 11 ), "attack", "RESET", SubResource( 12 ), "stagger", "RESET", SubResource( 16 ), "run", "stagger", SubResource( 17 ), "idle", "stagger", SubResource( 18 ) ]
 start_node = "RESET"
-graph_offset = Vector2( -139, 118 )
+graph_offset = Vector2( 75, 59 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 

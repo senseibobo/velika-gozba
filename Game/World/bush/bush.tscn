@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Textures/environment/tree/krosnja.png" type="Texture" id=1]
+[ext_resource path="res://Textures/environment/zbuntttt.png" type="Texture" id=1]
 [ext_resource path="res://World/tree/wave.gdshader" type="Shader" id=2]
 
 [sub_resource type="OpenSimplexNoise" id=1]
@@ -16,10 +16,10 @@ shader = ExtResource( 2 )
 shader_param/spread = 5.0
 shader_param/wave_freq = 1.0
 shader_param/wave_width = 1.0
+shader_param/nestotamo = null
 shader_param/noise = SubResource( 2 )
 
 [node name="Bush" type="Sprite"]
-modulate = Color( 0.388235, 0.670588, 0.14902, 1 )
 material = SubResource( 3 )
 position = Vector2( 0, -20 )
 scale = Vector2( 0.08, 0.08 )

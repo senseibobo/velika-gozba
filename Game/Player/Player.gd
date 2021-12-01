@@ -49,6 +49,8 @@ func _handle_animations():
 func _handle_attack():
 	if Input.is_action_just_pressed("attack"):
 		animationtree.travel("attack")
+	elif Input.is_action_just_pressed("pound"):
+		animationtree.travel("pound")
 
 func attack():
 	var pos = object.get_node("attack/tiganj").global_position
@@ -75,6 +77,7 @@ func hit_enemies(pos):
 
 func hit(damage,source):
 	if animationtree.get_current_node() == "stagger": return
-	elif animationtree.get_current_node() in ["run","idle"]: animationtree.travel("stagger")
+	elif animationtree.get_current_node() in ["run","idle"]: 
+		animationtree.travel("stagger")
 	.hit(damage,source)
 	SFX.play_sound(SFX.PLAYERHIT1 + randi()%3)

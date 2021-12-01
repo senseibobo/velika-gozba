@@ -28,9 +28,11 @@ func _check_collision(delta):
 			attack_timer = attack_interval
 
 func _handle_movement(delta):
-	var dir : Vector2
-	dir = global_position.direction_to(Global.player.global_position)
-	if dir.x != 0:
-		sprite.scale.x = -abs(sprite.scale.x)*sign(dir.x)
-	move_and_slide(dir*movement_speed)
+	var vec = Global.player.global_position - global_position
+	var dir = vec.normalized()
+	var dist = vec.length()
+	if dist > 5:
+		if dir.x != 0:
+			sprite.scale.x = -abs(sprite.scale.x)*sign(dir.x)
+		move_and_slide(dir*movement_speed)
 

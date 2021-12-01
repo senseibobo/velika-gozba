@@ -52,6 +52,7 @@ func _handle_attack():
 		animationtree.travel("attack")
 	elif Input.is_action_just_pressed("pound"):
 		animationtree.travel("pound")
+		$CollisionShape2D.set_deferred("disabled",true)
 
 func attack():
 	var pos = object.get_node("attack/tiganj").global_position
@@ -61,8 +62,9 @@ func attack():
 	else: SFX.play_sound(SFX.TIGANJ1 + randi()%2)
 
 func pound():
+	$CollisionShape2D.set_deferred("disabled",false)
 	SFX.play_sound(SFX.SERPA)
-	hit_enemies(global_position,basic_attack_radius*2.0)
+	hit_enemies(global_position,basic_attack_radius*2.0,basic_attack_damage*1.5)
 	animationtree.travel("stagger")
 
 func deflect_bullets(pos):
@@ -76,11 +78,11 @@ func deflect_bullets(pos):
 	return deflected
 			
 
-func hit_enemies(pos,radius):
+func hit_enemies(pos,radius,damage = basic_attack_damage):
 	for enemy in Global.enemies:
 		if not is_instance_valid(enemy): continue
 		if enemy.global_position.distance_to(pos) < radius + enemy.hitbox_radius:
-			enemy.hit(basic_attack_damage,self)
+			enemy.hit(damage,self)
 
 func hit(damage,source):
 	if frozen or animationtree.get_current_node() in ["pound"]: return false

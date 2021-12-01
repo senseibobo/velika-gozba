@@ -29,12 +29,12 @@ func add_score_multiplier(amount):
 	score_timer = score_drop_time
 
 func _process(delta):
-	print(score_timer)
 	score_timer -= delta
 	if score_timer <= 0:
 		score_multiplier = 1.0
 
 func start_level():
+	score = 0
 	Music.play_music(music_names_per_level[level-1],music_per_level[level-1])
 	var level_scene : Node = load("res://Levels/Level"+str(level)+".tscn").instance()
 	var tilemap : TileMap = level_scene.get_node("TileMap")

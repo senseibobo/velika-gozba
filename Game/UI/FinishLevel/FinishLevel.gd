@@ -15,7 +15,9 @@ func _ready():
 	tween.start()
 	Web.request_highscores(LevelManager.level,self,"on_highscores_received")
 	if LevelManager.level >= LevelManager.level_count:
-		$CenterContainer/vb/NextLevel.visible = false
+		$CenterContainer/vb/NextLevel.text = "This is the last level"
+		$CenterContainer/vb/NextLevel.disabled = false
+		
 
 func on_highscores_received(result, response_code, headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())

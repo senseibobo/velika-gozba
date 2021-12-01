@@ -58,7 +58,6 @@ speed = 300.0
 life_time = 15.0
 texture = ExtResource( 4 )
 bullet_size = Vector2( 30, 48 )
-bullet_radius = 16.0
 shot_delay = 0.2
 width = 1700.0
 inner_width = 800.0

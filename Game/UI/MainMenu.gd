@@ -59,7 +59,7 @@ func _ready() -> void:
 	Music.stream = mainmusic
 	Music.play()
 
-func _input(event):
+func _input(event) -> void:
 	if event is InputEventKey and event.pressed:
 		var is_lowercase = (event.unicode >= ord('a') && event.unicode <= ord('z'))
 		var is_uppercase = (event.unicode >= ord('A') && event.unicode <= ord('Z'))
@@ -72,10 +72,10 @@ func _input(event):
 			Global.ime = Global.ime.substr(0,max(0,Global.ime.length()-1))
 	update()
 
-func _draw():
+func _draw() -> void:
 	_draw_name()
 
-func _draw_name():
+func _draw_name() -> void:
 	var screen_size : Vector2 = get_viewport_rect().size
 	var mpos : Vector2 = get_viewport().get_mouse_position()
 	var pos = Vector2(0.1,0.43)*screen_size-(screen_size/2-mpos)/40.0 + Vector2(100,370)
@@ -134,7 +134,7 @@ func _update_offset() -> void:
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 
-func change_menu(new_menu):
+func change_menu(new_menu) -> void:
 	if changing: return
 	changing = true
 	var tween = Tween.new()
@@ -144,7 +144,7 @@ func change_menu(new_menu):
 	tween.connect("tween_all_completed",self,"on_menu_change",[new_menu])
 	tween.connect("tween_all_completed",tween,"queue_free")
 	
-func on_menu_change(new_menu):
+func on_menu_change(new_menu) -> void:
 	visible_container = new_menu
 	match new_menu:
 		VCONTAINER.MAIN: c = mainc.get_children()
@@ -158,7 +158,7 @@ func on_menu_change(new_menu):
 		VCONTAINER.SELECT: c = selectc.get_children()
 		VCONTAINER.SETTINGS: c = settingsc.get_children()
 	_update_visible()
-	var tween = Tween.new()
+	var tween : Tween = Tween.new()
 	add_child(tween)
 	tween.interpolate_property(centerc,"rect_scale",Vector2.ZERO,Vector2.ONE,0.2,Tween.TRANS_CUBIC,Tween.EASE_OUT)
 	tween.start()
@@ -166,8 +166,8 @@ func on_menu_change(new_menu):
 	tween.connect("tween_all_completed",self,"set",["changing",false])
 
 
-func get_all_buttons(node):
-	var arr = []
+func get_all_buttons(node) -> Array:
+	var arr : Array = []
 	if node is Button: arr.append(node)
 	for child in node.get_children():
 		arr.append_array(get_all_buttons(child))
@@ -178,5 +178,5 @@ func get_all_buttons(node):
 
 
 
-func _on_New_Game_pressed():
+func _on_New_Game_pressed() -> void:
 	get_tree().change_scene("res://World/World.tscn")

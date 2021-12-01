@@ -5,7 +5,7 @@ var level : int = 1
 
 const level_count : int = 2
 
-func start_level():
+func start_level() -> void:
 	var level_scene : Node = load("res://Levels/Level"+str(level)+".tscn").instance()
 	var tilemap : TileMap = level_scene.get_node("TileMap")
 	var elements : Node = level_scene.get_node("Elements")
@@ -21,12 +21,12 @@ func start_level():
 		get_tree().current_scene.add_child(finish)
 		finish.connect("body_entered",self,"finish_level")
 
-func finish_level(body):
+func finish_level(body) -> void:
 	Global.player.frozen = true
 	Global.player.animationtree.travel("idle")
 	Web.send_highscore(level,score,self,"on_highscore_received")
 
-func on_highscore_received(result, response_code, headers, body):
+func on_highscore_received(result, response_code, headers, body) -> void:
 	var level_complete = preload("res://UI/FinishLevel/FinishLevel.tscn").instance()
 	Global.in_game = false
 	get_tree().current_scene.add_child(level_complete)

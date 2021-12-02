@@ -33,6 +33,9 @@ func set_shooting(value):
 	time = 0
 
 func _ready() -> void:
+	add_to_generator_array()
+
+func add_to_generator_array():
 	match targets:
 		TARGETS.ENEMY: Global.player_generators.append(self)
 		TARGETS.PLAYER: Global.enemy_generators.append(self)

@@ -6,11 +6,10 @@ KAKO POKRENUTI APLIKACIJU: Kliknuti na .exe fajl. <br/>
 NAPOMENA: .pck fajl mora biti u istom folderu kao i .exe fajl.<br/>
 <br/>
 !----------------------Tehnologije korišćene u izradi------------------------!<br/>
-Korišćen je Godot Game Engine koji koristi svoj custom programskim jezikom zvanim GDScript. <br/>
-GDScript je inspirisan Python-om tako da je 90% sintakse slično Python-u. U GDScript-u je isprogramirana sam mehanika igre.<br/>
+Korišćen je Godot Game Engine koji koristi GDScript jezik koji je slican Pythonu. <br/>
 Za shader-e je korišćen Godot-ov custom Shading jezik koji je gotovo isti kao GLSL (OpenGL Shading Language).<br/>
 Singleton je korišćen za: puštanje muzike, zvučne efekte, za integrisanje sa backend-om kao i upravljanje levelima.<br/>
-Sprite-ovi(modeli) su napravljeni u Adobe Photoshop-u.<br/>
+Spriteovi su nacrtani u Adobe Photoshop-u.<br/>
 Zvučni efekti su obrađivani u programu Audacity.<br/>
 Backend je napravljen koristeći Express.js framework i on je hostovan na sajtu heroku.com. <br/>
 On je povezan sa MongoDB bazom podataka koja je hostovana na mongodb.com/atlas/database.<br/>

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void fragment() {
+	float ratio = SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y;
+	COLOR = texture(SCREEN_TEXTURE,SCREEN_UV);
+	float n = (SCREEN_UV.x-0.5)*(SCREEN_UV.x-0.5)+(SCREEN_UV.y-0.5)*(SCREEN_UV.y-0.5)*ratio*ratio;
+	/*if(n > 0.025)*/ COLOR.rgb = mix(max(COLOR.rgb-vec3(0.3),vec3(0.0)),vec3(0.0),n*15.0);
+}"
+
+[resource]
+shader = SubResource( 1 )

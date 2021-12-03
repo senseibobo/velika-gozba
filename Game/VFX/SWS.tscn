@@ -1,21 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-void fragment() {
-	COLOR = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x,1.0-SCREEN_UV.y));
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[ext_resource path="res://VFX/Shaders/default.tres" type="Material" id=1]
+[ext_resource path="res://VFX/SWS.gd" type="Script" id=2]
 
 [node name="SWS" type="CanvasLayer"]
 layer = 21
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-material = SubResource( 2 )
+material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

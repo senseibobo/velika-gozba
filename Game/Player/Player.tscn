@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Textures/Player/kapa.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Player/leva ruka.png" type="Texture" id=2]
@@ -24,7 +24,6 @@
 [ext_resource path="res://Textures/Player/attack/splash.png" type="Texture" id=22]
 [ext_resource path="res://Textures/Player/attack/hit.png" type="Texture" id=23]
 [ext_resource path="res://Textures/Player/attack/swosh.png" type="Texture" id=24]
-[ext_resource path="res://Textures/Player/leva noga.png" type="Texture" id=25]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
 animation = "RESET"
@@ -585,12 +584,12 @@ position = Vector2( 6.25, 437.5 )
 texture = ExtResource( 22 )
 
 [node name="levaNoga" type="Sprite" parent="Object"]
-position = Vector2( 142.803, -48 )
-texture = ExtResource( 25 )
+position = Vector2( 140, -48 )
+texture = ExtResource( 5 )
 offset = Vector2( 30.4709, 7 )
 
 [node name="desnaNoga" type="Sprite" parent="Object"]
-position = Vector2( -139.364, -53 )
+position = Vector2( -136, -53 )
 texture = ExtResource( 3 )
 offset = Vector2( -25.8532, 29 )
 
@@ -598,32 +597,30 @@ offset = Vector2( -25.8532, 29 )
 position = Vector2( 0.005, 0 )
 
 [node name="levaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 224, -374.721 )
-rotation = -0.0390811
+position = Vector2( 224, -383 )
 texture = ExtResource( 2 )
 offset = Vector2( 33, 97.9647 )
 
 [node name="telo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 0, -366.721 )
+position = Vector2( 0, -375 )
 texture = ExtResource( 7 )
 
 [node name="kapa" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -57, -538.685 )
+position = Vector2( -57, -545 )
 texture = ExtResource( 1 )
 offset = Vector2( -50, -225.035 )
 
 [node name="uvo" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -260, -528.721 )
+position = Vector2( -260, -537 )
 texture = ExtResource( 8 )
 
 [node name="desnaRuka" type="Sprite" parent="Object/Node2D"]
-position = Vector2( -266, -330.721 )
-rotation = 0.0294867
+position = Vector2( -266, -339 )
 texture = ExtResource( 4 )
 offset = Vector2( -1, 108.965 )
 
 [node name="lice" type="Sprite" parent="Object/Node2D"]
-position = Vector2( 51, -560.011 )
+position = Vector2( 51, -566.327 )
 texture = ExtResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Object"]

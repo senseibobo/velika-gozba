@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+
 func _ready():
 	$Difficulty.text = "Difficulty: " + ["Easy","Medium","Hard"][Global.difficulty]
 
@@ -21,8 +22,10 @@ func toggle_fullscreen():
 	Save.save_game()
 
 
+
+
 func toggle_shader():
-	SWS.get_node("ColorRect").visible = !SWS.get_node("ColorRect").visible
+	SWS.next_shader()
 
 
 func change_difficulty():

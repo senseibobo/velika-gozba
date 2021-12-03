@@ -56,6 +56,11 @@ func update_enemy_generators() -> void:
 	for gen in enemy_generators:
 		if !is_instance_valid(gen):
 			enemy_generators.erase(gen)
+
+func slow_time(duration,slow):
+	Engine.time_scale = 1.0-slow
+	yield(get_tree().create_timer(Engine.time_scale*duration),"timeout")
+	Engine.time_scale = 1.0
 		
 
 

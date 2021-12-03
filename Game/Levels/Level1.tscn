@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Enemies/Krastavac/Krastavac.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/environment/tekiBeLikwe.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Luk/Luk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/bush/bush.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/MainTheme.theme" type="Theme" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 32, 128, 0, 128, 0, 0, 128, 0, 128, 32, 32, 32 )
@@ -1153,6 +1154,42 @@ position = Vector2( 9722, 91 )
 
 [node name="Player" parent="Elements" instance=ExtResource( 5 )]
 position = Vector2( -208, 491 )
+
+[node name="Label" type="Label" parent="Elements"]
+margin_left = 54.0
+margin_top = 148.0
+margin_right = 221.0
+margin_bottom = 179.0
+rect_pivot_offset = Vector2( 83.5, 100 )
+theme = ExtResource( 8 )
+text = "Press Space to hit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Elements"]
+margin_left = 1627.0
+margin_top = 1426.0
+margin_right = 1794.0
+margin_bottom = 1457.0
+rect_pivot_offset = Vector2( 83.5, 100 )
+theme = ExtResource( 8 )
+text = "Press E or C to do a jump attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Elements"]
+margin_left = 2233.0
+margin_top = 791.0
+margin_right = 2593.0
+margin_bottom = 822.0
+rect_pivot_offset = Vector2( 83.5, 100 )
+theme = ExtResource( 8 )
+text = "Hit bullets using Space to deflect them"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelFinish" type="Area2D" parent="."]
 position = Vector2( 16732, 533 )

@@ -62,7 +62,7 @@ func _ready() -> void:
 	var mainmusic = preload("res://Sound/Music/LeBaguette-320bit.mp3")
 	Music.stream = mainmusic
 	Music.play()
-	if LevelManager.level == 1:
+	if LevelManager.level == 1 or LevelManager.level == 5:
 		$CenterContainer/PlayContainer/Continue.disabled = true
 
 func _input(event) -> void:

@@ -476,28 +476,30 @@ cone_angle = 90.0
 [node name="Napad2Generator" type="Node2D" parent="."]
 script = ExtResource( 5 )
 damage = 10.0
-count = 5
-shot_interval = 0.4
+count = 7
+shot_interval = 0.35
 speed = 300.0
 life_time = 10.0
 texture = ExtResource( 2 )
 bullet_size = Vector2( 16, 40 )
 shooting = false
-shot_delay = 0.02
+shot_delay = 0.017
 shot_count = 3
 cone_angle = 120.0
 
 [node name="Napad3Generator" type="Node2D" parent="."]
 script = ExtResource( 18 )
-damage = 1.5
+damage = 1.8
 count = 30
 shot_interval = 0.03
-speed = 1250.0
+speed = 1500.0
+life_time = 2.0
 texture = ExtResource( 2 )
 bullet_size = Vector2( 16, 40 )
 shooting = false
 shot_count = 1
-rand_offset = Vector2( 35, 100 )
+cone_angle = 5.0
+rand_offset = Vector2( 35, 60 )
 rand_dir = 0.12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

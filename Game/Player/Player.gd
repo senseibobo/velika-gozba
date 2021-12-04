@@ -14,7 +14,7 @@ var is_attacking : bool = false
 var is_pounding : bool = false
 
 
-func _ready():
+func _ready() -> void:
 	var camera = WorldCamera.new()
 	camera.target_node = self
 	add_child(deflect_generator)
@@ -24,19 +24,19 @@ func _ready():
 	get_tree().current_scene.call_deferred("add_child",camera)
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if frozen: return
 	if animationtree.get_current_node() in ["run","idle","RESET"]:
 		_handle_movement()
 
-func _process(delta):
+func _process(delta) -> void:
 	if frozen: return
 	if animationtree.get_current_node() in ["run","idle","RESET"]:
 		_handle_animations()
 		_handle_attacking()
 
 		
-func _handle_attacking():
+func _handle_attacking() -> void:
 	if is_attacking:
 		animationtree.travel("attack")
 	elif is_pounding:
@@ -45,9 +45,9 @@ func _handle_attacking():
 
 
 func _handle_movement():
-	var _hmove = Input.get_action_strength("move_right")-Input.get_action_strength("move_left")
-	var _vmove = Input.get_action_strength("move_down")-Input.get_action_strength("move_up")
-	var _dir = Vector2(_hmove,_vmove).normalized()
+	var _hmove : float = Input.get_action_strength("move_right")-Input.get_action_strength("move_left")
+	var _vmove : float = Input.get_action_strength("move_down")-Input.get_action_strength("move_up")
+	var _dir : Vector2 = Vector2(_hmove,_vmove).normalized()
 	move_and_slide(_dir*movement_speed)
 
 func _handle_animations():
